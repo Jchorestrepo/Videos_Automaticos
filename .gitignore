@@ -2,6 +2,8 @@ node_modules
 dist
 .DS_Store
 .env
+.old.env
 
-# Ignore the output video from Git but not videos you import into src/.
+# Ignore the output video and generated storage from Git
 out
+storage

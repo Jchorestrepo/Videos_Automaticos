@@ -1,0 +1,13 @@
+{
+  "character_id": "campesino_egipcio",
+  "channel_id": "ancient_lives",
+  "name": "Nekht (Campesino del Nilo)",
+  "role": "Trabajador agrícola y constructor en el Antiguo Egipto",
+  "real_person": false,
+  "anchor_prompt": "Stylized 3D cinematic animated character of an ancient Egyptian male peasant named Nekht, sun-baked bronze skin with light beads of sweat, completely shaved clean head, dark intense kohl eyeliner protecting eyes from sun glare, lean muscular sinewy build, wearing simple unbleached rough linen kilt (shendyt) tied at waist, weathered hands, resilient tired but proud expression, high-end 3D animated documentary character render, Arcane Pixar inspired aesthetic",
+  "signature_props": [
+    "porous clay water jar (zir)",
+    "bronze sickle for harvesting",
+    "mudbrick background under blazing sun"
+  ]
+}

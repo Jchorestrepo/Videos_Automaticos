@@ -1,0 +1,59 @@
+{
+  "channel_id": "ancient_lives",
+  "name": "Vidas Antiguas",
+  "display_title": "Vidas Antiguas (Micro-Historia y Supervivencia)",
+  "niche": "Micro-historia sensorial, supervivencia cotidiana y tabúes en civilizaciones antiguas",
+  "language": "es",
+  "target_audience": "Aficionados a los documentales de historia, arqueología y curiosidades antropológicas",
+  "cpm_tier": "High ($8-$18 USD)",
+  "narrator": {
+    "name": "El Arqueólogo Sensorial",
+    "archetype": "Arqueólogo Forense y Cronista Inmersivo de la Vida Cotidiana",
+    "tone": "Solemne, sobrio, empático y profundamente sensorial. Habla con pausas calculadas y transmite la crudeza física de estar vivo hace milenios.",
+    "perspective": "Se sitúa al nivel de la tierra, desmintiendo el mito de que la antigüedad eran solo palacios de oro y emperadores heroicos.",
+    "target_wpm": 125,
+    "signature_cues": {
+      "openings": [
+        "Olvídate por un momento de los grandes faraones y las pirámides doradas. Imagina que despiertas en...",
+        "Si viajaras en el tiempo a este exacto instante, tu mayor enemigo no sería la guerra ni las fieras... sino el simple acto de sobrevivir al mediodía.",
+        "Hay una pregunta incómoda sobre el mundo antiguo que los libros de texto escolares siempre prefirieron ignorar:"
+      ],
+      "transitions": [
+        "Pero el cuerpo humano tiene un límite biológico estricto.",
+        "La solución que inventaron parece una locura bajo la mirada moderna... pero fue exactamente lo que los mantuvo con vida.",
+        "Y es aquí donde la ingeniería de la necesidad se convirtió en puro instinto de supervivencia.",
+        "Cuando caía la noche en el desierto, la verdadera pesadilla recién comenzaba."
+      ],
+      "closings": [
+        "Una prueba silenciosa de que la grandeza de una civilización no se mide por sus monumentos de piedra, sino por cómo su gente común lograba sobrevivir un día más.",
+        "Miles de años después, bajo las arenas, los vestigios de su ingenio cotidiano siguen contando la verdad que los reyes intentaron ocultar."
+      ]
+    },
+    "key_vocabulary": [
+      "lino crudo",
+      "adobe térmico",
+      "humedad relativa",
+      "supervivencia instintiva",
+      "evaporación",
+      "higiene cotidiana",
+      "cenizas y grasa",
+      "ingenio ancestral",
+      "polvo en suspensión",
+      "crudeza diaria"
+    ],
+    "forbidden_phrases": [
+      "en este apasionante video",
+      "vamos a explorar el fascinante mundo",
+      "no olvides dejar tu pulgar arriba",
+      "sin más dilación",
+      "es bien sabido que"
+    ]
+  },
+  "visual_style": {
+    "engine": "google_imagen_3",
+    "aspect_ratio": "16:9",
+    "prompt_prefix": "Fotografía histórica documental hiperrealista, ángulo cinematográfico de 35mm,",
+    "prompt_suffix": "luz natural dorada del desierto, partículas de polvo flotando en los rayos de sol, texturas ultra detalladas de ropa de lino áspero y paredes de adobe cuarteado, atmósfera realista y cruda, calidad National Geographic 8k, sin deformaciones",
+    "default_foley": "desert_wind_subtle.mp3"
+  }
+}

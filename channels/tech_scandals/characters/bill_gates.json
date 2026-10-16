@@ -1,0 +1,13 @@
+{
+  "character_id": "bill_gates",
+  "channel_id": "tech_scandals",
+  "name": "Bill Gates (Era 90s)",
+  "role": "CEO y Fundador de Microsoft",
+  "real_person": true,
+  "anchor_prompt": "Stylized 3D cinematic animated character of young 1990s Bill Gates, oversized retro tortoiseshell aviator glasses, tousled parted light brown hair, slender frame, classic burgundy V-neck sweater over a collared shirt, sharp calculating eyes, intense intellectual presence, high-end 3D animated documentary character render, Pixar Arcane aesthetic, expressive face",
+  "signature_props": [
+    "vintage Windows 95 software box",
+    "stack of antitrust legal court papers",
+    "CRT monitors glowing in the dark"
+  ]
+}

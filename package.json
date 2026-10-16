@@ -1,28 +1,47 @@
 {
-  "name": "Videos",
+  "name": "ancientlives-automation",
   "version": "1.0.0",
-  "description": "My Remotion video",
-  "repository": {},
-  "license": "UNLICENSED",
+  "description": "Multi-Channel Video Automation Pipeline with Remotion and Google GenAI",
   "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "tsx server/index.ts",
+    "studio": "remotion studio src/remotion/index.ts",
+    "render": "remotion render src/remotion/index.ts",
+    "pipeline:auto": "tsx pipeline/batch_runner.ts"
+  },
   "dependencies": {
-    "@remotion/cli": "4.0.534",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "remotion": "4.0.534"
+    "@google/genai": "^2.30.0",
+    "@remotion/captions": "^4.0.535",
+    "@remotion/cli": "^4.0.535",
+    "@remotion/media-utils": "^4.0.535",
+    "@remotion/player": "^4.0.535",
+    "clsx": "^2.1.1",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.535",
+    "tailwind-merge": "^3.0.1"
   },
   "devDependencies": {
-    "@remotion/eslint-config-flat": "4.0.534",
-    "@types/react": "19.2.7",
-    "@types/web": "0.0.166",
-    "eslint": "9.39.5",
-    "prettier": "3.8.1",
-    "typescript": "5.9.3"
-  },
-  "scripts": {
-    "dev": "remotion studio",
-    "build": "remotion bundle",
-    "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
   }
 }
