@@ -13,6 +13,10 @@ export default defineConfig({
       '/storage': {
         target: 'http://localhost:3001',
         changeOrigin: true,
+      },
+      '/channel-assets': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
       }
     }
   }

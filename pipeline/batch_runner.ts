@@ -65,7 +65,7 @@ async function runAutonomousPipeline() {
   console.log('\n[2/3] Generando imágenes 16:9 con arco emocional por actos...');
   const totalScenes = script.scenes.length;
   for (const scene of script.scenes) {
-    console.log(`  - Generando escena ${scene.scene_id}/${totalScenes}: ${scene.chapter}`);
+    console.log(`  - Generando escena ${scene.scene_id}/${totalScenes}: ${scene.chapter} [${scene.shot_type || 'auto'}]`);
     const imageUrl = await ImageService.generateSceneImage(
       script.project_id,
       scene.scene_id,
@@ -74,7 +74,8 @@ async function runAutonomousPipeline() {
       persona.channel_id,
       character,
       totalScenes,
-      script.artStyle
+      script.artStyle,
+      scene.shot_type
     );
     scene.imageUrl = imageUrl;
   }
@@ -82,8 +83,21 @@ async function runAutonomousPipeline() {
   ProjectService.saveProject(script);
   console.log('  ✓ Todas las imágenes generadas y guardadas.');
 
-  // 5. Generar Audio y Timestamps por Palabra (ElevenLabs)
-  console.log('\n[3/4] Generando locución sincronizada con ElevenLabs...');
+  // 5. Generar Audio y Timestamps por Palabra (OpenAI TTS para Pruebas ES / ElevenLabs para Final EN)
+  const isFinalEnglish = process.argv.includes('--final-en');
+  if (isFinalEnglish) {
+    console.log('\n[3/4] Adaptando guion a Inglés Documental para producción final...');
+    const translated = await ScriptService.translateProjectToEnglish(script);
+    Object.assign(script, translated);
+    ProjectService.saveProject(script);
+  }
+
+  const preferredVoiceProvider = isFinalEnglish ? 'elevenlabs' : 'openai';
+  console.log(
+    `\n[3/4] Generando locución sincronizada con ${
+      preferredVoiceProvider === 'openai' ? 'OpenAI TTS (Modo Prueba Español)' : 'ElevenLabs (Producción Final Inglés)'
+    }...`
+  );
   const { AudioService } = await import('../server/services/audioService.ts');
   for (const scene of script.scenes) {
     console.log(`  - Sintetizando voz de escena ${scene.scene_id}: ${scene.chapter}`);
@@ -91,7 +105,8 @@ async function runAutonomousPipeline() {
       script.project_id,
       scene.scene_id,
       scene.voiceover,
-      persona.channel_id
+      persona.channel_id,
+      preferredVoiceProvider
     );
     scene.audioUrl = audioRes.audioUrl;
     scene.durationInSeconds = audioRes.durationInSeconds;
