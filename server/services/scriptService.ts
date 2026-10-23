@@ -1,14 +1,26 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import dotenv from 'dotenv';
 import { GoogleGenAI } from '@google/genai';
 import type {
   ChannelPersona,
+  CharacterProfile,
   NarrativeBlockType,
   ProjectScript,
   ResearchDossier,
   SceneItem,
   ShotType,
+  VisualMotionMode,
+  EmotionalAnimationEffect,
+  DurationRange,
 } from '../../src/types/index.ts';
 import { ResearchService } from './researchService.ts';
+import { CharacterService } from './characterService.ts';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const STORAGE_DIR = path.resolve(__dirname, '../../storage/projects');
 
 interface BlockGenerationSpec {
   blockIndex: number;
@@ -17,19 +29,97 @@ interface BlockGenerationSpec {
   actsDescription: string;
 }
 
+interface WordRange {
+  min: number;
+  max: number;
+}
+
+const DEFAULT_DURATION_RANGE: DurationRange = { min: 10, max: 14 };
+const MIN_DURATION_MINUTES = 3;
+const MAX_DURATION_MINUTES = 30;
+const DEFAULT_SCENE_COUNT = 24;
+const SPANISH_NARRATION_WPM = 135;
+const ENGLISH_NARRATION_WPM = 155;
+
 export class ScriptService {
+  /**
+   * Detecta automáticamente efectos expresivos procedurales acordes a la emoción relatada en la escena
+   */
+  static detectEmotionalEffect(voiceover: string, chapter: string, lang: 'es' | 'en' = 'es'): EmotionalAnimationEffect {
+    const combined = `${voiceover} ${chapter}`.toLowerCase();
+    if (
+      /cólera|enojo|furia|estafa|traición|mentira|rabia|grito|ira|engañ|ardid|furios/i.test(combined) ||
+      /anger|fury|rage|scam|fraud|betrayal|lies?|screaming|furious|deceit/i.test(combined)
+    ) {
+      return 'smoke_head';
+    }
+    if (
+      /borrach|mareo|fiesta|descontrol|locura|droga|alcohol|bambol|ebrio|resaca|alucin/i.test(combined) ||
+      /drunk|dizzy|wobble|hangover|party|insanity|drugs|alcohol|hallucinat/i.test(combined)
+    ) {
+      return 'dizzy_wobble';
+    }
+    if (
+      /millon|riqueza|oro|fortuna|adquisici|éxito|glamour|dólares|imperio|dinero|acuerdo/i.test(combined) ||
+      /million|billion|wealth|gold|fortune|acquisition|success|glamour|dollars|empire|money|profit/i.test(combined)
+    ) {
+      return 'golden_glint';
+    }
+    if (
+      /pánico|colapso|alarma|emergencia|bancarrota|implosión|quiebra|miedo|desplome|pesadilla/i.test(combined) ||
+      /panic|collapse|alarm|emergency|bankruptcy|implosion|crash|nightmare|terror/i.test(combined)
+    ) {
+      return 'panic_heartbeat';
+    }
+    return 'none';
+  }
+
   /**
    * Limpia artefactos de texto que hacen que ElevenLabs lea barras, paréntesis o siglas rotas
    */
-  static sanitizeVoiceover(text: string): string {
-    return text
+  static sanitizeVoiceover(text: string, lang: 'es' | 'en' = 'es'): string {
+    const cleaned = text
       .replace(/\s*\/\s*/g, ', ')
-      .replace(/\(([^)]+)\)/g, ', $1, ')
+      .replace(/\(([^)]+)\)/g, ', $1, ');
+
+    if (lang === 'en') {
+      return cleaned
+        .replace(/\$(\d+(?:[.,]\d+)?)\s*M\b/gi, '$1 million dollars')
+        .replace(/\$(\d+(?:[.,]\d+)?)\s*B\b/gi, '$1 billion dollars')
+        .replace(/\s{2,}/g, ' ')
+        .replace(/,\s*,/g, ',')
+        .trim();
+    }
+
+    return cleaned
       .replace(/\$(\d+(?:[.,]\d+)?)\s*M\b/gi, '$1 millones de dólares')
       .replace(/\$(\d+(?:[.,]\d+)?)\s*B\b/gi, '$1 mil millones de dólares')
       .replace(/\s{2,}/g, ' ')
       .replace(/,\s*,/g, ',')
       .trim();
+  }
+
+  static normalizeDurationRange(range?: Partial<DurationRange>): DurationRange {
+    const rawMin = Number(range?.min);
+    const rawMax = Number(range?.max);
+    const min = Number.isFinite(rawMin) ? rawMin : DEFAULT_DURATION_RANGE.min;
+    const max = Number.isFinite(rawMax) ? rawMax : DEFAULT_DURATION_RANGE.max;
+    const clampedMin = Math.min(Math.max(min, MIN_DURATION_MINUTES), MAX_DURATION_MINUTES);
+    const clampedMax = Math.min(Math.max(max, clampedMin), MAX_DURATION_MINUTES);
+    return { min: clampedMin, max: clampedMax };
+  }
+
+  /** Words per scene needed so the narration lands inside the duration range. */
+  static computeWordsPerScene(
+    range: DurationRange,
+    wordsPerMinute: number,
+    sceneCount: number = DEFAULT_SCENE_COUNT
+  ): WordRange {
+    const scenes = Math.max(sceneCount, 1);
+    return {
+      min: Math.max(20, Math.round((range.min * wordsPerMinute) / scenes)),
+      max: Math.max(30, Math.round((range.max * wordsPerMinute) / scenes)),
+    };
   }
 
   static async generateScript(
@@ -38,10 +128,23 @@ export class ScriptService {
     conflictDetails?: string,
     characterCompany?: string,
     sources?: string[],
-    targetDurationMinutes: number = 11
+    targetDurationRange: DurationRange = DEFAULT_DURATION_RANGE,
+    onProgress?: (percent: number, phase: string, detail?: string) => void
   ): Promise<ProjectScript> {
     dotenv.config({ override: true });
+    const durationRange = this.normalizeDurationRange(targetDurationRange);
+    const targetDurationMinutes = (durationRange.min + durationRange.max) / 2;
+    const wordRange = this.computeWordsPerScene(
+      durationRange,
+      persona.narrator.target_wpm || SPANISH_NARRATION_WPM
+    );
     const projectId = `proj_${Date.now()}`;
+
+    onProgress?.(
+      12,
+      'Fase 1/4: Investigando el caso y armando el Dossier Forense 360°...',
+      `Analizando protagonista, antagonista, cifras clave y cronología de "${topic.slice(0, 45)}..."`
+    );
 
     // 1. FASE 1: AGENTE DE INVESTIGACIÓN FORENSE 360°
     const dossier = await ResearchService.conductDeepResearch(
@@ -50,6 +153,30 @@ export class ScriptService {
       conflictDetails,
       characterCompany,
       sources
+    );
+
+    // 1.1 DESAGREGAR Y VINCULAR ELENCO INDIVIDUAL + PERSONAJES DE LORE DEL CANAL
+    const cast = CharacterService.resolveCastForStory(
+      persona.channel_id,
+      characterCompany || '',
+      topic,
+      conflictDetails,
+      dossier,
+      projectId
+    );
+    const loreCastMember = cast.find((c) => c.character_category === 'channel_lore_cast');
+    const loreAnalogyDirective = loreCastMember
+      ? `Si usas un personaje de ejemplo en la analogía o como usuario secundario sin rostro conocido, puedes nombrar a nuestro personaje recurrente del canal "${loreCastMember.name}" (${
+          loreCastMember.channel_lore?.age || ''
+        }, ${loreCastMember.channel_lore?.personality_traits?.join(', ') || ''}, peculiaridades: ${
+          loreCastMember.channel_lore?.peculiarities?.slice(0, 2).join('; ') || ''
+        }) para mantener el lore del canal.`
+      : '';
+
+    onProgress?.(
+      35,
+      'Fase 2/4: Dossier y Elenco listos. Estructurando los 6 Actos (24 escenas)...',
+      `Elenco individual (${cast.length}): ${cast.map((c) => c.name).join(' • ')}`
     );
 
     const openrouterKey = (process.env.OPENROUTER_API_KEY || '').trim();
@@ -112,7 +239,7 @@ BLOQUE 2 DE 3 (ESCENAS 9 A 16 — ACTOS 3 Y 4):
 - ESCENAS 13 A 16 (ACTO 4: "concept_explainer" - El Paréntesis Maestro / Explicación del Concepto Clave):
   * Explica de forma ultra entretenida el concepto central: "${dossier.core_concept_explainer.concept_name}".
   * Escena 13: Define el concepto sin tecnicismos aburridos (${dossier.core_concept_explainer.simple_definition}).
-  * Escenas 14 y 15: Desarrolla la ANALOGÍA COTIDIANA (${dossier.core_concept_explainer.everyday_analogy}) para que el espectador sienta una revelación mental.
+  * Escenas 14 y 15: Desarrolla la ANALOGÍA COTIDIANA (${dossier.core_concept_explainer.everyday_analogy}) para que el espectador sienta una revelación mental. ${loreAnalogyDirective}
   * Escena 16: Conecta el concepto directamente con la bomba de relojería dentro del caso (${dossier.core_concept_explainer.why_it_matters_here}).
 `,
       },
@@ -138,22 +265,45 @@ BLOQUE 3 DE 3 (ESCENAS 17 A 24 — ACTOS 5 Y 6):
       console.log(
         `\n🎬 [Script Showrunner] Redactando documental largo (24 escenas / 6 Actos / ~10-13 min)...`
       );
+      let completedBlocks = 0;
       const blockResults = await Promise.all(
-        blockSpecs.map((spec) =>
-          this.generateNarrativeBlock(
+        blockSpecs.map(async (spec) => {
+          const res = await this.generateNarrativeBlock(
             spec,
             topic,
             persona,
             dossier,
             openAICompatibleConfig,
-            geminiKey
-          )
-        )
+            geminiKey,
+            wordRange,
+            durationRange,
+            cast
+          );
+          completedBlocks++;
+          const pct = 35 + Math.round((completedBlocks / blockSpecs.length) * 52);
+          onProgress?.(
+            pct,
+            `Fase 3/4: Redactando guion y dirección visual (${completedBlocks}/${blockSpecs.length} bloques listos)...`,
+            `Escenas ${spec.sceneStartId} a ${spec.sceneStartId + spec.sceneCount - 1} completadas`
+          );
+          return res;
+        })
       );
 
       const allScenes = blockResults.flat();
       if (allScenes.length >= 18) {
-        const normalizedScenes = this.normalizeAndEnrichScenes(allScenes, persona, dossier, topic);
+        onProgress?.(
+          92,
+          'Fase 4/4: Normalizando tiempos, elenco por escena y efectos de cámara...',
+          `${allScenes.length} escenas generadas`
+        );
+        const normalizedScenes = this.normalizeAndEnrichScenes(
+          allScenes,
+          persona,
+          dossier,
+          topic,
+          cast
+        );
         const totalWords = normalizedScenes.reduce(
           (acc, s) => acc + s.voiceover.split(/\s+/).length,
           0
@@ -168,15 +318,19 @@ BLOQUE 3 DE 3 (ESCENAS 17 A 24 — ACTOS 5 Y 6):
         return {
           project_id: projectId,
           channel_id: persona.channel_id,
+          lastActiveStep: 2,
           language: 'es',
-          voiceEngine: 'openai',
+          voiceEngine: persona.default_voice_engine || 'openai',
+          primaryVoice: persona.default_voice_id || undefined,
           title: topic,
           hook: normalizedScenes[0]?.voiceover.split('.')[0] || persona.narrator.signature_cues.openings[0],
-          characterCompany: dossier.protagonist_profile.name,
+          characterCompany: characterCompany || dossier.protagonist_profile.name,
+          characters: CharacterService.pruneUnusedCharacters(normalizedScenes, cast || []),
           researchDossier: dossier,
           targetDurationMinutes,
+          targetDurationRange: durationRange,
           scenes: normalizedScenes,
-          status: 'draft',
+          status: 'characters_ready',
           createdAt: new Date().toISOString(),
         };
       }
@@ -184,14 +338,26 @@ BLOQUE 3 DE 3 (ESCENAS 17 A 24 — ACTOS 5 Y 6):
       console.warn('[Script Showrunner] Fallback activado:', err.message);
     }
 
+    onProgress?.(
+      90,
+      'Fase 4/4: Construyendo estructura completa de 24 escenas desde el Dossier Forense...',
+      `Protagonista: ${dossier.protagonist_profile.name}`
+    );
+
     // 3. FALLBACK DE 24 ESCENAS BASADO EN EL DOSSIER FORENSE
-    return this.generateFullDocumentaryFallback(
+    const fallbackProj = this.generateFullDocumentaryFallback(
       projectId,
       topic,
       persona,
       dossier,
-      targetDurationMinutes
+      targetDurationMinutes,
+      cast
     );
+    fallbackProj.lastActiveStep = 2;
+    fallbackProj.targetDurationRange = durationRange;
+    if (persona.default_voice_engine) fallbackProj.voiceEngine = persona.default_voice_engine;
+    if (persona.default_voice_id) fallbackProj.primaryVoice = persona.default_voice_id;
+    return fallbackProj;
   }
 
   private static async generateNarrativeBlock(
@@ -200,11 +366,19 @@ BLOQUE 3 DE 3 (ESCENAS 17 A 24 — ACTOS 5 Y 6):
     persona: ChannelPersona,
     dossier: ResearchDossier,
     openAIConfig: { name: string; url: string; key: string; model: string } | null,
-    geminiKey: string
+    geminiKey: string,
+    wordRange: WordRange,
+    durationRange: DurationRange,
+    cast?: CharacterProfile[]
   ): Promise<any[]> {
+    const castDescription = cast && cast.length > 0
+      ? `\nELENCO DISPONIBLE PARA ESTA HISTORIA (USA ESTOS IDs EXACTOS EN "character_ids"):\n` +
+        cast.map((c) => `- ID "${c.character_id}": ${c.name} (${c.role || c.company_or_affiliation || 'Personaje'}) [${c.character_category === 'channel_lore_cast' ? 'Lore / Analogía Cotidiana' : 'Persona Real'}]`).join('\n')
+      : '';
+
     const systemPrompt = `
 Eres el Showrunner y Guionista Principal del canal documental "${persona.name}" (${persona.niche}).
-Estás escribiendo el BLOQUE ${spec.blockIndex} de 3 de un documental de YouTube de 10 a 14 minutos en ESPAÑOL con estilo Thriller Documental Inmersivo (inspirado en MagnatesMedia, ColdFusion y Johnny Harris).
+Estás escribiendo el BLOQUE ${spec.blockIndex} de 3 de un documental de YouTube de ${durationRange.min} a ${durationRange.max} minutos en ESPAÑOL con estilo Thriller Documental Inmersivo (inspirado en MagnatesMedia, ColdFusion y Johnny Harris).
 
 PERFIL DEL NARRADOR:
 - Arquetipo: ${persona.narrator.archetype}
@@ -219,24 +393,26 @@ DOSSIER DE INVESTIGACIÓN VERIFICADA:
 - Cronología: ${JSON.stringify(dossier.chronology)}
 - Cifras Duras: ${JSON.stringify(dossier.hard_numbers)}
 - Detalles y Secretos ("Smoking Guns"): ${JSON.stringify(dossier.smoking_guns)}
+${castDescription}
 
 INSTRUCCIONES ESTRICTAS PARA ESTE BLOQUE (${spec.sceneCount} ESCENAS, de scene_id ${spec.sceneStartId} a ${
       spec.sceneStartId + spec.sceneCount - 1
     }):
 ${spec.actsDescription}
 
-REGLAS DE REDACCIÓN PARA ALTA RETENCIÓN Y DURACIÓN (9–15 MINUTOS):
-1. Cada escena DEBE tener un "voiceover" rico, narrativo, cinematográfico y envolvente de entre **62 y 82 palabras** en español (esto equivale a ~25-30 segundos por escena). ¡NO escribas resúmenes cortos de 25 palabras! Desarrolla la atmósfera, las emociones, las cifras y la tensión.
+REGLAS DE REDACCIÓN PARA ALTA RETENCIÓN Y DURACIÓN (${durationRange.min}–${durationRange.max} MINUTOS):
+1. Cada escena DEBE tener un "voiceover" rico, narrativo, cinematográfico y envolvente de entre **${wordRange.min} y ${wordRange.max} palabras** en español. ¡NO escribas resúmenes cortos de 25 palabras! Desarrolla la atmósfera, las emociones, las cifras y la tensión.
 2. NUNCA uses barras "/" ni paréntesis "( )" dentro de "voiceover". Escribe las cifras de forma natural para un locutor humano.
 3. Alterna el campo "shot_type" entre las escenas para que el video sea visualmente dinámico:
-   - "character_closeup": Plano emocional del protagonista.
+   - "character_closeup": Plano emocional del protagonista o personaje principal del momento.
    - "environment_wide": Plano abierto del lugar, oficinas, servidores, ciudad o entorno histórico.
    - "object_detail": Primer plano de un objeto clave, contrato, pantalla financiera, código o herramienta.
    - "antagonist_shot": Plano dramático del rival, competidor o fuerza opuesta.
-   - "concept_diagram": Escena visual metafórica que ilustra el concepto explicado.
+   - "concept_diagram": Escena visual metafórica que ilustra el concepto explicado (si hay personaje de lore como Juanito, ponlo a protagonizar la metáfora).
    - "symbolic_silhouette": Silueta cinematográfica de alta tensión.
-4. En cada escena incluye "highlight_metric" (máx 18 caracteres, ej: "$124 MILLONES", "AÑO 2008", "BURN RATE", "-50% TRÁFICO") y "highlight_label" (máx 26 caracteres, ej: "CAPITAL QUEMADO", "EL ORIGEN", "CONCEPTO CLAVE", "ÉXODO EN 72 HORAS") para mostrar tarjetas forenses en pantalla.
-5. En "visual_prompt", escribe en INGLÉS la descripción visual de la escena indicando un único encuadre cinematográfico ("Single unified 16:9 frame, no grid, no split screen").
+4. En "character_ids", incluye un arreglo con los IDs exactos de los personajes que aparecen en esta escena (ej: ["${cast?.[0]?.character_id || 'protagonist'}"]). Si es una escena de solo objetos o entorno sin personas, usa [].
+5. En cada escena incluye "highlight_metric" (máx 18 caracteres, ej: "$124 MILLONES", "AÑO 2008", "BURN RATE", "-50% TRÁFICO") y "highlight_label" (máx 26 caracteres, ej: "CAPITAL QUEMADO", "EL ORIGEN", "CONCEPTO CLAVE", "ÉXODO EN 72 HORAS") para mostrar tarjetas forenses en pantalla.
+6. En "visual_prompt", escribe en INGLÉS la descripción visual de la escena indicando un único encuadre cinematográfico ("Single unified 16:9 frame, no grid, no split screen").
 
 DEVUELVE ÚNICAMENTE UN OBJETO JSON con la propiedad "scenes" conteniendo exactamente ${spec.sceneCount} escenas:
 {
@@ -247,9 +423,10 @@ DEVUELVE ÚNICAMENTE UN OBJETO JSON con la propiedad "scenes" conteniendo exacta
       "act_number": 1,
       "narrative_block": "hook_climax" | "protagonist_origin" | "antagonist_rival" | "concept_explainer" | "collision_collapse" | "aftermath_verdict",
       "shot_type": "character_closeup" | "environment_wide" | "object_detail" | "antagonist_shot" | "concept_diagram" | "symbolic_silhouette",
+      "character_ids": ["id_del_personaje"],
       "highlight_metric": "...",
       "highlight_label": "...",
-      "voiceover": "Texto narrativo de 62 a 82 palabras en español...",
+      "voiceover": "Texto narrativo de ${wordRange.min} a ${wordRange.max} palabras en español...",
       "visual_prompt": "Detailed cinematic 16:9 scene description in English...",
       "camera_motion": "zoom_in" | "zoom_out" | "pan_left" | "pan_right"
     }
@@ -271,7 +448,7 @@ DEVUELVE ÚNICAMENTE UN OBJETO JSON con la propiedad "scenes" conteniendo exacta
               { role: 'system', content: systemPrompt },
               {
                 role: 'user',
-                content: `Redacta las ${spec.sceneCount} escenas del Bloque ${spec.blockIndex} para el documental "${topic}". Asegúrate de que cada escena tenga entre 62 y 82 palabras de narración absorbente.`,
+                content: `Redacta las ${spec.sceneCount} escenas del Bloque ${spec.blockIndex} para el documental "${topic}". Asegúrate de que cada escena tenga entre ${wordRange.min} y ${wordRange.max} palabras de narración absorbente.`,
               },
             ],
             response_format: { type: 'json_object' },
@@ -338,7 +515,8 @@ DEVUELVE ÚNICAMENTE UN OBJETO JSON con la propiedad "scenes" conteniendo exacta
     rawScenes: any[],
     persona: ChannelPersona,
     dossier: ResearchDossier,
-    topic: string
+    topic: string,
+    cast?: CharacterProfile[]
   ): SceneItem[] {
     const shotRotation: ShotType[] = [
       'character_closeup',
@@ -358,7 +536,7 @@ DEVUELVE ÚNICAMENTE UN OBJETO JSON con la propiedad "scenes" conteniendo exacta
       'pan_right',
     ];
 
-    return rawScenes.map((s, idx) => {
+    const enriched: SceneItem[] = rawScenes.map((s, idx) => {
       const sceneId = idx + 1;
       const cleanVoiceover = this.sanitizeVoiceover(s.voiceover || '');
       const wordCount = cleanVoiceover.split(/\s+/).filter(Boolean).length;
@@ -394,12 +572,22 @@ DEVUELVE ÚNICAMENTE UN OBJETO JSON con la propiedad "scenes" conteniendo exacta
           label: s.chapter || 'EXPEDIENTE FORENSE',
         };
 
+      const shot = (s.shot_type as ShotType) || shotRotation[idx % shotRotation.length];
+      const isCharShot = shot === 'character_closeup' || shot === 'antagonist_shot';
+      const motionMode: VisualMotionMode =
+        (s.motion_mode as VisualMotionMode) ||
+        (isCharShot ? 'character_alive' : 'cinematic_camera');
+      const characterEffect: EmotionalAnimationEffect =
+        (s.character_effect as EmotionalAnimationEffect) ||
+        (isCharShot ? this.detectEmotionalEffect(cleanVoiceover, s.chapter || '') : 'none');
+
       return {
         scene_id: sceneId,
         chapter: s.chapter || `Capítulo ${actNum}: Escena ${sceneId}`,
         act_number: actNum,
         narrative_block: (s.narrative_block as NarrativeBlockType) || blockMap[actNum],
-        shot_type: (s.shot_type as ShotType) || shotRotation[idx % shotRotation.length],
+        shot_type: shot,
+        character_ids: Array.isArray(s.character_ids) ? s.character_ids : undefined,
         highlight_metric: s.highlight_metric || defaultNumber.metric,
         highlight_label: s.highlight_label || defaultNumber.label,
         voiceover: cleanVoiceover,
@@ -408,8 +596,15 @@ DEVUELVE ÚNICAMENTE UN OBJETO JSON con la propiedad "scenes" conteniendo exacta
           `${persona.visual_style.prompt_prefix} Single unified cinematic 16:9 frame representing ${topic}, ${persona.visual_style.prompt_suffix}`,
         camera_motion: s.camera_motion || motionRotation[idx % motionRotation.length],
         durationInSeconds: calculatedSeconds,
+        motion_mode: motionMode,
+        character_effect: characterEffect,
+        videoUrl: s.videoUrl,
       };
     });
+
+    return cast && cast.length > 0
+      ? CharacterService.assignCharactersToScenes(enriched, cast)
+      : enriched;
   }
 
   /**
@@ -420,7 +615,8 @@ DEVUELVE ÚNICAMENTE UN OBJETO JSON con la propiedad "scenes" conteniendo exacta
     topic: string,
     persona: ChannelPersona,
     dossier: ResearchDossier,
-    targetDurationMinutes: number
+    targetDurationMinutes: number,
+    cast?: CharacterProfile[]
   ): ProjectScript {
     const pName = dossier.protagonist_profile.name;
     const aName = dossier.antagonist_profile.name;
@@ -687,7 +883,7 @@ DEVUELVE ÚNICAMENTE UN OBJETO JSON con la propiedad "scenes" conteniendo exacta
       },
     ];
 
-    const scenes = this.normalizeAndEnrichScenes(rawTemplates, persona, dossier, topic);
+    const scenes = this.normalizeAndEnrichScenes(rawTemplates, persona, dossier, topic, cast);
 
     return {
       project_id: projectId,
@@ -697,10 +893,11 @@ DEVUELVE ÚNICAMENTE UN OBJETO JSON con la propiedad "scenes" conteniendo exacta
       title: topic,
       hook: opening,
       characterCompany: pName,
+      characters: CharacterService.pruneUnusedCharacters(scenes, cast || []),
       researchDossier: dossier,
       targetDurationMinutes,
       scenes,
-      status: 'draft',
+      status: 'characters_ready',
       createdAt: new Date().toISOString(),
     };
   }
@@ -744,6 +941,15 @@ DEVUELVE ÚNICAMENTE UN OBJETO JSON con la propiedad "scenes" conteniendo exacta
 
     console.log(`\n🇺🇸 [English Adaptation Engine] Adaptando proyecto "${project.title}" a Inglés Documental...`);
 
+    const englishDurationRange = this.normalizeDurationRange(
+      project.targetDurationRange ?? DEFAULT_DURATION_RANGE
+    );
+    const englishWordRange = this.computeWordsPerScene(
+      englishDurationRange,
+      ENGLISH_NARRATION_WPM,
+      project.scenes.length
+    );
+
     // Dividir las escenas en lotes de 8 para mantener la longitud exacta sin recortes
     const chunkSize = 8;
     const sceneChunks: SceneItem[][] = [];
@@ -775,7 +981,7 @@ DEVUELVE ÚNICAMENTE UN OBJETO JSON con la propiedad "scenes" conteniendo exacta
                 content: `You are a master American documentary scriptwriter (style: MagnatesMedia, ColdFusion, Johnny Harris).
 Translate and adapt the following Spanish documentary scenes into gripping, natural, high-retention English for YouTube.
 Rules:
-1. Keep the exact same word count and dramatic pacing per scene (60 to 80 words per scene). Do NOT summarize or shorten!
+1. The final English video must last between ${englishDurationRange.min} and ${englishDurationRange.max} minutes. English narration is faster than Spanish, so each scene's "voiceover" MUST contain between ${englishWordRange.min} and ${englishWordRange.max} English words. If a literal translation is shorter, EXPAND it with vivid details, tension and context from the same scene. Do NOT summarize or shorten!
 2. Do NOT use slashes "/" or parentheses "( )" inside "voiceover" so ElevenLabs reads it seamlessly.
 3. Translate "chapter", "highlight_metric" (max 18 chars, e.g. "$124 MILLION", "72 HOURS"), and "highlight_label" (max 26 chars, e.g. "CAPITAL BURNED", "THE FATAL FLAW") into punchy English.
 Return ONLY a valid JSON object: { "scenes": [ { "scene_id": number, "chapter": "...", "highlight_metric": "...", "highlight_label": "...", "voiceover": "..." } ] }`,
@@ -841,33 +1047,95 @@ Return ONLY a valid JSON object: { "scenes": [ { "scene_id": number, "chapter": 
       // Keep existing if meta translation fails
     }
 
+    // 1. Respaldar intactas las escenas en español y asegurar audio_es/ antes de adaptar a inglés
+    let preservedScenesEs = project.scenes_es;
+    if (!preservedScenesEs || preservedScenesEs.length === 0 || project.language === 'es') {
+      const audioEsDir = path.join(STORAGE_DIR, project.project_id, 'audio_es');
+      if (!fs.existsSync(audioEsDir)) {
+        try {
+          fs.mkdirSync(audioEsDir, { recursive: true });
+        } catch {}
+      }
+
+      preservedScenesEs = project.scenes.map((s) => {
+        const srcAudio = path.join(STORAGE_DIR, project.project_id, 'audio', `scene_${s.scene_id}.mp3`);
+        const destAudio = path.join(audioEsDir, `scene_${s.scene_id}.mp3`);
+        let esAudioUrl = s.audioUrl;
+
+        if (fs.existsSync(srcAudio)) {
+          try {
+            if (!fs.existsSync(destAudio)) {
+              fs.copyFileSync(srcAudio, destAudio);
+            }
+            esAudioUrl = `/storage/${project.project_id}/audio_es/scene_${s.scene_id}.mp3`;
+          } catch (copyErr) {
+            console.warn(`[Preserve ES Audio] No se pudo copiar audio escena ${s.scene_id}:`, copyErr);
+          }
+        }
+
+        return {
+          scene_id: s.scene_id,
+          chapter_es: s.chapter,
+          voiceover_es: s.voiceover,
+          audioUrl: esAudioUrl,
+          wordTimings: s.wordTimings,
+          audioDurationSeconds: s.audioDurationSeconds || s.durationInSeconds,
+          highlight_metric: s.highlight_metric,
+          highlight_label: s.highlight_label,
+        };
+      });
+    }
+
+    const existingEnMap = new Map<number, any>();
+    if (project.scenes_en && Array.isArray(project.scenes_en)) {
+      for (const sen of project.scenes_en) {
+        existingEnMap.set(sen.scene_id, sen);
+      }
+    }
+
     const updatedScenes: SceneItem[] = project.scenes.map((scene) => {
       const t = translatedMap.get(scene.scene_id);
-      if (!t) return scene;
-      const cleanEnVoiceover = (t.voiceover || scene.voiceover)
-        .replace(/\s*\/\s*/g, ', ')
-        .replace(/\(([^)]+)\)/g, ', $1, ')
-        .replace(/\s{2,}/g, ' ')
-        .trim();
+      const enVoiceoverRaw = t?.voiceover || scene.voiceover;
+      const cleanEnVoiceover = ScriptService.sanitizeVoiceover(enVoiceoverRaw, 'en');
+
+      const existingEn = existingEnMap.get(scene.scene_id);
+      const isVoiceoverSame = existingEn && existingEn.voiceover_en === cleanEnVoiceover;
 
       return {
         ...scene,
-        chapter: t.chapter || scene.chapter,
-        highlight_metric: t.highlight_metric || scene.highlight_metric,
-        highlight_label: t.highlight_label || scene.highlight_label,
+        chapter: t?.chapter || existingEn?.chapter_en || scene.chapter,
+        highlight_metric: t?.highlight_metric || existingEn?.highlight_metric || scene.highlight_metric,
+        highlight_label: t?.highlight_label || existingEn?.highlight_label || scene.highlight_label,
         voiceover: cleanEnVoiceover,
+        // Limpiar audioUrl/wordTimings salvo que ya tuviéramos audio en inglés para este texto idéntico
+        audioUrl: isVoiceoverSame ? existingEn?.audioUrl : undefined,
+        wordTimings: isVoiceoverSame ? existingEn?.wordTimings : undefined,
+        audioDurationSeconds: isVoiceoverSame ? existingEn?.audioDurationSeconds : undefined,
       };
     });
 
-    console.log(`✓ [English Adaptation Engine] ${updatedScenes.length} escenas adaptadas a Inglés para ElevenLabs.`);
+    const scenesEn = updatedScenes.map((s) => ({
+      scene_id: s.scene_id,
+      chapter_en: s.chapter,
+      voiceover_en: s.voiceover,
+      audioUrl: s.audioUrl,
+      wordTimings: s.wordTimings,
+      audioDurationSeconds: s.audioDurationSeconds,
+      highlight_metric: s.highlight_metric,
+      highlight_label: s.highlight_label,
+    }));
+
+    console.log(`✓ [English Adaptation Engine] ${updatedScenes.length} escenas adaptadas a Inglés (Track ES respaldado con ${preservedScenesEs.length} escenas).`);
 
     return {
       ...project,
       language: 'en',
-      voiceEngine: 'elevenlabs',
+      voiceEngine: project.voiceEngine || 'elevenlabs',
       title: englishTitle,
       hook: englishHook,
       scenes: updatedScenes,
+      scenes_es: preservedScenesEs,
+      scenes_en: scenesEn,
     };
   }
 
@@ -1048,7 +1316,7 @@ ${JSON.stringify(
 
       changedSceneIds.push(existingScene.scene_id);
       const cleanVoiceover = match.voiceover
-        ? ScriptService.sanitizeVoiceover(match.voiceover)
+        ? ScriptService.sanitizeVoiceover(match.voiceover, project.language || 'es')
         : existingScene.voiceover;
 
       return {

@@ -1,4 +1,4 @@
-import type { ShotType } from '../../src/types/index.ts';
+import type { CharacterProfile, ShotType } from '../../src/types/index.ts';
 
 export interface ActLightingRule {
   act_number: number;
@@ -83,13 +83,29 @@ export class VisualArcService {
     return this.actRules[actIndex];
   }
 
+  private static formatCharacterAnchorWithLore(char: CharacterProfile): string {
+    const lorePeculiarities = char.channel_lore?.peculiarities?.length
+      ? ` (Recurring visual traits: ${char.channel_lore.peculiarities.join('; ')})`
+      : '';
+    // Extraer la descripción física esencial evitando frases de estilo redundantes
+    const cleanAnchor = (char.anchor_prompt || '')
+      .replace(/Pixar and Arcane inspired visual aesthetic,?/gi, '')
+      .replace(/rich volumetric lighting,?/gi, '')
+      .replace(/single individual 3D documentary render,?/gi, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    return `${char.name}: ${cleanAnchor}${lorePeculiarities}`;
+  }
+
   static enrichScenePrompt(
     basePrompt: string,
     characterAnchor: string | null,
     sceneIndex: number,
     totalScenes: number = 24,
     customArtStyle?: string,
-    shotType?: ShotType
+    shotType?: ShotType,
+    sceneCharacters?: CharacterProfile[]
   ): { fullPrompt: string; actRule: ActLightingRule } {
     const actRule = this.getActRule(sceneIndex, totalScenes);
 
@@ -104,27 +120,52 @@ export class VisualArcService {
         sceneIndex % 4
       ] as ShotType);
 
+    const activeChars = sceneCharacters?.filter(Boolean) || [];
+    let resolvedCharDirective = '';
+
+    if (activeChars.length === 1) {
+      resolvedCharDirective = `Character in frame — ${this.formatCharacterAnchorWithLore(
+        activeChars[0]
+      )}.`;
+    } else if (activeChars.length > 1) {
+      const charDescriptions = activeChars
+        .slice(0, 3)
+        .map((c, idx) => `Character ${idx + 1} (${this.formatCharacterAnchorWithLore(c)})`)
+        .join(' AND ');
+      resolvedCharDirective = `Multiple distinct characters interacting in the same unified scene: ${charDescriptions}.`;
+    } else if (characterAnchor) {
+      resolvedCharDirective = `Character in frame: ${characterAnchor}.`;
+    }
+
     let subjectDirective = '';
     switch (effectiveShot) {
       case 'environment_wide':
-        subjectDirective = `Establishing wide environment shot focusing on the setting and atmosphere (${basePrompt}). If a figure is present in the distance, keep them integrated in the environment.`;
+        subjectDirective = `Establishing wide environment shot focusing on the setting and atmosphere (${basePrompt}). ${
+          resolvedCharDirective
+            ? `Characters present in the environment: ${resolvedCharDirective}`
+            : 'If a figure is present in the distance, keep them integrated in the environment.'
+        }`;
         break;
       case 'object_detail':
-        subjectDirective = `Extreme macro close-up shot of key physical evidence and objects (${basePrompt}), shallow depth of field, intricate surface textures.`;
+        subjectDirective = `${
+          resolvedCharDirective ? `Close interaction with ${activeChars.map((c) => c.name).join(' / ')}. ` : ''
+        }Extreme macro close-up shot of key physical evidence and objects (${basePrompt}), shallow depth of field, intricate surface textures.`;
         break;
       case 'concept_diagram':
-        subjectDirective = `Cinematic 3D visual metaphor illustrating a financial or historical mechanism (${basePrompt}), dramatic studio lighting, symbolic objects in motion.`;
+        subjectDirective = `Cinematic 3D visual metaphor illustrating the concept (${basePrompt}). ${
+          resolvedCharDirective ? `Metaphor protagonized by: ${resolvedCharDirective}` : ''
+        } Dramatic lighting, symbolic objects in motion.`;
         break;
       case 'antagonist_shot':
-        subjectDirective = `Dramatic thriller shot of the rival force or opposing executives in action (${basePrompt}), tense body language.`;
+        subjectDirective = `Dramatic thriller shot of the rival force or opposing figure in action (${basePrompt}). ${resolvedCharDirective} Expression: ${actRule.expression_prompt}, tense body language.`;
         break;
       case 'symbolic_silhouette':
-        subjectDirective = `Powerful atmospheric silhouette composition (${basePrompt}), high contrast rim lighting.`;
+        subjectDirective = `Powerful atmospheric silhouette composition (${basePrompt}). ${resolvedCharDirective} High contrast rim lighting.`;
         break;
       case 'character_closeup':
       default:
-        subjectDirective = characterAnchor
-          ? `Single protagonist in frame: ${characterAnchor}. Expression: ${actRule.expression_prompt}. Scene action: ${basePrompt}.`
+        subjectDirective = resolvedCharDirective
+          ? `${resolvedCharDirective} Expression: ${actRule.expression_prompt}. Scene action: ${basePrompt}.`
           : `Main subject action: ${basePrompt}. Expression: ${actRule.expression_prompt}.`;
         break;
     }
