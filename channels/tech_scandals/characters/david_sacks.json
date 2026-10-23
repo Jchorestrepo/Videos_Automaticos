@@ -1,0 +1,260 @@
+{
+  "character_id": "david_sacks",
+  "channel_id": "tech_scandals",
+  "name": "David Sacks",
+  "role": "CEO interino de Zenefits (2016-2017) y miembro del consejo de administración",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "anchor_prompt": "Stylized 3D cinematic animated character of David Sacks, single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "modern minimalist tech desk",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792738888340_692.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792738830465_924.jpg",
+    "/channel-assets/tech_scandals/characters/assets/david_sacks_frame_1792716171012_80.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716132010_927.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716039522_572.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716019949_964.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715999747_853.jpg",
+    "/channel-assets/tech_scandals/characters/assets/david_sacks_ai_1792715794118.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792738888343_qfhle",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792738888340_692.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of a man standing on a rooftop at sunset, looking out over a city skyline, with a new building under construction in the distance. The sky is orange and purple, symbolizing a new beginning. Cinematic, hopeful yet contemplative.",
+      "description": "Nuevos Comienzos",
+      "characterId": "david_sacks",
+      "characterName": "David Sacks",
+      "characterIds": [
+        "parker_conrad",
+        "david_sacks"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "David Sacks"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "New York City / Calle Urbana",
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-23T07:01:28.343Z"
+    },
+    {
+      "id": "asset_1792738830470_71wnq",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792738830465_924.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of a man standing on a rooftop at sunset, looking out over a city skyline, with a new building under construction in the distance. The sky is orange and purple, symbolizing a new beginning. Cinematic, hopeful yet contemplative.",
+      "description": "Nuevos Comienzos",
+      "characterId": "david_sacks",
+      "characterName": "David Sacks",
+      "characterIds": [
+        "parker_conrad",
+        "david_sacks"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "David Sacks"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "New York City / Calle Urbana",
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-23T07:00:30.470Z"
+    },
+    {
+      "id": "asset_1792716171015_o80ri",
+      "url": "/channel-assets/tech_scandals/characters/assets/david_sacks_frame_1792716171012_80.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Dramatic shot of a confident man in a suit, David Sacks, standing in a modern office, looking at documents with a serious expression. Behind him, a whiteboard with charts showing declining numbers. The lighting is harsh, highlighting his determined face. Cinematic, antagonist vibe.",
+      "description": "Auditoría Interna",
+      "characterId": "david_sacks",
+      "characterName": "David Sacks",
+      "characterIds": [
+        "david_sacks"
+      ],
+      "characterNames": [
+        "David Sacks"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "parker conrad / zenefits",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen",
+        "dramatic",
+        "confident"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 20,
+      "createdAt": "2026-10-23T00:42:51.015Z"
+    },
+    {
+      "id": "asset_1792716132045_s7w8m",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716132010_927.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of a man in his mid-30s with a weary expression, wearing a suit, standing in a corporate hallway, holding a box of personal items. The lighting is cold and blue, emphasizing isolation. A blurred office background with employees watching. Cinematic, emotional, shallow depth of field.",
+      "description": "Renuncia de Conrad",
+      "characterId": "david_sacks",
+      "characterName": "David Sacks",
+      "characterIds": [
+        "parker_conrad",
+        "david_sacks"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "David Sacks"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Cancha / Entorno Deportivo",
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "character_closeup",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 19,
+      "createdAt": "2026-10-23T00:42:12.045Z"
+    },
+    {
+      "id": "asset_1792716039526_5h2qj",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716039522_572.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of a man (Parker Conrad) walking away down a long, dimly lit corridor, carrying a briefcase. The light at the end of the corridor is bright, but his figure is dark. On the wall, a framed newspaper headline reads 'Zenefits Fined'. The scene is symbolic, with high contrast and a sense of finality. Cinematic, thriller style.",
+      "description": "El arquitecto en la sombra",
+      "characterId": "david_sacks",
+      "characterName": "David Sacks",
+      "characterIds": [
+        "parker_conrad",
+        "david_sacks"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "David Sacks"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 12,
+      "createdAt": "2026-10-23T00:40:39.526Z"
+    },
+    {
+      "id": "asset_1792716019953_6h1fm",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716019949_964.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Wide shot of a modern open-plan office in chaos: empty desks, cardboard boxes, employees hugging goodbye. A large digital screen on the wall displays a downward-trending stock chart. The atmosphere is somber, with muted colors and natural light filtering through blinds. Cinematic, documentary style, capturing the human cost of the collapse.",
+      "description": "El arquitecto en la sombra",
+      "characterId": "david_sacks",
+      "characterName": "David Sacks",
+      "characterIds": [
+        "parker_conrad",
+        "david_sacks"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "David Sacks"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "environment_wide",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 11,
+      "createdAt": "2026-10-23T00:40:19.953Z"
+    },
+    {
+      "id": "asset_1792715999780_ialgl",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715999747_853.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A dimly lit boardroom at night, David Sacks (a sharp-featured man in his 40s, wearing a crisp white shirt) stands by a floor-to-ceiling window, looking out over Silicon Valley lights. His reflection is faint on the glass. A stack of documents sits on the table behind him. The mood is tense, calculating, cinematic thriller style, with cool blue tones and high contrast.",
+      "description": "El arquitecto en la sombra",
+      "characterId": "david_sacks",
+      "characterName": "David Sacks",
+      "characterIds": [
+        "parker_conrad",
+        "david_sacks"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "David Sacks"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Oficina Corporativa / Boardroom",
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-23T00:39:59.780Z"
+    }
+  ],
+  "updatedAt": "2026-10-23T07:01:28.343Z",
+  "real_reference_image_url": "/channel-assets/tech_scandals/characters/assets/david_sacks_realref_1792715771263.jpg",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/david_sacks_ai_1792715794118.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

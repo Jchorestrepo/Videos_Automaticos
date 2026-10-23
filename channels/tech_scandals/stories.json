@@ -1,0 +1,290 @@
+[
+  {
+    "id": "tech_scandals_case_1",
+    "channel_id": "tech_scandals",
+    "rowIndex": 2,
+    "title": "Quemó $120M en 24 Meses y Engañó a Silicon Valley: La Caída de Fast",
+    "characterCompany": "Domm Holland / Fast (Fast.co)",
+    "conflict": "Prometieron revolucionar el checkout en 1 clic y levantaron $124M con el apoyo de Stripe. Mientras el CEO gastaba $10M al mes en marketing y patrocinios, en 2021 solo facturaron ~$600.000. Al agotarse el dinero y no tener retención real, la empresa colapsó en abril de 2022.",
+    "sources": [
+      "https://www.forbes.com/sites/lisakim/2022/04/05/fast-burn-rate-short-lived-fast-shuts-down-after-raising-125-million/",
+      "https://www.nprillinois.org/2022-04-05/fast-the-easy-checkout-startup-shuts-down-after-burning-through-investors-money"
+    ],
+    "status": "completed",
+    "approved": true,
+    "finished": true,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.009Z",
+    "updatedAt": "2026-10-22T17:29:37.710Z",
+    "linkedProjectId": "proj_1792095252042"
+  },
+  {
+    "id": "tech_scandals_case_2",
+    "channel_id": "tech_scandals",
+    "rowIndex": 3,
+    "title": "Valía $2.000 Millones y Murió en Silencio: Cómo Figma Destruyó a InVision",
+    "characterCompany": "Clark Valberg / InVision vs. Dylan Field / Figma",
+    "conflict": "InVision era el líder indiscutible en diseño y prototipado con valoración de $2B y clientes en todo Fortune 100. Creyeron que el software de diseño siempre viviría en el escritorio y subestimaron el navegador web. Figma construyó colaboración en la nube en tiempo real, devoró a sus usuarios y obligó a InVision a cerrar en 2024.",
+    "sources": [
+      "https://www.fastcompany.com/91069936/why-invision-failed",
+      "https://newsletter.failory.com/p/lessons-from-invision-s-2b-failure"
+    ],
+    "status": "completed",
+    "approved": true,
+    "finished": true,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.009Z",
+    "updatedAt": "2026-10-22T17:29:37.710Z",
+    "linkedProjectId": "proj_1792360536298"
+  },
+  {
+    "id": "tech_scandals_case_3",
+    "channel_id": "tech_scandals",
+    "rowIndex": 4,
+    "title": "Rechazado por Facebook en 2009... 5 Años Después le Cobró $19.000 Millones: La Historia de WhatsApp",
+    "characterCompany": "Brian Acton y Jan Koum / WhatsApp",
+    "conflict": "Tras ser rechazado para un puesto en Facebook y Twitter, Brian Acton y Jan Koum crearon WhatsApp con 32 ingenieros, cero presupuesto de marketing y política anti-anuncios. Llegaron a 450 millones de usuarios hasta forzar a Zuckerberg a pagar $19.000M por la compra en 2014, para luego renunciar defendiendo la privacidad del usuario.",
+    "sources": [
+      "https://www.forbes.com/profile/jan-koum/",
+      "https://www.cbsnews.com/news/brian-acton-whatsapp-on-facebook-forbes-interview-today-2018-09-26/",
+      "https://www.forbes.com/profile/brian-acton/"
+    ],
+    "status": "published",
+    "approved": true,
+    "finished": true,
+    "published": true,
+    "createdAt": "2026-10-17T09:11:43.009Z",
+    "updatedAt": "2026-10-23T07:34:16.781Z",
+    "linkedProjectId": "proj_1792289301259",
+    "archived": true
+  },
+  {
+    "id": "tech_scandals_case_4",
+    "channel_id": "tech_scandals",
+    "rowIndex": 5,
+    "title": "Rechazó $200M de Google y Murió en 24 Horas: El Error que Mató a Digg",
+    "characterCompany": "Kevin Rose / Digg",
+    "conflict": "Digg dominaba las noticias sociales con más de 40M de usuarios y rechazó compras millonarias de Google. En 2010 lanzaron Digg v4 priorizando a anunciantes sobre usuarios; la comunidad se rebeló, el tráfico cayó más del 50% casi de inmediato y migraron a Reddit. En 2012 fue vendido en partes por apenas $500.000.",
+    "sources": [
+      "https://www.fastcompany.com/1842715/updated-digg-darling-pre-facebook-web-sells-assets-betaworks-rumored-500000",
+      "https://aiinstitute.hbs.edu/platform-rctom/submission/5-things-you-need-to-know-about-the-rise-and-fall-of-digg-com-5-will-shock-you/",
+      "https://www.businessinsider.com/digg-kevin-rose-untold-history-2012-7"
+    ],
+    "status": "completed",
+    "approved": true,
+    "finished": true,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.009Z",
+    "updatedAt": "2026-10-22T19:53:08.495Z",
+    "linkedProjectId": "proj_1792690869908"
+  },
+  {
+    "id": "tech_scandals_case_5",
+    "channel_id": "tech_scandals",
+    "rowIndex": 6,
+    "title": "Fracasó Dos Veces Creando Videojuegos... y Vendió un Chat por $27.700 Millones: La Historia de Slack",
+    "characterCompany": "Stewart Butterfield / Tiny Speck (Slack)",
+    "conflict": "Tras fundar Flickr a partir de un juego fallido, Butterfield intentó crear el juego Glitch. El juego fracasó y cerró en 2012, pero rescataron la herramienta interna que habían programado para comunicarse. Pivotaron para crear Slack, alcanzaron crecimiento viral en empresas y en 2020 Salesforce la compró por $27.700 millones.",
+    "sources": [
+      "https://www.businessinsider.com/salesforce-slack-acquisition-merger-deal-2020-11",
+      "https://www.ghosh.com/blog/when-side-hustles-eclipse-the-core-business-startup-pivot-success-stories/",
+      "https://en.wikipedia.org/wiki/Slack_(software)"
+    ],
+    "status": "approved",
+    "approved": true,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.009Z",
+    "updatedAt": "2026-10-22T17:29:37.710Z"
+  },
+  {
+    "id": "tech_scandals_case_6",
+    "channel_id": "tech_scandals",
+    "rowIndex": 7,
+    "title": "Pagaron $1.100 Millones por Ella y la Vendieron por $3 Millones: El Desastre de Tumblr",
+    "characterCompany": "David Karp (Tumblr) y Marissa Mayer (Yahoo)",
+    "conflict": "En 2013, Yahoo compró Tumblr por $1.100 millones prometiendo \"no arruinarla\". Intentaron monetizarla con publicidad tradicional agresiva ignorando la cultura de su comunidad. Tras años de pérdidas y pérdida masiva de tráfico, en 2019 Automattic (dueña de WordPress) compró Tumblr en liquidación por solo $3 millones, destruyendo el 99.7% de su valor.",
+    "sources": [
+      "https://www.techmeme.com/240828/p35",
+      "https://en.wikipedia.org/wiki/Yahoo!_Inc._(1995%E2%80%932017)",
+      "https://timelines.issarice.com/wiki/Timeline_of_Yahoo!"
+    ],
+    "status": "completed",
+    "approved": true,
+    "finished": true,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.009Z",
+    "updatedAt": "2026-10-22T17:29:37.710Z",
+    "linkedProjectId": "proj_1792136125235"
+  },
+  {
+    "id": "tech_scandals_case_7",
+    "channel_id": "tech_scandals",
+    "rowIndex": 8,
+    "title": "Crearon el Primer Navegador Web... y Microsoft los Destruyó Ilegalmente: La Guerra de Netscape",
+    "characterCompany": "Marc Andreessen y Jim Clark / Netscape vs. Microsoft",
+    "conflict": "En 1994, Netscape lanzó Navigator y desató la era puntocom superando el 80% de cuota de mercado. Su visión de convertir el navegador en una plataforma universal amenazaba a Windows. Bill Gates integró Internet Explorer gratis en cada Windows y presionó a fabricantes para no instalar Netscape. Aunque el Departamento de Justicia de EE. UU. ganó un juicio antimonopolio contra Microsoft, Netscape colapsó y fue vendida a AOL.",
+    "sources": [
+      "https://www.justice.gov/atr/us-v-microsoft-proposed-findings-fact-0",
+      "https://en.wikipedia.org/wiki/United_States_v._Microsoft_Corp.",
+      "https://en.wikipedia.org/wiki/Netscape"
+    ],
+    "status": "approved",
+    "approved": true,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.009Z",
+    "updatedAt": "2026-10-22T17:29:37.710Z"
+  },
+  {
+    "id": "tech_scandals_case_8",
+    "channel_id": "tech_scandals",
+    "rowIndex": 9,
+    "title": "Twitter Tenía al \"TikTok\" Original por $30M y lo Dejó Morir: El Fracaso de Vine",
+    "characterCompany": "Dom Hofmann, Rus Yusupov y Colin Kroll / Vine (Twitter)",
+    "conflict": "Twitter compró Vine en 2012 por $30M inventando el video corto en bucle de 6 segundos y logrando un fenómeno cultural masivo. Sin embargo, Twitter nunca construyó un modelo publicitario ni pagó a los creadores. Cuando los influencers exigieron compensación en 2016 e Instagram añadió video, los creadores migraron y Twitter cerró Vine ese mismo año, regalándole el mercado a TikTok.",
+    "sources": [
+      "https://www.businessinsider.com/twitter-shutting-vine-down-2016-10",
+      "https://thinkinsights.net/strategy/vines-rise-and-fall"
+    ],
+    "status": "completed",
+    "approved": true,
+    "finished": true,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.009Z",
+    "updatedAt": "2026-10-22T17:29:37.710Z",
+    "linkedProjectId": "proj_1792226956203"
+  },
+  {
+    "id": "tech_scandals_case_9",
+    "channel_id": "tech_scandals",
+    "rowIndex": 10,
+    "title": "Creó la Tecnología que Mueve Internet y Google se la Quitó Gratis: La Tragedia de Docker",
+    "characterCompany": "Solomon Hykes / Docker vs. Google Kubernetes",
+    "conflict": "Solomon Hykes inventó los contenedores Docker en 2013, convirtiéndose en el estándar universal de la nube con valuación de unicornio ($1.000M+). Pero cuando intentaron comercializar su herramienta de orquestación Swarm, Google lanzó Kubernetes gratis y de código abierto, devorando el mercado empresarial. Docker no pudo monetizar y tuvo que vender su división empresarial a Mirantis en 2019.",
+    "sources": [
+      "https://www.geekwire.com/2018/docker-co-founder-solomon-hykes-leaving-company-cites-need-enterprise-focused-cto/",
+      "https://news.ycombinator.com/item?id=21526284"
+    ],
+    "status": "idea",
+    "approved": false,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.009Z",
+    "updatedAt": "2026-10-22T17:29:37.710Z"
+  },
+  {
+    "id": "tech_scandals_case_10",
+    "channel_id": "tech_scandals",
+    "rowIndex": 11,
+    "title": "Quemó $1.750 Millones en 6 Meses y Nadie la Usó: La Catástrofe de Quibi",
+    "characterCompany": "Jeffrey Katzenberg y Meg Whitman / Quibi",
+    "conflict": "Respaldada con $1.750M de Hollywood y Silicon Valley para revolucionar el video móvil de alta calidad, prohibió compartir capturas o transmitir a pantallas de TV, y se lanzó en abril de 2020 justo al inicio de la pandemia cuando la gente consumía televisión tradicional en casa. Tras el fin de la prueba gratuita, la tasa de conversión fue ínfima y cerró apenas 6 meses después, vendiendo su catálogo a Roku por menos de $100M.",
+    "sources": [
+      "https://www.businessinsider.com/how-quibi-went-from-raising-1-billion-to-shutting-down-2020-10",
+      "https://news.crunchbase.com/startups/quibi-shutting-down/",
+      "https://en.wikipedia.org/wiki/Quibi"
+    ],
+    "status": "idea",
+    "approved": false,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.009Z",
+    "updatedAt": "2026-10-22T17:29:37.710Z"
+  },
+  {
+    "id": "tech_scandals_case_11",
+    "channel_id": "tech_scandals",
+    "rowIndex": 12,
+    "title": "Transmitió su Vida 24/7 y Casi se Vuelve Loco... pero Creó un Monstruo de $970 Millones: La Historia de Twitch",
+    "characterCompany": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+    "conflict": "En 2007, Justin Kan se colocó una cámara en la cabeza para transmitir su vida en vivo sin parar, sufriendo invasiones de privacidad y acoso telefónico. Cuando el reality show individual perdió la novedad, abrieron la plataforma a cualquiera, pero los costos de ancho de banda casi los quiebran. Al notar que una pequeña subcomunidad de videojuegos crecía de forma explosiva, apostaron todo a esa categoría creando Twitch en 2011. Tres años después, Amazon compró Twitch por $970 millones en efectivo tras competir con Google.",
+    "sources": [
+      "https://www.businessinsider.com/amazon-buys-twitch-2014-8",
+      "https://www.pcmag.com/news/amazon-to-buy-twitch-for-970-million",
+      "https://www.gamedeveloper.com/business/amazon-to-acquire-twitch-in-a-970-million-cash-deal"
+    ],
+    "status": "in_production",
+    "approved": true,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.010Z",
+    "updatedAt": "2026-10-23T18:57:42.299Z",
+    "linkedProjectId": "proj_1792779696034",
+    "archived": false
+  },
+  {
+    "id": "tech_scandals_case_12",
+    "channel_id": "tech_scandals",
+    "rowIndex": 13,
+    "title": "Valía $4.500 Millones y un Simple Script la Destruyó: El Escándalo de Zenefits",
+    "characterCompany": "Parker Conrad / Zenefits",
+    "conflict": "Zenefits fue el software de RRHH de mayor crecimiento en Silicon Valley, ofreciendo software de nómina gratis a cambio de comisiones por seguros de salud. Para mantener un crecimiento absurdo, Parker Conrad programó un script (\"macro\") que permitía a sus vendedores burlar las 52 horas de formación regulatoria obligatoria de California mientras el navegador completaba el curso solo. Cuando el fraude salió a la luz en 2016, el CEO tuvo que renunciar, los fondos recortaron su valoración a la mitad y pagaron millones en multas a la SEC antes de desvanecerse.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Parker_Conrad",
+      "https://medium.com/the-human-business/zenefits-sex-in-the-stairwells-hypergrowth-3a4d3a698da8"
+    ],
+    "status": "completed",
+    "approved": true,
+    "finished": true,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.010Z",
+    "updatedAt": "2026-10-23T07:19:36.365Z",
+    "linkedProjectId": "proj_1792715738305"
+  },
+  {
+    "id": "tech_scandals_case_13",
+    "channel_id": "tech_scandals",
+    "rowIndex": 14,
+    "title": "Inventó las Redes Sociales, Rechazó a Google por $30M y Murió por Servidores Lentos: La Caída de Friendster",
+    "characterCompany": "Jonathan Abrams / Friendster",
+    "conflict": "En 2002, Friendster fue la primera red social masiva de la historia y acumuló millones de usuarios antes que MySpace o Facebook. En 2003 rechazaron una oferta de compra de Google por $30 millones en acciones. Sin embargo, su infraestructura técnica colapsó con páginas que tardaban hasta 40 segundos en cargar y la directiva se obsesionó con censurar usuarios con perfiles ficticios (\"fakesters\"). Esta fricción técnica y cultural provocó que la comunidad huyera en masa a MySpace y Facebook.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Friendster",
+      "https://www.nationalcollaborative.org/wp-content/uploads/2024/10/nche-21st-century-social-1.pdf"
+    ],
+    "status": "idea",
+    "approved": false,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.010Z",
+    "updatedAt": "2026-10-22T17:29:37.710Z"
+  },
+  {
+    "id": "tech_scandals_case_14",
+    "channel_id": "tech_scandals",
+    "rowIndex": 15,
+    "title": "El Software que Silicon Valley Ignoró por Años... y Microsoft Compró por $7.500 Millones: La Historia de GitHub",
+    "characterCompany": "Chris Wanstrath, PJ Hyett y Tom Preston-Werner / GitHub",
+    "conflict": "Creada en 2008 mediante bootstrapping con sus propios ahorros para facilitar el trabajo colaborativo con Git, GitHub rechazó inversores y operó sin jerarquías tradicionales. Construyeron la plataforma de desarrollo y código abierto más importante del planeta. En 2018, Microsoft —que en el pasado había llamado al software libre un \"cáncer\"— pagó $7.500 millones de dólares en acciones bajo la dirección de Satya Nadella para adueñarse de la plataforma.",
+    "sources": [
+      "https://news.microsoft.com/source/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/",
+      "https://www.forbes.com/sites/petercohan/2018/06/04/4-reasons-microsofts-7-5b-github-buy-will-boost-its-stock/",
+      "https://techpoint.africa/general/facebook-shared-user-data-with-device-makers/"
+    ],
+    "status": "idea",
+    "approved": false,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.010Z",
+    "updatedAt": "2026-10-22T17:29:37.710Z"
+  },
+  {
+    "id": "tech_scandals_case_15",
+    "channel_id": "tech_scandals",
+    "rowIndex": 16,
+    "title": "Tenían el Chat Más Codiciado del Mundo y lo Destruyeron por Arrogancia: La Muerte de BBM",
+    "characterCompany": "Mike Lazaridis y Jim Balsillie / BlackBerry (BBM)",
+    "conflict": "A finales de los 2000, BlackBerry Messenger (BBM) era la aplicación de chat más exclusiva y adictiva del planeta. La dirección de RIM se negó a abrir BBM a dispositivos Android y iPhone para proteger la venta de sus costosos teléfonos físicos. Esa negativa dejó el camino completamente despejado para que WhatsApp conquistara el mercado mundial de mensajería móvil. Cuando finalmente abrieron BBM en 2013, los usuarios ya se habían marchado para siempre.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/BlackBerry",
+      "https://www.youtube.com/watch?v=9bGFUyfbr0Y"
+    ],
+    "status": "idea",
+    "approved": false,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-17T09:11:43.010Z",
+    "updatedAt": "2026-10-22T17:29:37.710Z"
+  }
+]

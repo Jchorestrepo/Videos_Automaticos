@@ -1,0 +1,636 @@
+{
+  "character_id": "parker_conrad",
+  "channel_id": "tech_scandals",
+  "name": "Parker Conrad",
+  "role": "Protagonista / Fundador de Zenefits",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Zenefits",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Parker Conrad (Zenefits), single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "Zenefits branded office environment",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792738888340_692.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792738830465_924.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792738779125_887.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716188079_682.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716132010_927.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716113584_684.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716095553_477.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716078068_785.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716039522_572.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716019949_964.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715999747_853.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715982001_369.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715963954_45.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715945309_818.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715927155_103.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715887870_717.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715869720_659.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715852169_613.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715834180_463.jpg",
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_ai_1792715780123.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792738888342_g98or",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792738888340_692.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of a man standing on a rooftop at sunset, looking out over a city skyline, with a new building under construction in the distance. The sky is orange and purple, symbolizing a new beginning. Cinematic, hopeful yet contemplative.",
+      "description": "Nuevos Comienzos",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad",
+        "david_sacks"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "David Sacks"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "New York City / Calle Urbana",
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-23T07:01:28.342Z"
+    },
+    {
+      "id": "asset_1792738830469_3lp12",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792738830465_924.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of a man standing on a rooftop at sunset, looking out over a city skyline, with a new building under construction in the distance. The sky is orange and purple, symbolizing a new beginning. Cinematic, hopeful yet contemplative.",
+      "description": "Nuevos Comienzos",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad",
+        "david_sacks"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "David Sacks"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "New York City / Calle Urbana",
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-23T07:00:30.469Z"
+    },
+    {
+      "id": "asset_1792738779129_qqklp",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792738779125_887.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of a legal document with the SEC logo, a fountain pen resting on it, and a gavel in the background out of focus. The document shows a large fine amount. The lighting is somber, with a spotlight on the paper. Cinematic, forensic detail.",
+      "description": "Multa de la SEC",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad"
+      ],
+      "characterNames": [
+        "Parker Conrad"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "object_detail",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "legal"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 22,
+      "createdAt": "2026-10-23T06:59:39.129Z"
+    },
+    {
+      "id": "asset_1792716188082_eq51b",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716188079_682.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Conceptual diagram showing a steep downward graph with a dollar sign, overlaid on a background of a crumbling castle made of cards. The graph line is red and jagged. In the foreground, a silhouette of a person watching the collapse. Cinematic, metaphorical, high contrast.",
+      "description": "Recorte de Valoración",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad"
+      ],
+      "characterNames": [
+        "Parker Conrad"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "concept_diagram",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad",
+        "grid",
+        "split",
+        "screen",
+        "conceptual",
+        "diagram"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 21,
+      "createdAt": "2026-10-23T00:43:08.082Z"
+    },
+    {
+      "id": "asset_1792716132044_1v0hm",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716132010_927.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of a man in his mid-30s with a weary expression, wearing a suit, standing in a corporate hallway, holding a box of personal items. The lighting is cold and blue, emphasizing isolation. A blurred office background with employees watching. Cinematic, emotional, shallow depth of field.",
+      "description": "Renuncia de Conrad",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad",
+        "david_sacks"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "David Sacks"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Cancha / Entorno Deportivo",
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "character_closeup",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 19,
+      "createdAt": "2026-10-23T00:42:12.044Z"
+    },
+    {
+      "id": "asset_1792716113618_516d7",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716113584_684.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A dramatic silhouette of a crumbling castle made of playing cards against a dark sky, with a giant dollar sign looming over it. In the foreground, a newspaper with the headline 'Zenefits Scandal' lies on the ground. The scene is symbolic, with a stormy sky and lightning in the distance. Cinematic, metaphorical style.",
+      "description": "La regla oculta",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad"
+      ],
+      "characterNames": [
+        "Parker Conrad"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad",
+        "grid",
+        "split",
+        "screen",
+        "dramatic",
+        "silhouette"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 16,
+      "createdAt": "2026-10-23T00:41:53.618Z"
+    },
+    {
+      "id": "asset_1792716095588_bhdk5",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716095553_477.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Extreme close-up of a computer screen displaying lines of code for a macro, with a progress bar rapidly filling to 100%. The screen reflects in the glasses of an unseen user. In the foreground, a coffee mug and a sticky note that reads '52 hrs in 5 min'. The lighting is dim, with the screen glow illuminating the scene. Cinematic, tech-thriller style.",
+      "description": "La regla oculta",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad"
+      ],
+      "characterNames": [
+        "Parker Conrad"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "object_detail",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad",
+        "grid",
+        "split",
+        "screen",
+        "extreme",
+        "close"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 15,
+      "createdAt": "2026-10-23T00:41:35.588Z"
+    },
+    {
+      "id": "asset_1792716078103_d9eto",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716078068_785.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A conceptual diagram showing a computer screen with a script running automatically, filling out a form with checkmarks. A shadowy hand hovers over the keyboard. In the background, a blurred image of a government building with columns. The style is infographic meets thriller, with glowing lines and a dark, ominous atmosphere.",
+      "description": "La regla oculta",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad"
+      ],
+      "characterNames": [
+        "Parker Conrad"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "concept_diagram",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad",
+        "grid",
+        "split",
+        "screen",
+        "conceptual",
+        "diagram"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 13,
+      "createdAt": "2026-10-23T00:41:18.103Z"
+    },
+    {
+      "id": "asset_1792716039526_zng1g",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716039522_572.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of a man (Parker Conrad) walking away down a long, dimly lit corridor, carrying a briefcase. The light at the end of the corridor is bright, but his figure is dark. On the wall, a framed newspaper headline reads 'Zenefits Fined'. The scene is symbolic, with high contrast and a sense of finality. Cinematic, thriller style.",
+      "description": "El arquitecto en la sombra",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad",
+        "david_sacks"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "David Sacks"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 12,
+      "createdAt": "2026-10-23T00:40:39.526Z"
+    },
+    {
+      "id": "asset_1792716019952_q2j20",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792716019949_964.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Wide shot of a modern open-plan office in chaos: empty desks, cardboard boxes, employees hugging goodbye. A large digital screen on the wall displays a downward-trending stock chart. The atmosphere is somber, with muted colors and natural light filtering through blinds. Cinematic, documentary style, capturing the human cost of the collapse.",
+      "description": "El arquitecto en la sombra",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad",
+        "david_sacks"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "David Sacks"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "environment_wide",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 11,
+      "createdAt": "2026-10-23T00:40:19.952Z"
+    },
+    {
+      "id": "asset_1792715999780_v7h2y",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715999747_853.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A dimly lit boardroom at night, David Sacks (a sharp-featured man in his 40s, wearing a crisp white shirt) stands by a floor-to-ceiling window, looking out over Silicon Valley lights. His reflection is faint on the glass. A stack of documents sits on the table behind him. The mood is tense, calculating, cinematic thriller style, with cool blue tones and high contrast.",
+      "description": "El arquitecto en la sombra",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad",
+        "david_sacks"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "David Sacks"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Oficina Corporativa / Boardroom",
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "david",
+        "sacks",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-23T00:39:59.780Z"
+    },
+    {
+      "id": "asset_1792715982005_jea9t",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715982001_369.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Dramatic shot of Parker Conrad standing on a pile of documents labeled 'Regulations', with a shadowy figure of a regulator looming behind him. High contrast, tense atmosphere. Cinematic, ominous.",
+      "description": "La Semilla de la Destrucción",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad"
+      ],
+      "characterNames": [
+        "Parker Conrad"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad",
+        "grid",
+        "split",
+        "screen",
+        "dramatic",
+        "standing"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 8,
+      "createdAt": "2026-10-23T00:39:42.005Z"
+    },
+    {
+      "id": "asset_1792715963968_ag312",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715963954_45.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of Parker Conrad in a modest office, looking at a whiteboard with a business plan, a determined glint in his eye. Warm lighting, startup vibe. Cinematic, intimate.",
+      "description": "El Nacimiento de Zenefits",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad",
+        "laks_srini"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "Laks Srini"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "character_closeup",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "laks",
+        "srini",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 7,
+      "createdAt": "2026-10-23T00:39:23.968Z"
+    },
+    {
+      "id": "asset_1792715945344_j6oyb",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715945309_818.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of a vintage Harvard Crimson newspaper with a headline about Parker Conrad, and a rejection letter from Harvard. Dimly lit room, papers scattered. Cinematic, introspective.",
+      "description": "El Primer Tropiezo",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad"
+      ],
+      "characterNames": [
+        "Parker Conrad"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "object_detail",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "vintage"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 6,
+      "createdAt": "2026-10-23T00:39:05.344Z"
+    },
+    {
+      "id": "asset_1792715927159_ybhxv",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715927155_103.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Wide shot of Harvard University campus in autumn, with a young Parker Conrad walking with books, looking determined. Golden hour light, iconic buildings. Cinematic, nostalgic.",
+      "description": "Raíces de Ambición",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad"
+      ],
+      "characterNames": [
+        "Parker Conrad"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "environment_wide",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad",
+        "grid",
+        "split",
+        "screen",
+        "harvard",
+        "university"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 5,
+      "createdAt": "2026-10-23T00:38:47.159Z"
+    },
+    {
+      "id": "asset_1792715887874_71kdp",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715887870_717.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of Parker Conrad standing in front of a giant crumbling castle of cards, with a stormy sky. Dramatic backlighting, symbolic of impending collapse. Cinematic, moody.",
+      "description": "El Precio de la Hubris",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad"
+      ],
+      "characterNames": [
+        "Parker Conrad"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad",
+        "grid",
+        "split",
+        "screen",
+        "silhouette",
+        "standing"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 4,
+      "createdAt": "2026-10-23T00:38:07.874Z"
+    },
+    {
+      "id": "asset_1792715869756_m57vy",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715869720_659.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Conceptual diagram: a split image showing a calendar with 52 hours crossed out and replaced by a computer script executing rapidly, with a shadowy figure pulling strings. Minimalist, tech-noir style, glowing lines.",
+      "description": "La Promesa Imposible",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad"
+      ],
+      "characterNames": [
+        "Parker Conrad"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "concept_diagram",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad",
+        "grid",
+        "split",
+        "screen",
+        "conceptual",
+        "diagram"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 3,
+      "createdAt": "2026-10-23T00:37:49.756Z"
+    },
+    {
+      "id": "asset_1792715852203_h9rmp",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715852169_613.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Wide shot of a bustling open-plan office with employees typing furiously, glass walls, and a giant screen showing revenue growth. Sunlight streams in, but shadows hint at underlying chaos. Cinematic, high contrast.",
+      "description": "El Imperio de Cristal",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad"
+      ],
+      "characterNames": [
+        "Parker Conrad"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "environment_wide",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad",
+        "grid",
+        "split",
+        "screen",
+        "bustling",
+        "open"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 2,
+      "createdAt": "2026-10-23T00:37:32.203Z"
+    },
+    {
+      "id": "asset_1792715834183_dticn",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715834180_463.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of Parker Conrad, a confident young CEO in a sharp suit, smiling at a press conference, with flashing cameras and a backdrop displaying a soaring stock chart. Shallow depth of field, dramatic lighting, cinematic tension.",
+      "description": "La Cima del Unicornio",
+      "characterId": "parker_conrad",
+      "characterName": "Parker Conrad",
+      "characterIds": [
+        "parker_conrad"
+      ],
+      "characterNames": [
+        "Parker Conrad"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "Conferencia / Escenario de Prensa",
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "character_closeup",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "confident"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 1,
+      "createdAt": "2026-10-23T00:37:14.183Z"
+    }
+  ],
+  "updatedAt": "2026-10-23T07:01:28.342Z",
+  "real_reference_image_url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_realref_1792715771644.jpg",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_ai_1792715780123.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

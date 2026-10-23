@@ -1,0 +1,19 @@
+{
+  "character_id": "kyle_vogt",
+  "channel_id": "tech_scandals",
+  "name": "Kyle Vogt",
+  "role": "Cofundador de Justin.tv, luego fundador de Cruise Automation",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Justin.tv / Cruise",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Kyle Vogt (Justin.tv / Cruise), single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "Justin.tv / Cruise branded office environment",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [],
+  "assets": [],
+  "updatedAt": "2026-10-23T18:21:50.237Z"
+}

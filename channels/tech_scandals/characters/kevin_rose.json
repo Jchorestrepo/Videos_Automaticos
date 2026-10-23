@@ -1,0 +1,561 @@
+{
+  "character_id": "kevin_rose",
+  "channel_id": "tech_scandals",
+  "name": "Kevin Rose",
+  "role": "Fundador de Digg",
+  "real_person": true,
+  "anchor_prompt": "Stylized 3D cinematic animated character of Kevin Rose (Digg founder), 30-35 years old, expressive facial structure, sharp eyes, modern Silicon Valley tech entrepreneur casual hoodie and blazer attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "Web 2.0 server racks",
+    "Silicon Valley startup office",
+    "laptop with social news feed"
+  ],
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Digg",
+  "updatedAt": "2026-10-22T18:31:26.382Z",
+  "real_reference_image_url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_realref_1792693261760.jpg",
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693886348_937.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693867999_965.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693849495_16.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693810282_397.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693792155_93.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693753145_207.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693734792_13.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693717195_400.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693638498_365.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693620456_738.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693601691_358.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693582399_513.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693563354_579.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693500143_278.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693480317_513.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693462204_629.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693443426_201.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_ai_1792693327310.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792693886382_4v2hn",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693886348_937.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of Kevin Rose in a new, smaller office, looking at a laptop with the Milk logo. His expression is a mix of determination and regret. In the background, a framed BusinessWeek cover with his face, slightly faded. Cinematic, introspective.",
+      "description": "Nuevos Horizontes",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "character_closeup",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "smaller"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-22T18:31:26.382Z"
+    },
+    {
+      "id": "asset_1792693868032_z1wcv",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693867999_965.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of a lone figure walking out of a dimly lit office building, carrying a box. The Digg logo on the window is half-covered in dust. In the background, a For Sale sign. Cinematic, melancholic, high contrast.",
+      "description": "Las Cenizas",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "silhouette",
+        "lone"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 22,
+      "createdAt": "2026-10-22T18:31:08.032Z"
+    },
+    {
+      "id": "asset_1792693849499_g9rh4",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693849495_16.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Wide shot of a dark server room, blinking lights reflecting on empty chairs, monitors displaying error logs and traffic graphs plummeting. A lone technician sits with head in hands. Cinematic, moody, desolate.",
+      "description": "El Pánico en los Servidores",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "Sala de Servidores / Datacenter",
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "environment_wide",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "dark",
+        "server"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 21,
+      "createdAt": "2026-10-22T18:30:49.499Z"
+    },
+    {
+      "id": "asset_1792693810287_o8zxu",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693810282_397.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A conceptual diagram showing a steep downward graph, with dollar bills flying away like leaves in the wind. In the background, a silhouette of a castle made of cards collapsing. The numbers $200M and $500K are highlighted. Cinematic metaphor, dramatic lighting.",
+      "description": "La Sangría Financiera",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "concept_diagram",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "conceptual",
+        "diagram"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 20,
+      "createdAt": "2026-10-22T18:30:10.287Z"
+    },
+    {
+      "id": "asset_1792693792193_ta04x",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693792155_93.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of Kevin Rose in a boardroom, sweat on his brow, eyes wide with stress, hands gripping the table. Background blurred, showing other executives looking down. Dramatic lighting, shallow focus, emotional intensity.",
+      "description": "Reunión de Emergencia",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "Oficina Corporativa / Boardroom",
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "character_closeup",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "boardroom"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 19,
+      "createdAt": "2026-10-22T18:29:52.193Z"
+    },
+    {
+      "id": "asset_1792693753181_t4kvz",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693753145_207.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of a computer screen showing Digg's homepage being flooded with Reddit links, vote counts plummeting, error messages popping up. A hand slams on a keyboard in frustration. The screen reflects the panic in the room. Cinematic detail, high contrast, tension.",
+      "description": "La Traición de los Votos",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "object_detail",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "computer"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 18,
+      "createdAt": "2026-10-22T18:29:13.181Z"
+    },
+    {
+      "id": "asset_1792693734795_kv3zk",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693734792_13.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of a digital clock counting down, with the Digg logo on its face. The background is a blurred server room with blinking lights. A hand is about to press a large red button labeled 'V4'. The tension is palpable.",
+      "description": "La bomba de relojería",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "Sala de Servidores / Datacenter",
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "object_detail",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "digital"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 16,
+      "createdAt": "2026-10-22T18:28:54.795Z"
+    },
+    {
+      "id": "asset_1792693717231_sbnm8",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693717195_400.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. An abstract diagram showing a balance scale: on one side, a glowing heart labeled 'TRUST'; on the other, a stack of coins labeled 'MONEY'. The scale is tipping dangerously. In the background, faint outlines of users connected by lines. The style is infographic but cinematic.",
+      "description": "La regla oculta",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "concept_diagram",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "abstract",
+        "diagram"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 13,
+      "createdAt": "2026-10-22T18:28:37.231Z"
+    },
+    {
+      "id": "asset_1792693638504_yfbhm",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693638498_365.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of a computer screen displaying a Digg front page from 2009, with a pie chart overlay showing 44% in one color and 56% in another. The screen is slightly dusty, and a coffee mug sits nearby. The focus is on the numbers, emphasizing the concentration of power.",
+      "description": "La élite invisible",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "object_detail",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "computer"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 10,
+      "createdAt": "2026-10-22T18:27:18.504Z"
+    },
+    {
+      "id": "asset_1792693620460_nwwtm",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693620456_738.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A dimly lit room filled with multiple computer monitors glowing in the dark, showing Digg's front page and voting patterns. Silhouettes of several users, their faces obscured, hands on keyboards, casting long shadows. The atmosphere is secretive and powerful, like a hacker collective.",
+      "description": "La élite invisible",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "dimly",
+        "room"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-22T18:27:00.460Z"
+    },
+    {
+      "id": "asset_1792693601726_ztz58",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693601691_358.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Dramatic shot of a group of shadowy power users, their faces illuminated by computer screens, looking angry and betrayed. In the foreground, a Digg logo cracks. Tension and impending conflict.",
+      "description": "El Punto Ciego",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "dramatic",
+        "group"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 8,
+      "createdAt": "2026-10-22T18:26:41.726Z"
+    },
+    {
+      "id": "asset_1792693582404_qk988",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693582399_513.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of Kevin Rose and Jay Adelson in a 2004 office, shaking hands over a desk with a laptop showing the first Digg prototype. Optimistic startup vibe, natural light.",
+      "description": "El Mentor y la Visión",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose",
+        "jay_adelson"
+      ],
+      "characterNames": [
+        "Kevin Rose",
+        "Jay Adelson"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "character_closeup",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose,",
+        "jay",
+        "adelson",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 6,
+      "createdAt": "2026-10-22T18:26:22.404Z"
+    },
+    {
+      "id": "asset_1792693563388_ucoaw",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693563354_579.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of a young Kevin Rose in his early twenties, soldering a computer cable in a cluttered TechTV workshop. Vintage monitors and cables around, warm lighting, nostalgic 90s atmosphere.",
+      "description": "El Origen del Genio",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "object_detail",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "early"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 5,
+      "createdAt": "2026-10-22T18:26:03.388Z"
+    },
+    {
+      "id": "asset_1792693500146_tlsyj",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693500143_278.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of Kevin Rose standing before a giant glowing dollar sign that slowly fades into darkness, symbolizing lost fortune. Dramatic backlighting, film noir style, tense atmosphere.",
+      "description": "El Precio de la Arrogancia",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "silhouette",
+        "standing"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 4,
+      "createdAt": "2026-10-22T18:25:00.146Z"
+    },
+    {
+      "id": "asset_1792693480321_kiw4l",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693480317_513.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Conceptual diagram showing a small group of silhouetted figures at the top of a pyramid, controlling a flow of news links to a massive crowd below. Glowing lines connect them, illustrating power concentration. Dark background, high contrast.",
+      "description": "La Promesa Democratizadora",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "concept_diagram",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "conceptual",
+        "diagram"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 3,
+      "createdAt": "2026-10-22T18:24:40.321Z"
+    },
+    {
+      "id": "asset_1792693462206_xkil8",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693462204_629.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Wide shot of a bustling Digg office in 2008, with employees monitoring large screens showing real-time voting and trending stories. Servers blink in the background, energetic startup atmosphere, cinematic lighting.",
+      "description": "El Imperio de los Votos",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "environment_wide",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "bustling",
+        "digg"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 2,
+      "createdAt": "2026-10-22T18:24:22.206Z"
+    },
+    {
+      "id": "asset_1792693443460_lgofd",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693443426_201.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of Kevin Rose in 2008, confident smile, standing in front of a glowing screen displaying Digg's skyrocketing user graph. Shallow depth of field, dramatic lighting, corporate thriller aesthetic.",
+      "description": "El Coloso de Silicon Valley",
+      "characterId": "kevin_rose",
+      "characterName": "Kevin Rose",
+      "characterIds": [
+        "kevin_rose"
+      ],
+      "characterNames": [
+        "Kevin Rose"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "Cancha / Entorno Deportivo",
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "character_closeup",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "2008"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 1,
+      "createdAt": "2026-10-22T18:24:03.460Z"
+    }
+  ],
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_ai_1792693327310.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

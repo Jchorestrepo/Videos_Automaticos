@@ -9,5 +9,29 @@
     "porous clay water jar (zir)",
     "bronze sickle for harvesting",
     "mudbrick background under blazing sun"
-  ]
+  ],
+  "character_category": "channel_lore_cast",
+  "known_face": false,
+  "channel_lore": {
+    "age": "32 años",
+    "personality_traits": [
+      "Resiliente",
+      "Ingenioso",
+      "protector de su familia",
+      "Observador"
+    ],
+    "peculiarities": [
+      "Ojos delineados con kohl oscuro para protegerse del sol abrasador",
+      "Lleva siempre una vasija de barro poroso que enfría el agua por evaporación",
+      "Tiene una cicatriz de trabajo en el antebrazo derecho"
+    ],
+    "channel_backstory": "Nekht es el obrero y artesano recurrente de nuestro canal de historia antigua. Representa al trabajador anónimo que construyó imperios bajo condiciones extremas.",
+    "reusable_archetypes": [
+      "campesino antiguo",
+      "obrero constructor",
+      "artesano",
+      "padre de familia antiguo"
+    ],
+    "appearances": []
+  }
 }

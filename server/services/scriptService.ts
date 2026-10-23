@@ -408,7 +408,7 @@ REGLAS DE REDACCIÓN PARA ALTA RETENCIÓN Y DURACIÓN (${durationRange.min}–${
    - "environment_wide": Plano abierto del lugar, oficinas, servidores, ciudad o entorno histórico.
    - "object_detail": Primer plano de un objeto clave, contrato, pantalla financiera, código o herramienta.
    - "antagonist_shot": Plano dramático del rival, competidor o fuerza opuesta.
-   - "concept_diagram": Escena visual metafórica que ilustra el concepto explicado (si hay personaje de lore como Juanito, ponlo a protagonizar la metáfora).
+   - "concept_diagram": Escena visual metafórica o infografía conceptual que ilustra el mecanismo técnico o económico explicado (usa character_ids: [] si no aparece una persona concreta).
    - "symbolic_silhouette": Silueta cinematográfica de alta tensión.
 4. En "character_ids", incluye un arreglo con los IDs exactos de los personajes que aparecen en esta escena (ej: ["${cast?.[0]?.character_id || 'protagonist'}"]). Si es una escena de solo objetos o entorno sin personas, usa [].
 5. En cada escena incluye "highlight_metric" (máx 18 caracteres, ej: "$124 MILLONES", "AÑO 2008", "BURN RATE", "-50% TRÁFICO") y "highlight_label" (máx 26 caracteres, ej: "CAPITAL QUEMADO", "EL ORIGEN", "CONCEPTO CLAVE", "ÉXODO EN 72 HORAS") para mostrar tarjetas forenses en pantalla.

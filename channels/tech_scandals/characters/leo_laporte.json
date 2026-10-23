@@ -1,0 +1,19 @@
+{
+  "character_id": "leo_laporte",
+  "channel_id": "tech_scandals",
+  "name": "Leo Laporte",
+  "role": "Presentador de TechTV y mentor inicial",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "TechTV",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Leo Laporte (TechTV), single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "TechTV branded office environment",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [],
+  "assets": [],
+  "updatedAt": "2026-10-22T17:32:05.416Z"
+}

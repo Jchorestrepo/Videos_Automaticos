@@ -1,0 +1,348 @@
+{
+  "character_id": "justin_kan",
+  "channel_id": "tech_scandals",
+  "name": "Justin Kan",
+  "role": "Protagonista / Fundador de Justin.tv (Twitch)",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Justin.tv (Twitch)",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Justin Kan (Justin.tv (Twitch)), single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "Justin.tv (Twitch) branded office environment",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781794228_296.jpg",
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781592845_788.jpg",
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781470023_532.jpg",
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781384998_144.jpg",
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781291846_486.jpg",
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781271560_111.jpg",
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781251980_653.jpg",
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781234421_513.jpg",
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781212118_475.jpg",
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781152649_691.jpg",
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_ai_1792779800292.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792781794231_2tpmb",
+      "url": "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781794228_296.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A split-screen effect showing Justin Kan on the left, looking contemplative in a modern office, and Jeff Bezos on the right, smiling confidently in a boardroom. The two images are separated by a thin line, symbolizing their divergent paths after the sale. The lighting is professional and polished.",
+      "description": "El Veredicto",
+      "characterId": "justin_kan",
+      "characterName": "Justin Kan",
+      "characterIds": [
+        "justin_kan",
+        "jeff_bezos"
+      ],
+      "characterNames": [
+        "Justin Kan",
+        "Jeff Bezos"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Oficina Corporativa / Boardroom",
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "character_closeup",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "justin",
+        "kan,",
+        "jeff",
+        "bezos",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-23T18:56:34.231Z"
+    },
+    {
+      "id": "asset_1792781592850_8q8b6",
+      "url": "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781592845_788.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of Justin Kan's face, lit by the cold glow of a computer screen. His expression is a mix of shock and exhilaration, with beads of sweat on his forehead. In the background, out-of-focus server racks blink with red and green lights. The scene is tense and emotional.",
+      "description": "La Guerra por Twitch",
+      "characterId": "justin_kan",
+      "characterName": "Justin Kan",
+      "characterIds": [
+        "justin_kan"
+      ],
+      "characterNames": [
+        "Justin Kan"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "character_closeup",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "justin",
+        "kan",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "face"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 19,
+      "createdAt": "2026-10-23T18:53:12.850Z"
+    },
+    {
+      "id": "asset_1792781470059_zjy7j",
+      "url": "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781470023_532.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Wide shot of a server room with glowing racks, overlaid with holographic screens showing Twitch metrics skyrocketing, while Justin Kan's silhouette watches from a distance, realizing the monster he created.",
+      "description": "La Bomba de Relojería",
+      "characterId": "justin_kan",
+      "characterName": "Justin Kan",
+      "characterIds": [
+        "justin_kan"
+      ],
+      "characterNames": [
+        "Justin Kan"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "Sala de Servidores / Datacenter",
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "environment_wide",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "justin",
+        "kan",
+        "grid",
+        "split",
+        "screen",
+        "server",
+        "room"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 16,
+      "createdAt": "2026-10-23T18:51:10.059Z"
+    },
+    {
+      "id": "asset_1792781385002_0ptzp",
+      "url": "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781384998_144.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Abstract diagram showing a chessboard with pieces representing Google and Amazon, and a glowing question mark over Twitch's logo, illustrating the hidden rule of attention economy.",
+      "description": "La Pregunta Oculta",
+      "characterId": "justin_kan",
+      "characterName": "Justin Kan",
+      "characterIds": [
+        "justin_kan",
+        "google"
+      ],
+      "characterNames": [
+        "Justin Kan",
+        "Google"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "concept_diagram",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "justin",
+        "kan,",
+        "google",
+        "grid",
+        "split",
+        "screen",
+        "abstract"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 12,
+      "createdAt": "2026-10-23T18:49:45.002Z"
+    },
+    {
+      "id": "asset_1792781291851_9c6uu",
+      "url": "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781291846_486.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of Justin Kan standing before a giant glowing Twitch logo, with a shadowy figure of Google lurking in the background, dramatic lighting, symbolic of impending conflict.",
+      "description": "La semilla de la tragedia",
+      "characterId": "justin_kan",
+      "characterName": "Justin Kan",
+      "characterIds": [
+        "justin_kan"
+      ],
+      "characterNames": [
+        "Justin Kan"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "justin",
+        "kan",
+        "grid",
+        "split",
+        "screen",
+        "silhouette",
+        "standing"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 8,
+      "createdAt": "2026-10-23T18:48:11.851Z"
+    },
+    {
+      "id": "asset_1792781271564_98j1j",
+      "url": "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781271560_111.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of Justin Kan looking distressed, dark circles under eyes, camera still on head, dimly lit room, tense atmosphere.",
+      "description": "El precio de la transparencia",
+      "characterId": "justin_kan",
+      "characterName": "Justin Kan",
+      "characterIds": [
+        "justin_kan"
+      ],
+      "characterNames": [
+        "Justin Kan"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "character_closeup",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "justin",
+        "kan",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "looking"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 7,
+      "createdAt": "2026-10-23T18:47:51.564Z"
+    },
+    {
+      "id": "asset_1792781251983_d8n2g",
+      "url": "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781251980_653.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of a head-mounted camera, Justin Kan's face partially visible, live streaming interface on a computer screen in the background, 2007 tech aesthetic.",
+      "description": "El nacimiento de Justin.tv",
+      "characterId": "justin_kan",
+      "characterName": "Justin Kan",
+      "characterIds": [
+        "justin_kan"
+      ],
+      "characterNames": [
+        "Justin Kan"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "object_detail",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "justin",
+        "kan",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "head"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 6,
+      "createdAt": "2026-10-23T18:47:31.983Z"
+    },
+    {
+      "id": "asset_1792781234455_ez0u0",
+      "url": "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781234421_513.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Wide shot of a cramped startup office with two young men (Justin Kan and Emmett Shear) looking at a computer screen, papers scattered, whiteboard with diagrams, 2005 setting, natural lighting.",
+      "description": "Raíces y fracasos",
+      "characterId": "justin_kan",
+      "characterName": "Justin Kan",
+      "characterIds": [
+        "justin_kan",
+        "emmett_shear"
+      ],
+      "characterNames": [
+        "Justin Kan",
+        "Emmett Shear"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "environment_wide",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "justin",
+        "kan,",
+        "emmett",
+        "shear",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 5,
+      "createdAt": "2026-10-23T18:47:14.455Z"
+    },
+    {
+      "id": "asset_1792781212120_5y2rz",
+      "url": "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781212118_475.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of Justin Kan with a camera on his head, standing against a backdrop of a dark city skyline at night, dramatic backlighting, mysterious atmosphere.",
+      "description": "El puente hacia el pasado",
+      "characterId": "justin_kan",
+      "characterName": "Justin Kan",
+      "characterIds": [
+        "justin_kan"
+      ],
+      "characterNames": [
+        "Justin Kan"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "New York City / Calle Urbana",
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "justin",
+        "kan",
+        "grid",
+        "split",
+        "screen",
+        "silhouette",
+        "camera"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 4,
+      "createdAt": "2026-10-23T18:46:52.120Z"
+    },
+    {
+      "id": "asset_1792781152683_70z8z",
+      "url": "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781152649_691.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of Justin Kan in 2014, confident smile, flashing cameras, blurred background of a press conference, cinematic lighting, shallow depth of field.",
+      "description": "El triunfo de un visionario",
+      "characterId": "justin_kan",
+      "characterName": "Justin Kan",
+      "characterIds": [
+        "justin_kan"
+      ],
+      "characterNames": [
+        "Justin Kan"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "Conferencia / Escenario de Prensa",
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "character_closeup",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "justin",
+        "kan",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "2014"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 1,
+      "createdAt": "2026-10-23T18:45:52.683Z"
+    }
+  ],
+  "updatedAt": "2026-10-23T18:56:34.231Z",
+  "real_reference_image_url": "/channel-assets/tech_scandals/characters/assets/justin_kan_realref_1792779797601.jpg",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/justin_kan_ai_1792779800292.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

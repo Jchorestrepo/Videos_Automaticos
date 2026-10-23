@@ -1,0 +1,299 @@
+{
+  "character_id": "dylan_field",
+  "channel_id": "tech_scandals",
+  "name": "Dylan Field",
+  "role": "Cofundador y CEO de Figma",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "anchor_prompt": "Stylized 3D cinematic animated character of Dylan Field, single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "modern minimalist tech desk",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792364219805_886.jpg",
+    "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792363738223_34.jpg",
+    "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792363615123_62.jpg",
+    "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792361581493_725.jpg",
+    "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792361451624_973.jpg",
+    "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792361346629_951.jpg",
+    "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792361297660_437.jpg",
+    "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792361259717_945.jpg",
+    "/channel-assets/tech_scandals/characters/assets/dylan_field_ai_1792360767708.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792364219806_n1spm",
+      "url": "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792364219805_886.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Split-screen effect avoided; instead, a close-up of a framed photo of Clark Valberg and Dylan Field shaking hands at a conference, now dusty, symbolizing their divergent fates.",
+      "description": "Las Cenizas",
+      "characterId": "dylan_field",
+      "characterName": "Dylan Field",
+      "characterIds": [
+        "clark_valberg",
+        "dylan_field"
+      ],
+      "characterNames": [
+        "Clark Valberg",
+        "Dylan Field"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Conferencia / Escenario de Prensa",
+      "companyOrSubject": "Clark Valberg / InVision vs. Dylan Field / Figma",
+      "shotType": "character_closeup",
+      "tags": [
+        "clark valberg / invision vs. dylan field / figma",
+        "clark",
+        "valberg,",
+        "dylan",
+        "field",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792360536298",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-18T22:56:59.806Z"
+    },
+    {
+      "id": "asset_1792363738225_5g4sp",
+      "url": "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792363738223_34.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A young Dylan Field in a dimly lit room, face illuminated by a laptop screen, coding late at night. The camera focuses on his intense eyes, reflecting lines of code. In the background, a whiteboard with sketches of a web-based design tool. Cinematic lighting, shallow depth of field.",
+      "description": "El rival en la sombra",
+      "characterId": "dylan_field",
+      "characterName": "Dylan Field",
+      "characterIds": [
+        "clark_valberg",
+        "dylan_field"
+      ],
+      "characterNames": [
+        "Clark Valberg",
+        "Dylan Field"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Oficina de Desarrollo / Open Space",
+      "companyOrSubject": "Clark Valberg / InVision vs. Dylan Field / Figma",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "clark valberg / invision vs. dylan field / figma",
+        "clark",
+        "valberg,",
+        "dylan",
+        "field",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792360536298",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-18T22:48:58.225Z"
+    },
+    {
+      "id": "asset_1792363615124_gvm31",
+      "url": "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792363615123_62.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A young Dylan Field in a dimly lit room, face illuminated by a laptop screen, coding late at night. The camera focuses on his intense eyes, reflecting lines of code. In the background, a whiteboard with sketches of a web-based design tool. Cinematic lighting, shallow depth of field.",
+      "description": "El rival en la sombra",
+      "characterId": "dylan_field",
+      "characterName": "Dylan Field",
+      "characterIds": [
+        "clark_valberg",
+        "dylan_field"
+      ],
+      "characterNames": [
+        "Clark Valberg",
+        "Dylan Field"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Oficina de Desarrollo / Open Space",
+      "companyOrSubject": "Clark Valberg / InVision vs. Dylan Field / Figma",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "clark valberg / invision vs. dylan field / figma",
+        "clark",
+        "valberg,",
+        "dylan",
+        "field",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792360536298",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-18T22:46:55.124Z"
+    },
+    {
+      "id": "asset_1792361581496_ewlsd",
+      "url": "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792361581493_725.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Split-screen effect avoided; instead, a close-up of a framed photo of Clark Valberg and Dylan Field shaking hands at a conference, now dusty, symbolizing their divergent fates.",
+      "description": "Las Cenizas",
+      "characterId": "dylan_field",
+      "characterName": "Dylan Field",
+      "characterIds": [
+        "clark_valberg",
+        "dylan_field"
+      ],
+      "characterNames": [
+        "Clark Valberg",
+        "Dylan Field"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Conferencia / Escenario de Prensa",
+      "companyOrSubject": "Clark Valberg / InVision vs. Dylan Field / Figma",
+      "shotType": "character_closeup",
+      "tags": [
+        "clark valberg / invision vs. dylan field / figma",
+        "clark",
+        "valberg,",
+        "dylan",
+        "field",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792360536298",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-18T22:13:01.496Z"
+    },
+    {
+      "id": "asset_1792361451629_7180j",
+      "url": "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792361451624_973.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Dramatic shot of a young CEO (Dylan Field) standing confidently in a sleek startup office, large screen behind him showing Figma's user growth curve skyrocketing, team members applauding in the background.",
+      "description": "El Choque de Trenes",
+      "characterId": "dylan_field",
+      "characterName": "Dylan Field",
+      "characterIds": [
+        "clark_valberg",
+        "dylan_field"
+      ],
+      "characterNames": [
+        "Clark Valberg",
+        "Dylan Field"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Cancha / Entorno Deportivo",
+      "companyOrSubject": "Clark Valberg / InVision vs. Dylan Field / Figma",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "clark valberg / invision vs. dylan field / figma",
+        "clark",
+        "valberg,",
+        "dylan",
+        "field",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792360536298",
+      "sourceSceneId": 18,
+      "createdAt": "2026-10-18T22:10:51.629Z"
+    },
+    {
+      "id": "asset_1792361346632_0lhvr",
+      "url": "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792361346629_951.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of a corporate leader standing in a dark room, looking out a large window at a city skyline. A faint reflection of a chessboard is visible on the glass, with one piece toppling over. The mood is ominous and contemplative.",
+      "description": "La regla oculta",
+      "characterId": "dylan_field",
+      "characterName": "Dylan Field",
+      "characterIds": [
+        "clark_valberg",
+        "dylan_field"
+      ],
+      "characterNames": [
+        "Clark Valberg",
+        "Dylan Field"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "New York City / Calle Urbana",
+      "companyOrSubject": "Clark Valberg / InVision vs. Dylan Field / Figma",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "clark valberg / invision vs. dylan field / figma",
+        "clark",
+        "valberg,",
+        "dylan",
+        "field",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792360536298",
+      "sourceSceneId": 12,
+      "createdAt": "2026-10-18T22:09:06.632Z"
+    },
+    {
+      "id": "asset_1792361297663_f1cp6",
+      "url": "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792361297660_437.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A young Dylan Field in a dimly lit room, face illuminated by a laptop screen, coding late at night. The camera focuses on his intense eyes, reflecting lines of code. In the background, a whiteboard with sketches of a web-based design tool. Cinematic lighting, shallow depth of field.",
+      "description": "El rival en la sombra",
+      "characterId": "dylan_field",
+      "characterName": "Dylan Field",
+      "characterIds": [
+        "clark_valberg",
+        "dylan_field"
+      ],
+      "characterNames": [
+        "Clark Valberg",
+        "Dylan Field"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Oficina de Desarrollo / Open Space",
+      "companyOrSubject": "Clark Valberg / InVision vs. Dylan Field / Figma",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "clark valberg / invision vs. dylan field / figma",
+        "clark",
+        "valberg,",
+        "dylan",
+        "field",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792360536298",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-18T22:08:17.663Z"
+    },
+    {
+      "id": "asset_1792361259728_t2tnt",
+      "url": "/channel-assets/tech_scandals/characters/assets/clark_valberg_frame_1792361259717_945.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Dramatic shot of Dylan Field, a young 24-year-old CEO, standing confidently in front of a laptop displaying the Figma interface with multiple cursors collaborating. He is in a modern, minimalist office, with a determined look. The lighting is cool, contrasting with the warm tones of InVision scenes, symbolizing the new era.",
+      "description": "El Origen de un Visionario",
+      "characterId": "dylan_field",
+      "characterName": "Dylan Field",
+      "characterIds": [
+        "clark_valberg",
+        "dylan_field"
+      ],
+      "characterNames": [
+        "Clark Valberg",
+        "Dylan Field"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Cancha / Entorno Deportivo",
+      "companyOrSubject": "Clark Valberg / InVision vs. Dylan Field / Figma",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "clark valberg / invision vs. dylan field / figma",
+        "clark",
+        "valberg,",
+        "dylan",
+        "field",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792360536298",
+      "sourceSceneId": 8,
+      "createdAt": "2026-10-18T22:07:39.728Z"
+    }
+  ],
+  "updatedAt": "2026-10-18T22:56:59.806Z",
+  "real_reference_image_url": "/channel-assets/tech_scandals/characters/assets/dylan_field_realref_1792360760789.webp",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/dylan_field_ai_1792360767708.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

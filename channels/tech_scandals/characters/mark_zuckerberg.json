@@ -1,0 +1,740 @@
+{
+  "character_id": "mark_zuckerberg",
+  "channel_id": "tech_scandals",
+  "name": "Mark Zuckerberg",
+  "role": "CEO de Facebook",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "anchor_prompt": "Stylized 3D cinematic animated character of Mark Zuckerberg, single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "modern minimalist tech desk",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464568988_411.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464503811_2.jpg",
+    "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792464269524_247.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464088005_604.jpg",
+    "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792462811222_832.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792462760719_306.jpg",
+    "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792462725311_500.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792293368081_564.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792293084527_110.jpg",
+    "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792292754299_155.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292708613_599.jpg",
+    "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792292378882_175.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292331503_108.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290849178_901.jpg",
+    "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792290556523_595.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290495477_264.jpg",
+    "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792289563310_712.jpg",
+    "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792289549690_534.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289540193_474.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289481056_90.jpg",
+    "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792289457799_463.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289448512_647.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792464568989_1h0mz",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464568988_411.jpg",
+      "prompt": "Wide shot of Brian Acton speaking at a congressional hearing, with a 'Signal' app interface projected massively behind him, contrasting with tiny Facebook logos on lawmakers' desks.",
+      "description": "Los Sobrevivientes",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "environment_wide",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "acton",
+        "speaking",
+        "congressional"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-20T02:49:28.989Z"
+    },
+    {
+      "id": "asset_1792464503813_k49f9",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464503811_2.jpg",
+      "prompt": "Single unified 16:9 frame of Mark Zuckerberg's silhouette against the glass walls of Facebook HQ at night, holding a contract with WhatsApp's logo faintly visible, blue light casting long shadows.",
+      "description": "El Tiro de Gracia",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "silhouette",
+        "glass",
+        "walls"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 17,
+      "createdAt": "2026-10-20T02:48:23.813Z"
+    },
+    {
+      "id": "asset_1792464269524_how18",
+      "url": "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792464269524_247.jpg",
+      "prompt": "Single unified 16:9 frame of a contract document being signed, with Zuckerberg's pen hovering over the signature line.",
+      "description": "El Movimiento Estratégico",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "object_detail",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "mark",
+        "zuckerberg",
+        "contract",
+        "document",
+        "being",
+        "signed",
+        "hovering"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 10,
+      "createdAt": "2026-10-20T02:44:29.524Z"
+    },
+    {
+      "id": "asset_1792464088006_vaeao",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464088005_604.jpg",
+      "prompt": "A silhouetted figure signs documents at a glass conference table, with the Facebook logo ominously reflected in the surface. The pen glints under cold office lighting.",
+      "description": "La Cumbre del Poder",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Conferencia / Escenario de Prensa",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "silhouetted",
+        "figure",
+        "signs"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 1,
+      "createdAt": "2026-10-20T02:41:28.006Z"
+    },
+    {
+      "id": "asset_1792462811223_wplg8",
+      "url": "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792462811222_832.jpg",
+      "prompt": "Wide shot of Jan Koum's empty office chair at WhatsApp HQ, nameplate still on the desk, with the Facebook 'Like' sign glowing ominously through the window at night.",
+      "description": "El Abandono del Cofundador",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "jan_koum",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Jan Koum",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "jan",
+        "koum,",
+        "mark",
+        "zuckerberg",
+        "koum",
+        "empty",
+        "office"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 21,
+      "createdAt": "2026-10-20T02:20:11.223Z"
+    },
+    {
+      "id": "asset_1792462760721_5kv1t",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792462760719_306.jpg",
+      "prompt": "Single unified 16:9 frame of Mark Zuckerberg sitting in a dimly lit office, staring at a screen showing WhatsApp's growth metrics.",
+      "description": "El Rival en la Sombra",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "sitting",
+        "dimly",
+        "office"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-20T02:19:20.721Z"
+    },
+    {
+      "id": "asset_1792462725312_2ztbd",
+      "url": "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792462725311_500.jpg",
+      "prompt": "A global map with pulsating lights representing WhatsApp messages crisscrossing continents, superimposed over a minimalist WhatsApp office with empty desks.",
+      "description": "El Imperio de los Bits",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "environment_wide",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "mark",
+        "zuckerberg",
+        "global",
+        "pulsating",
+        "lights",
+        "representing",
+        "whatsapp"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 2,
+      "createdAt": "2026-10-20T02:18:45.312Z"
+    },
+    {
+      "id": "asset_1792293368086_ju3zs",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792293368081_564.jpg",
+      "prompt": "A dimly lit profile shot of Zuckerberg looking at a computer screen showing Acton's rejected job application from 2009.",
+      "description": "Semillas del Conflicto",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "dimly",
+        "profile",
+        "zuckerberg",
+        "looking",
+        "computer"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "createdAt": "2026-10-18T03:16:08.086Z"
+    },
+    {
+      "id": "asset_1792293084527_2u6ci",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792293084527_110.jpg",
+      "prompt": "Single unified 16:9 frame of Mark Zuckerberg's silhouette against the glass walls of Facebook HQ at night, holding a contract with WhatsApp's logo faintly visible, blue light casting long shadows.",
+      "description": "El Tiro de Gracia",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "silhouette",
+        "glass",
+        "walls"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 17,
+      "createdAt": "2026-10-18T03:11:24.527Z"
+    },
+    {
+      "id": "asset_1792292754301_3cuhu",
+      "url": "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792292754299_155.jpg",
+      "prompt": "Single unified 16:9 frame of a contract document being signed, with Zuckerberg's pen hovering over the signature line.",
+      "description": "El Movimiento Estratégico",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "object_detail",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "mark",
+        "zuckerberg",
+        "contract",
+        "document",
+        "being",
+        "signed",
+        "hovering"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 10,
+      "createdAt": "2026-10-18T03:05:54.301Z"
+    },
+    {
+      "id": "asset_1792292708614_w8ecy",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292708613_599.jpg",
+      "prompt": "Single unified 16:9 frame of Mark Zuckerberg sitting in a dimly lit office, staring at a screen showing WhatsApp's growth metrics.",
+      "description": "El Rival en la Sombra",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "sitting",
+        "dimly",
+        "office"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-18T03:05:08.614Z"
+    },
+    {
+      "id": "asset_1792292378882_ax6c7",
+      "url": "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792292378882_175.jpg",
+      "prompt": "A global map with pulsating lights representing WhatsApp messages crisscrossing continents, superimposed over a minimalist WhatsApp office with empty desks.",
+      "description": "El Imperio de los Bits",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "environment_wide",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "mark",
+        "zuckerberg",
+        "global",
+        "pulsating",
+        "lights",
+        "representing",
+        "whatsapp"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 2,
+      "createdAt": "2026-10-18T02:59:38.882Z"
+    },
+    {
+      "id": "asset_1792292331524_9hc70",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292331503_108.jpg",
+      "prompt": "A silhouetted figure signs documents at a glass conference table, with the Facebook logo ominously reflected in the surface. The pen glints under cold office lighting.",
+      "description": "La Cumbre del Poder",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Conferencia / Escenario de Prensa",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "silhouetted",
+        "figure",
+        "signs"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 1,
+      "createdAt": "2026-10-18T02:58:51.524Z"
+    },
+    {
+      "id": "asset_1792290849181_wr4iz",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290849178_901.jpg",
+      "prompt": "Wide shot of Brian Acton speaking at a congressional hearing, with a 'Signal' app interface projected massively behind him, contrasting with tiny Facebook logos on lawmakers' desks.",
+      "description": "Los Sobrevivientes",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "environment_wide",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "acton",
+        "speaking",
+        "congressional"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-18T02:34:09.181Z"
+    },
+    {
+      "id": "asset_1792290556544_bowhg",
+      "url": "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792290556523_595.jpg",
+      "prompt": "Wide shot of Jan Koum's empty office chair at WhatsApp HQ, nameplate still on the desk, with the Facebook 'Like' sign glowing ominously through the window at night.",
+      "description": "El Abandono del Cofundador",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "jan_koum",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Jan Koum",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "jan",
+        "koum,",
+        "mark",
+        "zuckerberg",
+        "koum",
+        "empty",
+        "office"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 21,
+      "createdAt": "2026-10-18T02:29:16.544Z"
+    },
+    {
+      "id": "asset_1792290495483_86ltj",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290495477_264.jpg",
+      "prompt": "Single unified 16:9 frame of Mark Zuckerberg's silhouette against the glass walls of Facebook HQ at night, holding a contract with WhatsApp's logo faintly visible, blue light casting long shadows.",
+      "description": "El Tiro de Gracia",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "silhouette",
+        "glass",
+        "walls"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 17,
+      "createdAt": "2026-10-18T02:28:15.483Z"
+    },
+    {
+      "id": "asset_1792289563314_we6co",
+      "url": "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792289563310_712.jpg",
+      "prompt": "Single unified 16:9 frame of a chessboard with Zuckerberg's silhouette casting a shadow over WhatsApp's piece.",
+      "description": "La Trampa Perfecta",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "mark",
+        "zuckerberg",
+        "chessboard",
+        "silhouette",
+        "casting",
+        "shadow",
+        "whatsapp"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 11,
+      "createdAt": "2026-10-18T02:12:43.314Z"
+    },
+    {
+      "id": "asset_1792289549724_ytk9d",
+      "url": "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792289549690_534.jpg",
+      "prompt": "Single unified 16:9 frame of a contract document being signed, with Zuckerberg's pen hovering over the signature line.",
+      "description": "El Movimiento Estratégico",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "object_detail",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "mark",
+        "zuckerberg",
+        "contract",
+        "document",
+        "being",
+        "signed",
+        "hovering"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 10,
+      "createdAt": "2026-10-18T02:12:29.724Z"
+    },
+    {
+      "id": "asset_1792289540197_j7ywi",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289540193_474.jpg",
+      "prompt": "Single unified 16:9 frame of Mark Zuckerberg sitting in a dimly lit office, staring at a screen showing WhatsApp's growth metrics.",
+      "description": "El Rival en la Sombra",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "sitting",
+        "dimly",
+        "office"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-18T02:12:20.197Z"
+    },
+    {
+      "id": "asset_1792289481092_a7nvj",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289481056_90.jpg",
+      "prompt": "A dimly lit profile shot of Zuckerberg looking at a computer screen showing Acton's rejected job application from 2009.",
+      "description": "Semillas del Conflicto",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "dimly",
+        "profile",
+        "looking"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 4,
+      "createdAt": "2026-10-18T02:11:21.092Z"
+    },
+    {
+      "id": "asset_1792289457804_g6v5n",
+      "url": "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792289457799_463.jpg",
+      "prompt": "A global map with pulsating lights representing WhatsApp messages crisscrossing continents, superimposed over a minimalist WhatsApp office with empty desks.",
+      "description": "El Imperio de los Bits",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "environment_wide",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "mark",
+        "zuckerberg",
+        "global",
+        "pulsating",
+        "lights",
+        "representing",
+        "whatsapp"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 2,
+      "createdAt": "2026-10-18T02:10:57.804Z"
+    },
+    {
+      "id": "asset_1792289448515_khty1",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289448512_647.jpg",
+      "prompt": "A silhouetted figure signs documents at a glass conference table, with the Facebook logo ominously reflected in the surface. The pen glints under cold office lighting.",
+      "description": "La Cumbre del Poder",
+      "characterId": "mark_zuckerberg",
+      "characterName": "Mark Zuckerberg",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Conferencia / Escenario de Prensa",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "silhouetted",
+        "figure",
+        "signs"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 1,
+      "createdAt": "2026-10-18T02:10:48.515Z"
+    }
+  ],
+  "updatedAt": "2026-10-20T02:49:28.989Z",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/mark_zuckerberg_frame_1792289457799_463.jpg"
+}

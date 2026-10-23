@@ -1,0 +1,27 @@
+{
+  "character_id": "owen_byrne",
+  "channel_id": "tech_scandals",
+  "name": "Owen Byrne",
+  "role": "Cofundador y desarrollador",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Digg",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Owen Byrne (Digg), single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "Digg branded office environment",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/owen_byrne_ai_1792693410461.jpg"
+  ],
+  "assets": [],
+  "updatedAt": "2026-10-22T18:23:40.181Z",
+  "real_reference_image_url": "/channel-assets/tech_scandals/characters/assets/owen_byrne_realref_1792693346248.jpg",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/owen_byrne_ai_1792693410461.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

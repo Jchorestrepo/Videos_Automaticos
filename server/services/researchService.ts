@@ -141,43 +141,61 @@ export class ResearchService {
 Eres el Investigador Forense Jefe del canal documental "${persona.name}" (${persona.niche}).
 Tu misión es construir un DOSSIER DE INVESTIGACIÓN PROFUNDA en ESPAÑOL para un documental de 10 a 15 minutos sobre: "${topic}".
 
-Para que el documental sea extremadamente entretenido y NO tenga relleno, necesitamos investigar 4 pilares obligatorios:
-1. PERFIL DEL PROTAGONISTA ("protagonist_profile"):
-   - Quién es el personaje principal o fundador (${cleanProtagonistName}) y la empresa involucrada.
-   - Su historia previa ("backstory"): de dónde salió, sus primeros negocios, fracasos o victorias antes del evento principal.
-   - Su mayor logro ("greatest_achievement"): qué lo hizo parecer el mayor ganador o un genio invencible en su mejor momento.
-   - Su falla psicológica ("psychological_flaw"): qué rasgo de soberbia, ceguera o ambición sembró su caída.
+REGLA CRÍTICA DE PERSONAJES INDIVIDUALES:
+- Si la historia involucra a 2, 3 o más personas (ej: co-fundadores, comprador vs vendedor, CEO vs rival), NUNCA combines varios nombres como si fueran un solo personaje. Cada individuo debe identificarse por separado en "cast_members".
+- En "protagonist_profile.name" pon el nombre de la figura principal individual (ej: "David Karp", NO "David Karp y Marissa Mayer").
+- En "antagonist_profile.name" pon el nombre de la persona o contraparte individual (ej: "Marissa Mayer"). Si la contraparte o algún personaje secundario NO tiene un rostro público conocido (ej: un usuario joven, un ingeniero anónimo, la comunidad de creadores, un empleado filtrador), marca "known_face": false e indica su arquetipo en "suggested_archetype" para que el canal utilice su propio elenco recurrente con Lore (como Juanito o Elena Vega).
+
+Para que el documental sea extremadamente entretenido y NO tenga relleno, necesitamos investigar 5 pilares obligatorios:
+1. PERFIL DEL PROTAGONISTA INDIVIDUAL ("protagonist_profile"):
+   - Quién es la persona principal (${cleanProtagonistName}) y la empresa involucrada.
+   - "known_face": true si es una figura real con rostro público conocido, false si es un arquetipo o personaje anónimo.
+   - Su historia previa ("backstory"), mayor logro ("greatest_achievement") y falla psicológica ("psychological_flaw").
 
 2. PERFIL DEL ANTAGONISTA O RIVAL ("antagonist_profile"):
-   - Quién estaba del otro lado del tablero (un competidor directo como Reddit frente a Digg, un inversor institucional como Stripe, un auditor/periodista, o una fuerza implacable).
+   - Quién estaba del otro lado del tablero (nombre individual si es persona real, o fuerza opuesta).
+   - "known_face": true si es una persona real con rostro público conocido, false si es un grupo/entidad sin rostro único.
    - Qué movimiento clave ejecutó que dejó sin salida al protagonista.
 
-3. EL CONCEPTO CLAVE EXPLICADO ("core_concept_explainer"):
-   - Identifica el concepto financiero, económico, tecnológico o histórico que explica la tragedia (ej: "Quiebra por Burn Rate y Unit Economics Negativos", "Efecto de Red Inverso", "Valoración Ficticia de Unicornio", "Liquidación Forzosa", etc.).
-   - "simple_definition": Explicación clara y fascinante de qué es ese concepto.
-   - "everyday_analogy": Una analogía cotidiana brillante para que cualquier espectador lo entienda en 30 segundos y sienta que aprendió algo valioso.
-   - "why_it_matters_here": Por qué este concepto destruyó o definió el caso.
+3. ELENCO COMPLETO DESAGREGADO ("cast_members"):
+   - Lista de cada personaje individual que participa en la historia (protagonistas, co-fundadores, antagonistas y al menos 1 personaje secundario/testigo sin rostro conocido para dar perspectiva humana).
 
-4. CRONOLOGÍA, CIFRAS DURAS Y MUNICIÓN NARRATIVA ("chronology", "hard_numbers", "smoking_guns"):
+4. EL CONCEPTO CLAVE EXPLICADO ("core_concept_explainer"):
+   - Identifica el concepto financiero, económico, tecnológico o histórico que explica la tragedia.
+   - "simple_definition", "everyday_analogy" y "why_it_matters_here".
+
+5. CRONOLOGÍA, CIFRAS DURAS Y MUNICIÓN NARRATIVA ("chronology", "hard_numbers", "smoking_guns"):
    - 6 a 8 hitos cronológicos con fechas/años reales.
-   - 6 a 8 cifras contundentes ("metric" corto de máx 18 caracteres como "$124 MILLONES" o "-50% EN 72H", "label" corto como "CAPITAL QUEMADO", y "context").
-   - 5 detalles jugosos, ironías, excesos o secretos ocultos ("smoking_guns").
+   - 6 a 8 cifras contundentes ("metric" corto de máx 18 caracteres, "label" corto y "context").
+   - 5 detalles jugosos, ironías o secretos ocultos ("smoking_guns").
 
 DEVUELVE ÚNICAMENTE UN OBJETO JSON VÁLIDO con esta estructura exacta:
 {
   "protagonist_profile": {
-    "name": "...",
+    "name": "Nombre de 1 sola persona",
     "role": "...",
+    "known_face": true,
     "backstory": "...",
     "greatest_achievement": "...",
     "psychological_flaw": "..."
   },
   "antagonist_profile": {
-    "name": "...",
+    "name": "Nombre de 1 sola persona o entidad",
     "role": "...",
+    "known_face": true,
     "relationship_to_protagonist": "...",
     "key_move": "..."
   },
+  "cast_members": [
+    {
+      "name": "Nombre individual",
+      "role": "Rol en la historia",
+      "company": "Empresa",
+      "known_face": true,
+      "narrative_role": "protagonist",
+      "suggested_archetype": ""
+    }
+  ],
   "core_concept_explainer": {
     "concept_name": "...",
     "simple_definition": "...",
@@ -196,7 +214,7 @@ DEVUELVE ÚNICAMENTE UN OBJETO JSON VÁLIDO con esta estructura exacta:
 
     const userPrompt = `
 CASO A INVESTIGAR: ${topic}
-PROTAGONISTA / EMPRESA: ${characterCompany || topic}
+PROTAGONISTAS / EMPRESA: ${characterCompany || topic}
 DATOS INICIALES DEL CASO: ${conflictDetails || topic}
 EVIDENCIA RECOLECTADA EN LA WEB:
 ${rawEvidence || 'Utiliza tu base de conocimientos históricos y financieros verificados sobre este caso.'}
@@ -292,38 +310,70 @@ ${rawEvidence || 'Utiliza tu base de conocimientos históricos y financieros ver
     characterCompany?: string,
     conflictDetails?: string
   ): ResearchDossier {
-    const cleanName = (characterCompany || topic).split('/')[0].trim();
+    const rawPeoplePart = (characterCompany || topic).split('/')[0].trim();
+    const rawTokens = rawPeoplePart
+      .split(/\s*(?:,|\by\b|\band\b|&|\bvs\.?\b)\s*/i)
+      .map((s) => s.replace(/\(.*?\)/g, '').trim())
+      .filter(Boolean);
+
+    const firstPerson = rawTokens[0] || rawPeoplePart;
+    const secondPerson = rawTokens[1];
+
     const companyName =
       characterCompany && characterCompany.includes('/')
         ? characterCompany.split('/')[1].replace(/\(.*?\)/g, '').trim()
-        : cleanName;
+        : firstPerson;
 
     return {
       protagonist_profile: {
-        name: cleanName,
+        name: firstPerson,
         role: `Fundador y estratega principal detrás de ${companyName}`,
-        backstory: `Antes de convertirse en el rostro visible de ${companyName}, ${cleanName} forjó una reputación de ejecutor audaz capaz de vender visiones imposibles a los inversores más exigentes del mercado.`,
+        known_face: true,
+        backstory: `Antes de convertirse en el rostro visible de ${companyName}, ${firstPerson} forjó una reputación de ejecutor audaz capaz de vender visiones imposibles a los inversores más exigentes del mercado.`,
         greatest_achievement: `Logró posicionar a ${companyName} como el futuro indiscutible de su sector, levantando rondas multimillonarias en tiempo récord y acaparando titulares globales.`,
         psychological_flaw: `La convicción ciega de que el crecimiento superficial y el carisma mediático podían sustituir indefinidamente a un modelo financiero sostenible.`,
       },
       antagonist_profile: {
-        name: 'La Realidad Contable y los Rivales Silenciosos',
-        role: 'Competidores directos e inversores institucionales',
+        name: secondPerson || 'La Realidad Contable y los Rivales Silenciosos',
+        role: secondPerson
+          ? `Contraparte estratégica y figura clave en el destino de ${companyName}`
+          : 'Competidores directos e inversores institucionales',
+        known_face: Boolean(secondPerson),
         relationship_to_protagonist:
-          'Mientras el protagonista celebraba rondas de inversión, sus competidores optimizaban el producto real y los auditores comenzaban a revisar los libros.',
+          'Mientras el protagonista celebraba el crecimiento, del otro lado del tablero se gestaba una presión implacable sobre el modelo de negocio.',
         key_move:
-          'Cortar el flujo de capital de emergencia al descubrir la brecha insalvable entre el gasto mensual y la facturación real.',
+          'Tomar la decisión ejecutiva que expuso la brecha insalvable entre la promesa original y la realidad financiera.',
       },
+      cast_members: [
+        ...rawTokens.map((p, idx) => ({
+          name: p,
+          role: idx === 0 ? `Protagonista (${companyName})` : `Co-protagonista / Contraparte`,
+          company: companyName,
+          known_face: true,
+          narrative_role: (idx === 0 ? 'protagonist' : idx === 1 ? 'antagonist' : 'secondary') as
+            | 'protagonist'
+            | 'antagonist'
+            | 'secondary',
+        })),
+        {
+          name: 'Juanito (Usuario Joven / Creador)',
+          role: 'Testigo cotidiano y protagonista de la analogía del caso',
+          company: 'Elenco con Lore del Canal',
+          known_face: false,
+          narrative_role: 'secondary',
+          suggested_archetype: 'usuario joven',
+        },
+      ],
       core_concept_explainer: {
         concept_name: 'Burn Rate y la Trampa de los Unit Economics Negativos',
         simple_definition:
           'Es la velocidad a la que una empresa quema su efectivo disponible cuando cuesta diez veces más adquirir un cliente de lo que ese cliente genera en ingresos.',
         everyday_analogy:
-          'Es como abrir una pizzería donde vendes cada pizza a 5 dólares, pero dentro de cada caja metes un billete de 20 dólares de regalo para atraer clientes. Tendrás una fila de diez cuadras y parecerás el restaurante más exitoso de la ciudad... hasta el minuto exacto en que se te acaben los billetes.',
+          'Imagina a Juanito, nuestro joven de 15 años amante del deporte, organizando un torneo de fútbol donde cobra 1 dólar por entrada pero regala un balón de 20 dólares a cada asistente. Tendrá el estadio lleno el primer día... hasta el minuto exacto en que se quede sin ahorros.',
         why_it_matters_here: `En ${companyName}, el crecimiento explosivo era en realidad un subsidio masivo que acercaba la bancarrota con cada nuevo usuario.`,
       },
       chronology: [
-        { date_or_period: 'Fase 1: El Origen', event: `Nacimiento de la ambición de ${cleanName} y fundación de ${companyName}.` },
+        { date_or_period: 'Fase 1: El Origen', event: `Nacimiento de la ambición de ${firstPerson} y fundación de ${companyName}.` },
         { date_or_period: 'Fase 2: La Euforia', event: 'Inyección masiva de capital y expansión agresiva.' },
         { date_or_period: 'Fase 3: La Grieta', event: conflictDetails || 'Desconexión crítica entre gastos operativos e ingresos reales.' },
         { date_or_period: 'Fase 4: El Colapso', event: 'Cierre abrupto de operaciones y liquidación del imperio.' },

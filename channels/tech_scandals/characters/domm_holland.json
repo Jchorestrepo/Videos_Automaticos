@@ -9,5 +9,7 @@
     "sleek smartphone showing checkout button",
     "luxury wrist watch",
     "glowing corporate glass office in background"
-  ]
+  ],
+  "character_category": "real_person",
+  "known_face": true
 }

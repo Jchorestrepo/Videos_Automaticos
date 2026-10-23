@@ -21,6 +21,7 @@ export interface ParsedPersonEntity {
   isKnownRealPerson: boolean;
   roleHint?: string;
   narrativeRole?: 'protagonist' | 'antagonist' | 'secondary';
+  entityType?: 'person' | 'company';
 }
 
 export class CharacterService {
@@ -561,19 +562,32 @@ export class CharacterService {
     const cleanId = profile.character_id ? this.slugifyId(profile.character_id) : this.slugifyId(profile.name);
     const existing = this.getCharacter(channelId, cleanId);
 
+    const isCompany =
+      profile.character_category === 'company_or_brand' ||
+      profile.entity_type === 'company' ||
+      CharacterService.isCompanyOrBrandEntity(profile.name);
+
     const isLoreCast =
-      profile.character_category === 'channel_lore_cast' ||
-      profile.real_person === false ||
-      Boolean(profile.channel_lore);
+      !isCompany &&
+      (profile.character_category === 'channel_lore_cast' ||
+        profile.real_person === false ||
+        Boolean(profile.channel_lore));
+
+    const category: CharacterCategory = isCompany
+      ? 'company_or_brand'
+      : isLoreCast
+      ? 'channel_lore_cast'
+      : 'real_person';
 
     const merged: CharacterProfile = {
       ...existing,
       ...profile,
       character_id: cleanId,
       channel_id: channelId,
-      real_person: !isLoreCast,
-      character_category: isLoreCast ? 'channel_lore_cast' : 'real_person',
-      known_face: profile.known_face ?? (isLoreCast ? false : true),
+      real_person: category === 'real_person',
+      character_category: category,
+      entity_type: isCompany ? 'company' : 'person',
+      known_face: profile.known_face ?? (category === 'real_person'),
       channel_lore: profile.channel_lore ?? existing?.channel_lore,
       canonical_image_url: profile.canonical_image_url ?? existing?.canonical_image_url,
       real_reference_image_url: profile.real_reference_image_url ?? existing?.real_reference_image_url,
@@ -607,18 +621,53 @@ export class CharacterService {
   }
 
   /**
+   * Detecta si una entidad corresponde a una empresa, marca, corporación o institución
+   * (ej. Google, Apple, Fast, Enron, Theranos, Silicon Valley Bank, etc.)
+   */
+  static isCompanyOrBrandEntity(name: string): boolean {
+    const clean = (name || '').trim().toLowerCase();
+    if (!clean) return false;
+
+    const knownCompanies = [
+      'google', 'alphabet', 'apple', 'microsoft', 'amazon', 'meta', 'facebook', 'instagram',
+      'whatsapp', 'twitter', 'x corp', 'tiktok', 'bytedance', 'netflix', 'uber', 'airbnb',
+      'fast', 'fast.co', 'enron', 'theranos', 'lehman brothers', 'ftx', 'wework', 'we work',
+      'openai', 'anthropic', 'deepmind', 'silicon valley bank', 'svb', 'wirecard', 'nikola',
+      'magic leap', 'quibi', 'tumblr', 'vine', 'yahoo', 'digg', 'myspace', 'sony', 'nintendo',
+      'tesla', 'spacex', 'ibm', 'intel', 'amd', 'nvidia', 'oracle', 'salesforce', 'stripe',
+      'paypal', 'ebay', 'spotify', 'dropbox', 'slack', 'zoom', 'robinhood', 'coinbase', 'binance',
+      'general electric', 'ford', 'boeing', 'disney', 'warner bros', 'paramount'
+    ];
+    if (knownCompanies.some((c) => clean === c || clean.startsWith(`${c} `) || clean.endsWith(` ${c}`))) {
+      return true;
+    }
+
+    const corporateKeywords = [
+      /\b(inc|corp|corporation|ltd|llc|gmbh|s\.?a\.?|co\.|company|technologies|tech|ventures|capital|bank|banco|labs|fund|holdings|studio|studios|group|industries|media|enterprises)\b/i,
+      /\b(empresa|compañía|corporación|startup|plataforma|agencia|banco|fondo|firma)\b/i,
+    ];
+    return corporateKeywords.some((rx) => rx.test(clean));
+  }
+
+  /**
    * Detecta si un nombre corresponde a un rol genérico / personaje sin rostro conocido
    * o a una entidad corporativa abstracta en lugar de un individuo con nombre y apellido.
    */
   static isUnnamedOrUnknownFaceEntity(name: string): boolean {
     const clean = name.trim().toLowerCase();
     if (!clean) return true;
+
+    // Solo debe considerarse genérico si toda la frase es un rol sin nombre propio
     const genericRolePatterns = [
-      /\b(campesino|obrero|ciudadano|inquilino|buzo|cirujano|amauta|soldado|esclavo|mercader|aprendiz)\b/i,
-      /\b(usuario|usuarios|comunidad|empleado|empleados|ingeniero|ingenieros|programador|hacker|inversor|inversores|cliente|clientes|testigo|anónimo|desconocido|adolescente|niño|joven|creador|creadores)\b/i,
-      /\b(junta directiva|wall street|silicon valley|el mercado|la competencia)\b/i,
+      /^(el |la |un |una )?(campesino|obrero|ciudadano|inquilino|buzo|cirujano|amauta|soldado|esclavo|mercader|aprendiz)$/i,
+      /^(el |la |un |una |los |las )?(usuario|usuarios|comunidad|empleado|empleados|ingeniero|ingenieros|programador|hacker|inversor|inversores|cliente|clientes|testigo|anónimo|desconocido|adolescente|niño|joven|creador|creadores)$/i,
+      /^(la )?(junta directiva|wall street|silicon valley|el mercado|la competencia)$/i,
     ];
+
     if (genericRolePatterns.some((rx) => rx.test(clean))) {
+      return true;
+    }
+    if (/\b(an[oó]nimo|desconocid[oa]|sin rostro)\b/i.test(clean)) {
       return true;
     }
     return false;
@@ -668,11 +717,13 @@ export class CharacterService {
       if (seenNames.has(normKey)) continue;
       seenNames.add(normKey);
 
-      const isUnnamed = this.isUnnamedOrUnknownFaceEntity(cleanName);
+      const isCompany = this.isCompanyOrBrandEntity(cleanName);
+      const isUnnamed = !isCompany && this.isUnnamedOrUnknownFaceEntity(cleanName);
       results.push({
         name: cleanName,
-        company: localCompany || undefined,
-        isKnownRealPerson: !isUnnamed,
+        company: isCompany ? cleanName : localCompany || undefined,
+        isKnownRealPerson: !isUnnamed && !isCompany,
+        entityType: isCompany ? 'company' : 'person',
         narrativeRole: idx === 0 ? 'protagonist' : idx === 1 ? 'antagonist' : 'secondary',
       });
     }
@@ -803,7 +854,8 @@ export class CharacterService {
       company?: string;
       roleHint?: string;
       knownFace?: boolean;
-      characterCategory?: 'real_person' | 'channel_lore_cast';
+      characterCategory?: 'real_person' | 'company_or_brand' | 'channel_lore_cast';
+      age?: string;
       loreData?: Partial<ChannelCharacterLore>;
     }
   ): CharacterProfile {
@@ -815,14 +867,21 @@ export class CharacterService {
       name: (characterNameOrCompany || storyTitle || 'Protagonista').trim(),
       company: options?.company,
       isKnownRealPerson: options?.knownFace ?? true,
+      entityType: options?.characterCategory === 'company_or_brand' ? 'company' : 'person',
     };
 
     const cleanPersonName = primaryEntity.name;
     const companyName = options?.company || primaryEntity.company;
+    const isCompany =
+      options?.characterCategory === 'company_or_brand' ||
+      primaryEntity.entityType === 'company' ||
+      (!options?.characterCategory && this.isCompanyOrBrandEntity(cleanPersonName));
+
     const isLoreCast =
-      options?.characterCategory === 'channel_lore_cast' ||
-      options?.knownFace === false ||
-      !primaryEntity.isKnownRealPerson;
+      !isCompany &&
+      (options?.characterCategory === 'channel_lore_cast' ||
+        (options?.characterCategory !== 'real_person' &&
+          (options?.knownFace === false || !primaryEntity.isKnownRealPerson)));
 
     // Si es un personaje sin rostro conocido y no tiene nombre propio específico, usar el sistema de Lore del Canal
     if (isLoreCast && this.isUnnamedOrUnknownFaceEntity(cleanPersonName) && !options?.loreData) {
@@ -848,7 +907,7 @@ export class CharacterService {
       }
     }
 
-    // 2. Redactar nueva ficha individual 3D (estrictamente 1 sola persona)
+    // 2. Redactar nueva ficha individual 3D (persona o empresa)
     const isTech = channelId.includes('tech');
     let anchorPrompt = '';
     let props: string[] = [];
@@ -857,9 +916,16 @@ export class CharacterService {
       ? ` Signature recurring character quirks: ${options.loreData.peculiarities.join(', ')}.`
       : '';
 
-    if (isLoreCast) {
+    if (isCompany) {
+      anchorPrompt = `Stylized 3D cinematic visual identity of ${cleanPersonName}, iconic modern corporate headquarters campus architecture with recognizable branding aesthetic, sleek glass facades, cutting-edge technology hub, dramatic volumetric lighting, Pixar and Arcane inspired 3D documentary visual design, cinematic high-end render`;
+      props = [
+        'iconic headquarters building',
+        'modern tech campus lobby',
+        'branded architectural signage',
+      ];
+    } else if (isLoreCast) {
       anchorPrompt = `Stylized 3D cinematic animated character of ${cleanPersonName} (${
-        options?.loreData?.age || 'recurring channel character'
+        options?.age || options?.loreData?.age || 'recurring channel character'
       }), ${
         options?.loreData?.personality_traits?.join(', ') || 'expressive and memorable personality'
       }.${peculiaritiesText} Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, SINGLE INDIVIDUAL 3D character render (only 1 person in frame)`;
@@ -868,19 +934,21 @@ export class CharacterService {
         'characteristic outfit detail',
       ];
     } else if (isTech) {
+      const agePhrase = options?.age ? `${options.age}` : 'in their prime career era';
       anchorPrompt = `Stylized 3D cinematic animated character of ${cleanPersonName}${
         companyName ? ` (${companyName})` : ''
-      }, single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render`;
+      }, single individual person only, ${agePhrase}, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render`;
       props = [
         companyName ? `${companyName} branded office environment` : 'modern minimalist tech desk',
         'sleek smartphone with financial charts',
         'glass corporate office window',
       ];
     } else {
-      anchorPrompt = `Stylized 3D cinematic animated historical character of ${cleanPersonName}, single individual person only, sun-bronzed textured skin, authentic historical garments of the era, determined expressive eyes, Arcane and Pixar inspired 3D render, high aesthetic realism`;
+      const agePhrase = options?.age ? `${options.age}` : 'authentic historical presence';
+      anchorPrompt = `Stylized 3D cinematic animated historical character of ${cleanPersonName}, single individual person only, ${agePhrase}, authentic historical garments of the era, determined expressive eyes, Arcane and Pixar inspired 3D render, high aesthetic realism`;
       props = [
-        'earthenware water jar',
         'authentic historical tool of trade',
+        'characteristic cultural artifact',
         'sun-drenched historical setting',
       ];
     }
@@ -891,17 +959,27 @@ export class CharacterService {
       name: cleanPersonName,
       role:
         options?.roleHint ||
-        (companyName
+        (isCompany
+          ? `Empresa / Entidad Central en ${storyTitle.slice(0, 45)}`
+          : companyName
           ? `Figura clave en ${companyName} (${storyTitle.slice(0, 45)})`
           : `Figura central en ${storyTitle.slice(0, 50)}`),
-      real_person: !isLoreCast,
-      character_category: isLoreCast ? 'channel_lore_cast' : 'real_person',
-      known_face: !isLoreCast,
+      real_person: !isLoreCast && !isCompany,
+      character_category: isCompany
+        ? 'company_or_brand'
+        : isLoreCast
+        ? 'channel_lore_cast'
+        : 'real_person',
+      entity_type: isCompany ? 'company' : 'person',
+      age: isCompany
+        ? 'Entidad Corporativa'
+        : options?.age || (isTech ? '30-40 años' : 'Edad adulta'),
+      known_face: !isLoreCast && !isCompany,
       company_or_affiliation:
-        companyName || (isLoreCast ? 'Elenco con Lore del Canal' : undefined),
+        companyName || (isCompany ? cleanPersonName : isLoreCast ? 'Elenco con Lore del Canal' : undefined),
       channel_lore: isLoreCast
         ? {
-            age: options?.loreData?.age || '20 años',
+            age: options?.age || options?.loreData?.age || '20 años',
             personality_traits: options?.loreData?.personality_traits || [
               'Carismático',
               'Expresivo',
@@ -956,7 +1034,11 @@ export class CharacterService {
     // 1. Desagregar todos los individuos mencionados en el input `rawCharacterCompany`
     const parsedFromInput = this.splitCharacterEntities(rawCharacterCompany);
     for (const ent of parsedFromInput) {
-      if (ent.isKnownRealPerson) {
+      const isCompany = ent.entityType === 'company' || this.isCompanyOrBrandEntity(ent.name);
+      if (isCompany) {
+        // Las empresas o marcas son contexto corporativo/arquitectónico, NO actores con rostro
+        continue;
+      } else if (ent.isKnownRealPerson) {
         const char = this.findOrDraftCharacter(channelId, ent.name, storyTitle, conflict, {
           company: ent.company,
           roleHint:
@@ -983,6 +1065,7 @@ export class CharacterService {
       if (dossier.protagonist_profile?.name) {
         const protEntities = this.splitCharacterEntities(dossier.protagonist_profile.name);
         for (const pEnt of protEntities) {
+          if (this.isCompanyOrBrandEntity(pEnt.name)) continue;
           const isKnown =
             dossier.protagonist_profile.known_face !== false && pEnt.isKnownRealPerson;
           if (isKnown) {
@@ -1008,6 +1091,7 @@ export class CharacterService {
       if (dossier.antagonist_profile?.name) {
         const antEntities = this.splitCharacterEntities(dossier.antagonist_profile.name);
         for (const aEnt of antEntities) {
+          if (this.isCompanyOrBrandEntity(aEnt.name)) continue;
           const isKnown =
             dossier.antagonist_profile.known_face !== false && aEnt.isKnownRealPerson;
           if (isKnown) {
@@ -1019,8 +1103,6 @@ export class CharacterService {
             });
             addChar(char);
           } else {
-            // Si el antagonista o fuerza opuesta no tiene rostro conocido (ej. usuarios furiosos, ingenieros, junta anónima),
-            // vincular un personaje del Lore del Canal como secundario/doble consistente
             const loreChar = this.findOrCreateChannelLoreCharacter(
               channelId,
               `${aEnt.name} (${dossier.antagonist_profile.role || 'Secundario'})`,
@@ -1035,7 +1117,7 @@ export class CharacterService {
       // 3. Si el Dossier especificó cast_members adicionales
       if (Array.isArray(dossier.cast_members)) {
         for (const member of dossier.cast_members) {
-          if (!member.name) continue;
+          if (!member.name || this.isCompanyOrBrandEntity(member.name)) continue;
           if (member.known_face && !this.isUnnamedOrUnknownFaceEntity(member.name)) {
             const char = this.findOrDraftCharacter(channelId, member.name, storyTitle, conflict, {
               company: member.company,
@@ -1096,13 +1178,19 @@ export class CharacterService {
   ): SceneItem[] {
     if (!cast || cast.length === 0) return scenes;
 
-    const realCharacters = cast.filter((c) => c.character_category !== 'channel_lore_cast');
-    const loreCharacters = cast.filter((c) => c.character_category === 'channel_lore_cast');
+    // Excluir entidades corporativas o de marca para que no se asignen como personas a las escenas
+    const validCast = cast.filter(
+      (c) => c.character_category !== 'company_or_brand' && !CharacterService.isCompanyOrBrandEntity(c.name)
+    );
+    if (validCast.length === 0) return scenes.map((s) => ({ ...s, character_ids: [] }));
 
-    const primaryProtagonist = realCharacters[0] || cast[0];
-    const primaryAntagonist = realCharacters[1] || realCharacters[0] || cast[0];
-    const secondarySupporting = realCharacters[2];
-    const primaryLoreCast = loreCharacters[0] || cast.find((c) => c.character_category === 'channel_lore_cast');
+    const realCharacters = validCast.filter((c) => c.character_category !== 'channel_lore_cast');
+    const loreCharacters = validCast.filter((c) => c.character_category === 'channel_lore_cast');
+
+    const primaryProtagonist = realCharacters[0] || validCast[0];
+    const primaryAntagonist = realCharacters.length > 1 ? realCharacters[1] : null;
+    const secondarySupporting = realCharacters.length > 2 ? realCharacters[2] : null;
+    const primaryLoreCast = loreCharacters[0] || validCast.find((c) => c.character_category === 'channel_lore_cast');
     const witnessOrAuditor = realCharacters.find(
       (c) =>
         c.role?.toLowerCase().includes('testigo') ||
@@ -1114,11 +1202,11 @@ export class CharacterService {
     );
 
     return scenes.map((scene) => {
-      // Si la escena ya tiene character_ids válidos dentro del elenco actual, conservarlos
+      // Si la escena ya tiene character_ids válidos dentro del elenco actual, conservarlos (filtrando empresas)
       if (
         Array.isArray(scene.character_ids) &&
         scene.character_ids.length > 0 &&
-        scene.character_ids.every((id) => cast.some((c) => c.character_id === id))
+        scene.character_ids.every((id) => validCast.some((c) => c.character_id === id))
       ) {
         return scene;
       }
@@ -1127,7 +1215,7 @@ export class CharacterService {
       const matchedIds: string[] = [];
 
       // 1. Detectar menciones explícitas de cada personaje real o de lore en la escena
-      for (const char of cast) {
+      for (const char of validCast) {
         const nameTokens = char.name
           .toLowerCase()
           .replace(/\([^)]*\)/g, '')
@@ -1147,34 +1235,34 @@ export class CharacterService {
         };
       }
 
-      // 2. Asignación inteligente por tipo de plano y acto cuando no se menciona el nombre literal
-      if (scene.shot_type === 'object_detail') {
+      // 2. Planos sin personajes humanos: detalles de objeto, diagramas conceptuales y planos de entorno amplios
+      if (
+        scene.shot_type === 'object_detail' ||
+        scene.shot_type === 'concept_diagram' ||
+        scene.shot_type === 'environment_wide'
+      ) {
         return { ...scene, character_ids: [] };
       }
 
-      // Acto 3 (Antagonistas y fuerzas opuestas) o planos de antagonista
-      if (scene.shot_type === 'antagonist_shot' || scene.act_number === 3) {
+      // Acto 3 o planos de antagonista: solo si existe un rival humano real en el elenco
+      if (scene.shot_type === 'antagonist_shot' || (scene.act_number === 3 && scene.shot_type === 'character_closeup')) {
         return {
           ...scene,
-          character_ids: [primaryAntagonist.character_id],
+          character_ids: primaryAntagonist ? [primaryAntagonist.character_id] : [primaryProtagonist.character_id],
         };
       }
 
-      // En el Acto 4 (Explicación del Concepto / Analogía Cotidiana, escenas 13-16),
-      // usar al personaje recurrente con Lore del Canal (ej. Juanito) para protagonizar la analogía
+      // En el Acto 4 (Explicación del Concepto / Analogía Cotidiana): solo si el texto menciona analogía o no hay protagonista real
       if (
         scene.act_number === 4 &&
         primaryLoreCast &&
-        (scene.scene_id === 14 || scene.scene_id === 15 || scene.shot_type === 'concept_diagram')
+        realCharacters.length === 0 &&
+        (scene.scene_id === 14 || scene.scene_id === 15)
       ) {
         return {
           ...scene,
           character_ids: [primaryLoreCast.character_id],
         };
-      }
-
-      if (scene.shot_type === 'concept_diagram') {
-        return { ...scene, character_ids: [] };
       }
 
       // En el Acto 2 (Origen y socios iniciales): si hay un cofundador/socio secundario

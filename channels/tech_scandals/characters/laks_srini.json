@@ -1,0 +1,60 @@
+{
+  "character_id": "laks_srini",
+  "channel_id": "tech_scandals",
+  "name": "Laks Srini",
+  "role": "Co-fundador y CTO",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Zenefits",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Laks Srini (Zenefits), single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "Zenefits branded office environment",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715963954_45.jpg",
+    "/channel-assets/tech_scandals/characters/assets/laks_srini_ai_1792715806526.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792715963969_g5o7h",
+      "url": "/channel-assets/tech_scandals/characters/assets/parker_conrad_frame_1792715963954_45.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of Parker Conrad in a modest office, looking at a whiteboard with a business plan, a determined glint in his eye. Warm lighting, startup vibe. Cinematic, intimate.",
+      "description": "El Nacimiento de Zenefits",
+      "characterId": "laks_srini",
+      "characterName": "Laks Srini",
+      "characterIds": [
+        "parker_conrad",
+        "laks_srini"
+      ],
+      "characterNames": [
+        "Parker Conrad",
+        "Laks Srini"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Parker Conrad / Zenefits",
+      "shotType": "character_closeup",
+      "tags": [
+        "parker conrad / zenefits",
+        "parker",
+        "conrad,",
+        "laks",
+        "srini",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792715738305",
+      "sourceSceneId": 7,
+      "createdAt": "2026-10-23T00:39:23.969Z"
+    }
+  ],
+  "updatedAt": "2026-10-23T00:39:23.969Z",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/laks_srini_ai_1792715806526.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

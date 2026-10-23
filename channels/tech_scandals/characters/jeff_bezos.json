@@ -1,0 +1,95 @@
+{
+  "character_id": "jeff_bezos",
+  "channel_id": "tech_scandals",
+  "name": "Jeff Bezos",
+  "role": "CEO de Amazon, artífice de la compra de Twitch",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Amazon",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Jeff Bezos (Amazon), single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "Amazon branded office environment",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781794228_296.jpg",
+    "/channel-assets/tech_scandals/characters/assets/google_frame_1792781574440_914.jpg",
+    "/channel-assets/tech_scandals/characters/assets/jeff_bezos_ai_1792779818938.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792781794231_rl2u0",
+      "url": "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781794228_296.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A split-screen effect showing Justin Kan on the left, looking contemplative in a modern office, and Jeff Bezos on the right, smiling confidently in a boardroom. The two images are separated by a thin line, symbolizing their divergent paths after the sale. The lighting is professional and polished.",
+      "description": "El Veredicto",
+      "characterId": "jeff_bezos",
+      "characterName": "Jeff Bezos",
+      "characterIds": [
+        "justin_kan",
+        "jeff_bezos"
+      ],
+      "characterNames": [
+        "Justin Kan",
+        "Jeff Bezos"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Oficina Corporativa / Boardroom",
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "character_closeup",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "justin",
+        "kan,",
+        "jeff",
+        "bezos",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-23T18:56:34.231Z"
+    },
+    {
+      "id": "asset_1792781574475_fdkqa",
+      "url": "/channel-assets/tech_scandals/characters/assets/google_frame_1792781574440_914.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A close-up of a sleek, black suitcase filled with stacks of hundred-dollar bills, slightly open on a polished mahogany desk. In the background, a blurred contract with the Amazon logo and a pen resting on it. The lighting is warm, highlighting the cash and creating a sense of decisive action.",
+      "description": "La Guerra por Twitch",
+      "characterId": "jeff_bezos",
+      "characterName": "Jeff Bezos",
+      "characterIds": [
+        "google",
+        "jeff_bezos"
+      ],
+      "characterNames": [
+        "Google",
+        "Jeff Bezos"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "object_detail",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "google,",
+        "jeff",
+        "bezos",
+        "grid",
+        "split",
+        "screen",
+        "close"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 18,
+      "createdAt": "2026-10-23T18:52:54.475Z"
+    }
+  ],
+  "updatedAt": "2026-10-23T18:56:34.231Z",
+  "real_reference_image_url": "/channel-assets/tech_scandals/characters/assets/jeff_bezos_realref_1792779814789.jpg",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/jeff_bezos_ai_1792779818938.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

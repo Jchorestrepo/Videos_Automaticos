@@ -176,10 +176,10 @@ export class ImageService {
       : [];
     const is16x9 = options.aspectRatio === '16:9';
 
-    // Modelos multimodales para preservación y transferencia facial (priorizar modelo activo en Vertex AI)
+    // Modelos multimodales para preservación y transferencia facial (en Vertex AI us-central1 el modelo activo y validado es gemini-2.5-flash-image)
     const multimodalModels = isVertex
-      ? ['gemini-2.5-flash-image', 'gemini-3.1-flash-image', 'gemini-3.1-flash-lite-image']
-      : ['gemini-3.1-flash-image', 'gemini-3.1-flash-lite-image', 'gemini-2.5-flash-image'];
+      ? ['gemini-2.5-flash-image']
+      : ['gemini-2.5-flash-image'];
 
     let lastError = '';
 
@@ -225,33 +225,7 @@ export class ImageService {
       }
     }
 
-    // Texto a imagen (fallback de alta fidelidad con Google Imagen 3 si multimodal falla o no hay foto)
-    if (isVertex) {
-      try {
-        console.log(`[Google Vertex AI] Generando con Google Imagen 3 (imagen-3.0-generate-002)...`);
-        const imgResponse = await ai.models.generateImages({
-          model: 'imagen-3.0-generate-002',
-          prompt,
-          config: {
-            numberOfImages: 1,
-            aspectRatio: is16x9 ? '16:9' : '1:1',
-            outputMimeType: 'image/jpeg',
-          },
-        });
-
-        const imgBytes = imgResponse?.generatedImages?.[0]?.image?.imageBytes;
-        if (imgBytes) {
-          return {
-            buffer: Buffer.from(imgBytes, 'base64'),
-            modelUsed: 'imagen-3.0-generate-002',
-          };
-        }
-      } catch (err: any) {
-        lastError = err.message || String(err);
-        console.warn(`[Google Vertex AI] Imagen 3 aviso:`, lastError.slice(0, 160));
-      }
-    }
-
+    // Texto a imagen (usando gemini-2.5-flash-image mediante generateContent)
     for (const model of multimodalModels) {
       try {
         console.log(`[Google ${isVertex ? 'Vertex AI' : 'Gemini'}] Generando con ${model}...`);
@@ -463,20 +437,65 @@ export class ImageService {
       ? CharacterService.resolveImageFileBase64(activeChar.real_reference_image_url)
       : null;
 
+    const isCompany =
+      activeChar.character_category === 'company_or_brand' ||
+      activeChar.entity_type === 'company' ||
+      CharacterService.isCompanyOrBrandEntity(activeChar.name);
+
+    const ageDetail = activeChar.age ? `Specific age / life era: ${activeChar.age}.` : '';
+
     let portraitPrompt = '';
-    if (refImage) {
-      // PROMPT GUIADO POR FOTO REAL: Se enfoca en estilo deseado y fidelidad de facciones para evitar alucinaciones
+    if (isCompany) {
+      if (refImage) {
+        // PROMPT GUIADO POR LOGO O FOTO DE SEDE DE LA EMPRESA
+        portraitPrompt = [
+          `TRANSFORM THE ATTACHED REFERENCE PHOTO / LOGO OF THE COMPANY ${activeChar.name} into an iconic 3D stylized centerpiece:`,
+          `ARTISTIC STYLE TARGET: ${preset.prompt}`,
+          customStyle ? `ADDITIONAL AESTHETIC DIRECTIVES: ${customStyle}.` : '',
+          `IDENTITY DIRECTIVE: Faithfully translate the recognizable branding, signature colors, architectural facade or logo geometry of ${activeChar.name} from the reference into this artistic 3D style. Do NOT generate a human face. This is an iconic company headquarters campus or stylized 3D brand centerpiece.`,
+          `COMPOSITION: Iconic centerpiece representation of ${activeChar.name} (sleek modern corporate headquarters or stylized 3D emblem with cinematic volumetric lighting and ambient documentary tech environment).`,
+          activeChar.signature_props?.length
+            ? `Signature visual elements: ${activeChar.signature_props.join(', ')}.`
+            : '',
+          `STUDIO POLISH: Volumetric rim lighting, dramatic architectural illumination, clean documentary backdrop, 8k render, Unreal Engine 5 look.`,
+        ]
+          .filter(Boolean)
+          .join(' ');
+        console.log(
+          `[Character Studio] 🏢 Generando imagen oficial 3D asistida por LOGO/SEDE DE REFERENCIA para la empresa "${activeChar.name}" (${preset.label})...`
+        );
+      } else {
+        // PROMPT GENERATIVO DE TEXTO PARA EMPRESA
+        portraitPrompt = [
+          `Masterpiece 3D stylized cinematic visual representation of ${activeChar.name} (${activeChar.role}).`,
+          activeChar.anchor_prompt,
+          `STYLE: ${preset.prompt}`,
+          customStyle ? `STYLE DIRECTIVES: ${customStyle}.` : '',
+          `COMPOSITION: Iconic centerpiece representation of the company / brand ${activeChar.name}, modern architectural campus or bold 3D company motif, volumetric dramatic studio lighting, 8k documentary render, clean presentation, NO random human face in center.`,
+          activeChar.signature_props?.length
+            ? `Key visual motifs: ${activeChar.signature_props.join(', ')}.`
+            : '',
+        ]
+          .filter(Boolean)
+          .join(' ');
+        console.log(
+          `[Character Studio] 🏢 Generando imagen oficial 3D (sin foto) para la empresa "${activeChar.name}" (${preset.label})...`
+        );
+      }
+    } else if (refImage) {
+      // PROMPT GUIADO POR FOTO REAL HUMANA: Se enfoca en estilo deseado y fidelidad de facciones para evitar alucinaciones
       portraitPrompt = [
         `TRANSFORM THE REAL PERSON SHOWN IN THE ATTACHED REFERENCE PHOTO into an individual stylized character portrait:`,
         `ARTISTIC STYLE TARGET: ${preset.prompt}`,
         customStyle ? `ADDITIONAL AESTHETIC DIRECTIVES: ${customStyle}.` : '',
+        ageDetail,
         `FACIAL LIKENESS DIRECTIVE: Strictly preserve and capture the identifiable facial likeness, facial bone geometry, eye shape, nose structure, lips, jawline, hair color, haircut and beard/mustache of the real human in the reference photograph. Do NOT invent a different person. Faithfully translate their real-world features into this artistic style.`,
         `COMPOSITION & POSING: Strictly ONE SINGLE INDIVIDUAL PERSON IN FRAME (solo centered front-facing bust portrait of ${activeChar.name} alone, looking directly towards the viewer, NO second person, NO background crowd, NO split screen). Direct confident gaze.`,
         loreQuirks,
         activeChar.signature_props?.length
           ? `Signature accessories: ${activeChar.signature_props.join(', ')}.`
           : '',
-        `STUDIO POLISH: Volumetric rim lighting, dramatic three-point studio lighting, deep clean documentary backdrop, 8k render, Unreal Engine 5 look, NO text, NO captions, NO logos, NO watermarks.`,
+        `STUDIO POLISH: Volumetric rim lighting, dramatic three-point studio lighting, deep clean documentary backdrop, 8k render, Unreal Engine 5 look, NO text, NO watermarks.`,
       ]
         .filter(Boolean)
         .join(' ');
@@ -484,9 +503,10 @@ export class ImageService {
         `[Character Studio] 📸 Generando retrato con IA asistido por FOTO REAL DE FRENTE para "${activeChar.name}" (${preset.label})...`
       );
     } else {
-      // PROMPT GENERATIVO DE TEXTO (para figuras muy conocidas o personajes de Lore sin foto real)
+      // PROMPT GENERATIVO DE TEXTO PARA PERSONA (para figuras muy conocidas o personajes de Lore sin foto real)
       portraitPrompt = [
         `Masterpiece solo character portrait of ${activeChar.name} (${activeChar.role}).`,
+        ageDetail,
         activeChar.anchor_prompt,
         `STYLE: ${preset.prompt}`,
         customStyle ? `STYLE DIRECTIVES: ${customStyle}.` : '',
@@ -802,13 +822,16 @@ export class ImageService {
       })
       .filter((r): r is { char: CharacterProfile; base64: string; mimeType: string } => Boolean(r));
 
-    const useCharImageRef =
-      charRefs.length > 0 &&
+    const hasExplicitChar = sceneCharacters.length > 0 && sceneCharacters.some((c) => c.character_category !== 'company_or_brand');
+    const isHumanShot =
       shotType !== 'object_detail' &&
-      shotType !== 'concept_diagram';
+      shotType !== 'concept_diagram' &&
+      shotType !== 'environment_wide';
+
+    const useCharImageRef = charRefs.length > 0 && hasExplicitChar && isHumanShot;
 
     const castLabel =
-      sceneCharacters.length > 0 ? sceneCharacters.map((c) => c.name).join(' + ') : 'Arquetipo';
+      sceneCharacters.length > 0 ? sceneCharacters.map((c) => c.name).join(' + ') : 'Sin personaje (Entorno / Objeto)';
 
     console.log(`\n========================================================`);
     console.log(`🎬 [Escena ${sceneId}/${totalScenes}] ${actRule.act_name} | Plano: ${shotType || 'auto'}`);

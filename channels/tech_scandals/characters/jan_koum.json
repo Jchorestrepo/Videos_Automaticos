@@ -1,0 +1,292 @@
+{
+  "character_id": "jan_koum",
+  "channel_id": "tech_scandals",
+  "name": "Jan Koum",
+  "role": "Contraparte / Rival en WhatsApp",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "WhatsApp",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Jan Koum (WhatsApp), single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "WhatsApp branded office environment",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792464307808_523.jpg",
+    "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792462811222_832.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792462735708_582.jpg",
+    "/channel-assets/tech_scandals/characters/assets/jan_koum_ai_1792360425689.jpg",
+    "/channel-assets/tech_scandals/characters/assets/jan_koum_ai_1792350975488.jpg",
+    "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792292850985_81.jpg",
+    "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792290556523_595.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290506854_536.jpg",
+    "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792289572102_320.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289516266_970.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792464307808_2042m",
+      "url": "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792464307808_523.jpg",
+      "prompt": "Single unified 16:9 frame of a ticking bomb icon surrounded by dollar signs and privacy padlocks.",
+      "description": "La Bomba de Relojería",
+      "characterId": "jan_koum",
+      "characterName": "Jan Koum",
+      "characterIds": [
+        "jan_koum"
+      ],
+      "characterNames": [
+        "Jan Koum"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "jan",
+        "koum",
+        "ticking",
+        "bomb",
+        "icon",
+        "surrounded",
+        "dollar"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 12,
+      "createdAt": "2026-10-20T02:45:07.808Z"
+    },
+    {
+      "id": "asset_1792462811222_7shk6",
+      "url": "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792462811222_832.jpg",
+      "prompt": "Wide shot of Jan Koum's empty office chair at WhatsApp HQ, nameplate still on the desk, with the Facebook 'Like' sign glowing ominously through the window at night.",
+      "description": "El Abandono del Cofundador",
+      "characterId": "jan_koum",
+      "characterName": "Jan Koum",
+      "characterIds": [
+        "jan_koum",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Jan Koum",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "jan",
+        "koum,",
+        "mark",
+        "zuckerberg",
+        "koum",
+        "empty",
+        "office"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 21,
+      "createdAt": "2026-10-20T02:20:11.222Z"
+    },
+    {
+      "id": "asset_1792462735742_g5oco",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792462735708_582.jpg",
+      "prompt": "The empty office space with peeling paint that became WhatsApp's first HQ, showing a single desk with two computers back-to-back, afternoon light streaming through dusty windows.",
+      "description": "El Nacimiento de un Unicornio",
+      "characterId": "jan_koum",
+      "characterName": "Jan Koum",
+      "characterIds": [
+        "brian_acton",
+        "jan_koum"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Jan Koum"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "environment_wide",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "jan",
+        "koum",
+        "empty",
+        "office",
+        "space"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 7,
+      "createdAt": "2026-10-20T02:18:55.742Z"
+    },
+    {
+      "id": "asset_1792292850987_98cvv",
+      "url": "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792292850985_81.jpg",
+      "prompt": "Single unified 16:9 frame of a ticking bomb icon surrounded by dollar signs and privacy padlocks.",
+      "description": "La Bomba de Relojería",
+      "characterId": "jan_koum",
+      "characterName": "Jan Koum",
+      "characterIds": [
+        "jan_koum"
+      ],
+      "characterNames": [
+        "Jan Koum"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "jan",
+        "koum",
+        "ticking",
+        "bomb",
+        "icon",
+        "surrounded",
+        "dollar"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 12,
+      "createdAt": "2026-10-18T03:07:30.987Z"
+    },
+    {
+      "id": "asset_1792290556543_tpuvu",
+      "url": "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792290556523_595.jpg",
+      "prompt": "Wide shot of Jan Koum's empty office chair at WhatsApp HQ, nameplate still on the desk, with the Facebook 'Like' sign glowing ominously through the window at night.",
+      "description": "El Abandono del Cofundador",
+      "characterId": "jan_koum",
+      "characterName": "Jan Koum",
+      "characterIds": [
+        "jan_koum",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Jan Koum",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "jan",
+        "koum,",
+        "mark",
+        "zuckerberg",
+        "koum",
+        "empty",
+        "office"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 21,
+      "createdAt": "2026-10-18T02:29:16.543Z"
+    },
+    {
+      "id": "asset_1792290506860_8ylnv",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290506854_536.jpg",
+      "prompt": "Close-up of a pen signing the $19B acquisition contract on a wooden desk, with food stamp coupons subtly visible in the blurred background, shallow depth of field.",
+      "description": "Firma en la Humildad",
+      "characterId": "jan_koum",
+      "characterName": "Jan Koum",
+      "characterIds": [
+        "brian_acton",
+        "jan_koum"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Jan Koum"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Cancha / Entorno Deportivo",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "object_detail",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "jan",
+        "koum",
+        "close",
+        "signing",
+        "acquisition"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 18,
+      "createdAt": "2026-10-18T02:28:26.860Z"
+    },
+    {
+      "id": "asset_1792289572106_56vgl",
+      "url": "/channel-assets/tech_scandals/characters/assets/jan_koum_frame_1792289572102_320.jpg",
+      "prompt": "Single unified 16:9 frame of a ticking bomb icon surrounded by dollar signs and privacy padlocks.",
+      "description": "La Bomba de Relojería",
+      "characterId": "jan_koum",
+      "characterName": "Jan Koum",
+      "characterIds": [
+        "jan_koum"
+      ],
+      "characterNames": [
+        "Jan Koum"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "jan",
+        "koum",
+        "ticking",
+        "bomb",
+        "icon",
+        "surrounded",
+        "dollar"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 12,
+      "createdAt": "2026-10-18T02:12:52.106Z"
+    },
+    {
+      "id": "asset_1792289516270_meod9",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289516266_970.jpg",
+      "prompt": "The empty office space with peeling paint that became WhatsApp's first HQ, showing a single desk with two computers back-to-back, afternoon light streaming through dusty windows.",
+      "description": "El Nacimiento de un Unicornio",
+      "characterId": "jan_koum",
+      "characterName": "Jan Koum",
+      "characterIds": [
+        "brian_acton",
+        "jan_koum"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Jan Koum"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "environment_wide",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "jan",
+        "koum",
+        "empty",
+        "office",
+        "space"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 7,
+      "createdAt": "2026-10-18T02:11:56.270Z"
+    }
+  ],
+  "updatedAt": "2026-10-20T02:45:07.808Z",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/jan_koum_ai_1792360425689.jpg",
+  "real_reference_image_url": "/channel-assets/tech_scandals/characters/assets/jan_koum_realref_1792350969298.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

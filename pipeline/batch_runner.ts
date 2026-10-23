@@ -49,30 +49,57 @@ async function runAutonomousPipeline() {
   );
   console.log(`  ✓ Guion generado con ${script.scenes.length} escenas.`);
 
-  // 3.1 Identificar o redactar personaje ancla en biblioteca
+  // 3.1 Identificar o redactar elenco individual en biblioteca
   const { CharacterService } = await import('../server/services/characterService.ts');
-  const character = CharacterService.findOrDraftCharacter(
-    persona.channel_id,
-    targetCase.characterCompany,
-    targetCase.title,
-    targetCase.conflict
-  );
-  script.characters = [character];
+  if (!script.characters || script.characters.length === 0) {
+    script.characters = CharacterService.resolveCastForStory(
+      persona.channel_id,
+      targetCase.characterCompany,
+      targetCase.title,
+      targetCase.conflict
+    );
+    script.scenes = CharacterService.assignCharactersToScenes(script.scenes, script.characters);
+  }
   script.artStyle = '3d_animation';
-  console.log(`  🎭 Personaje ancla asignado: "${character.name}" (${character.character_id})`);
+  console.log(
+    `  🎭 Elenco asignado (${script.characters.length}): ${script.characters.map((c) => `"${c.name}" (${c.character_id})`).join(', ')}`
+  );
 
   // 4. Generar Activos Visuales (Multi-Proveedor con Arco Emocional y Consistencia)
   console.log('\n[2/3] Generando imágenes 16:9 con arco emocional por actos...');
   const totalScenes = script.scenes.length;
-  for (const scene of script.scenes) {
-    console.log(`  - Generando escena ${scene.scene_id}/${totalScenes}: ${scene.chapter} [${scene.shot_type || 'auto'}]`);
+  for (const [i, scene] of script.scenes.entries()) {
+    const sceneCast =
+      scene.character_ids && scene.character_ids.length > 0
+        ? scene.character_ids
+            .map(
+              (id) =>
+                script.characters?.find((c) => c.character_id === id) ||
+                CharacterService.getCharacter(persona.channel_id, id)
+            )
+            .filter((c): c is NonNullable<typeof c> => Boolean(c))
+        : script.characters?.[0]
+          ? [script.characters[0]]
+          : [];
+
+    if (i > 0) {
+      const isUsingVertex =
+        process.env.GOOGLE_GENAI_USE_VERTEXAI === 'true' ||
+        Boolean(process.env.GOOGLE_CLOUD_PROJECT);
+      const paceMs = isUsingVertex ? 9500 : 1500;
+      await new Promise((r) => setTimeout(r, paceMs));
+    }
+
+    console.log(
+      `  - Generando escena ${scene.scene_id}/${totalScenes}: ${scene.chapter} [${scene.shot_type || 'auto'}] (${sceneCast.map((c) => c.name).join(' + ')})`
+    );
     const imageUrl = await ImageService.generateSceneImage(
       script.project_id,
       scene.scene_id,
       scene.visual_prompt,
       scene.chapter,
       persona.channel_id,
-      character,
+      sceneCast,
       totalScenes,
       script.artStyle,
       scene.shot_type

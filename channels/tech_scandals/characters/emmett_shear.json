@@ -1,0 +1,94 @@
+{
+  "character_id": "emmett_shear",
+  "channel_id": "tech_scandals",
+  "name": "Emmett Shear",
+  "role": "Contraparte / Rival en Justin.tv (Twitch)",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Justin.tv (Twitch)",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Emmett Shear (Justin.tv (Twitch)), single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "Justin.tv (Twitch) branded office environment",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/emmett_shear_frame_1792781614331_809.jpg",
+    "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781234421_513.jpg",
+    "/channel-assets/tech_scandals/characters/assets/emmett_shear_ai_1792779931683.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792781614335_00bha",
+      "url": "/channel-assets/tech_scandals/characters/assets/emmett_shear_frame_1792781614331_809.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Wide shot of a bustling startup office at night. Engineers huddle around monitors, some typing frantically, others on phones. In the center, Emmett Shear and Michael Seibel stand over a table covered with laptops and papers, their faces illuminated by the glow. The room is cluttered with cables and empty coffee cups, conveying urgency.",
+      "description": "La Guerra por Twitch",
+      "characterId": "emmett_shear",
+      "characterName": "Emmett Shear",
+      "characterIds": [
+        "emmett_shear",
+        "michael_seibel"
+      ],
+      "characterNames": [
+        "Emmett Shear",
+        "Michael Seibel"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "environment_wide",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "emmett",
+        "shear,",
+        "michael",
+        "seibel",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 20,
+      "createdAt": "2026-10-23T18:53:34.335Z"
+    },
+    {
+      "id": "asset_1792781234456_hv0k8",
+      "url": "/channel-assets/tech_scandals/characters/assets/justin_kan_frame_1792781234421_513.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Wide shot of a cramped startup office with two young men (Justin Kan and Emmett Shear) looking at a computer screen, papers scattered, whiteboard with diagrams, 2005 setting, natural lighting.",
+      "description": "Raíces y fracasos",
+      "characterId": "emmett_shear",
+      "characterName": "Emmett Shear",
+      "characterIds": [
+        "justin_kan",
+        "emmett_shear"
+      ],
+      "characterNames": [
+        "Justin Kan",
+        "Emmett Shear"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "environment_wide",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "justin",
+        "kan,",
+        "emmett",
+        "shear",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 5,
+      "createdAt": "2026-10-23T18:47:14.456Z"
+    }
+  ],
+  "updatedAt": "2026-10-23T18:53:34.335Z",
+  "real_reference_image_url": "/channel-assets/tech_scandals/characters/assets/emmett_shear_realref_1792779929827.jpg",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/emmett_shear_ai_1792779931683.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

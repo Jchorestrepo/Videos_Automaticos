@@ -1,0 +1,46 @@
+{
+  "character_id": "juanito",
+  "channel_id": "archivo_confidencial",
+  "name": "Juanito",
+  "role": "Personaje Recurrente del Canal • Joven Entusiasta del Deporte, Beta Tester y Creador",
+  "real_person": false,
+  "character_category": "channel_lore_cast",
+  "known_face": false,
+  "company_or_affiliation": "Elenco con Lore del Canal",
+  "channel_lore": {
+    "age": "15 años",
+    "personality_traits": [
+      "Alegre",
+      "Amor por el deporte",
+      "Curioso",
+      "Optimista",
+      "Hiperactivo digital"
+    ],
+    "peculiarities": [
+      "Siempre usa una gorra deportiva azul hacia atrás",
+      "Viste una chaqueta o sudadera deportiva con el número 10 y auriculares al cuello",
+      "Siempre tiene un balón de fútbol o un cronómetro deportivo cerca de su escritorio",
+      "Usa analogías deportivas y celebra como si metiera un gol cuando descubre algo nuevo"
+    ],
+    "channel_backstory": "Juanito es un chico de 15 años alegre y apasionado por el deporte que vive conectado probando cada nueva plataforma, app viral o tendencia tecnológica. Cuando en una historia aparece un usuario temprano, un creador joven, un testigo cotidiano o un personaje del que no se conoce el rostro, Juanito entra en acción como parte del lore oficial del canal.",
+    "reusable_archetypes": [
+      "usuario joven",
+      "creador de contenido",
+      "beta tester",
+      "estudiante",
+      "comunidad de usuarios",
+      "testigo cotidiano",
+      "personaje sin rostro conocido"
+    ],
+    "appearances": []
+  },
+  "anchor_prompt": "Stylized 3D cinematic animated character of Juanito, a cheerful 15-year-old boy with a passion for sports, warm expressive eyes, bright energetic smile, wearing a signature backwards blue athletic cap, sporty jersey hoodie with number 10, headphones around his neck, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, single individual 3D documentary render",
+  "signature_props": [
+    "backwards blue sports cap",
+    "soccer ball next to laptop",
+    "sporty digital chronograph watch"
+  ],
+  "reference_gallery": [],
+  "assets": [],
+  "updatedAt": "2026-10-19T07:08:30.066Z"
+}

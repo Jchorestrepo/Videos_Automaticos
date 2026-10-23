@@ -206,13 +206,26 @@ export class AudioService {
 
   /**
    * Verifica si el backend local de VoiceStudio está activo en http://127.0.0.1:3900
+   * Usa /system/info (latencia ~2ms) en lugar de /v1/audio/voices (que escanea motores y tarda ~3s)
    */
   static async isVoiceStudioAvailable(): Promise<boolean> {
     try {
       const voiceStudioUrl = process.env.VOICESTUDIO_URL || 'http://127.0.0.1:3900';
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 1500);
-      const res = await fetch(`${voiceStudioUrl}/v1/audio/voices`, {
+      const timeoutId = setTimeout(() => controller.abort(), 3000);
+      const res = await fetch(`${voiceStudioUrl}/system/info`, {
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
+      if (res.ok) return true;
+    } catch {
+      // ignore and try /profiles fallback
+    }
+    try {
+      const voiceStudioUrl = process.env.VOICESTUDIO_URL || 'http://127.0.0.1:3900';
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3000);
+      const res = await fetch(`${voiceStudioUrl}/profiles`, {
         signal: controller.signal,
       });
       clearTimeout(timeoutId);
@@ -223,34 +236,83 @@ export class AudioService {
   }
 
   /**
-   * Obtiene la lista de perfiles o voces disponibles en VoiceStudio (ordenando perfiles clonados primero)
+   * Obtiene la lista de perfiles de voz disponibles en VoiceStudio (consultando /profiles en ~2ms
+   * y asegurando siempre los perfiles locales instalados como fallback).
    */
   static async getVoiceStudioVoices(): Promise<Array<{ id: string; name: string; type?: string; language?: string }>> {
+    const defaultLocalProfiles = [
+      { id: 'b4b14f0e', name: 'Gomorra', type: 'profile', language: 'Spanish' },
+      { id: '3ed550f0', name: 'Spanish Narrator', type: 'profile', language: 'Spanish' },
+      { id: '1236af3e', name: 'Spanish Explainer', type: 'profile', language: 'Spanish' },
+      { id: '411ae987', name: 'Spanish Companion', type: 'profile', language: 'Spanish' },
+      { id: 'demo0001', name: 'VoiceStudio Demo Voice', type: 'profile', language: 'English' },
+    ];
+
     try {
       const voiceStudioUrl = process.env.VOICESTUDIO_URL || 'http://127.0.0.1:3900';
+
+      // 1. Consultar /profiles primero (responde en ~2ms con todos los clones y diseños de voz reales)
+      const profController = new AbortController();
+      const profTimeout = setTimeout(() => profController.abort(), 3500);
+      const profRes = await fetch(`${voiceStudioUrl}/profiles`, {
+        signal: profController.signal,
+      });
+      clearTimeout(profTimeout);
+
+      if (profRes.ok) {
+        const profiles: any[] = await profRes.json();
+        if (Array.isArray(profiles) && profiles.length > 0) {
+          const mapped = profiles.map((p: any) => ({
+            id: p.id || p.name?.toLowerCase(),
+            name: p.name || p.id,
+            type: p.is_demo === 1 ? 'demo' : 'profile',
+            language:
+              p.name?.toLowerCase().includes('gomorra') ||
+              (p.language || '').toLowerCase().includes('spanish') ||
+              (p.language || '').toLowerCase().includes('es')
+                ? 'Spanish'
+                : p.language || 'Auto',
+          }));
+
+          return mapped.sort((a, b) => {
+            const aGomorra = a.name.toLowerCase().includes('gomorra') ? -1 : 0;
+            const bGomorra = b.name.toLowerCase().includes('gomorra') ? -1 : 0;
+            if (aGomorra !== bGomorra) return aGomorra - bGomorra;
+            const aEs = a.language === 'Spanish' ? -1 : 0;
+            const bEs = b.language === 'Spanish' ? -1 : 0;
+            if (aEs !== bEs) return aEs - bEs;
+            return a.name.localeCompare(b.name);
+          });
+        }
+      }
+
+      // 2. Fallback a /v1/audio/voices con timeout amplio de 5000ms
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 2000);
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
       const res = await fetch(`${voiceStudioUrl}/v1/audio/voices`, {
         signal: controller.signal,
       });
       clearTimeout(timeoutId);
-      if (!res.ok) return [];
-      const data: any = await res.json();
-      const list = (data.voices || []).map((v: any) => ({
-        id: v.voice_id || v.name?.toLowerCase(),
-        name: v.name,
-        type: v.type || 'profile',
-        language: v.language || 'Auto',
-      }));
+      if (res.ok) {
+        const data: any = await res.json();
+        const list = (data.voices || []).map((v: any) => ({
+          id: v.voice_id || v.name?.toLowerCase(),
+          name: v.name,
+          type: v.type || 'profile',
+          language: v.language || 'Auto',
+        }));
+        if (list.length > 0) {
+          return list.sort((a: any, b: any) => {
+            if (a.type === 'profile' && b.type !== 'profile') return -1;
+            if (a.type !== 'profile' && b.type === 'profile') return 1;
+            return a.name.localeCompare(b.name);
+          });
+        }
+      }
 
-      // Ordenar: primero los perfiles personalizados/clonados (ej. Gomorra), luego alias genéricos
-      return list.sort((a: any, b: any) => {
-        if (a.type === 'profile' && b.type !== 'profile') return -1;
-        if (a.type !== 'profile' && b.type === 'profile') return 1;
-        return a.name.localeCompare(b.name);
-      });
+      return defaultLocalProfiles;
     } catch {
-      return [];
+      return defaultLocalProfiles;
     }
   }
 
@@ -409,7 +471,8 @@ export class AudioService {
     voiceoverText: string,
     channelId: string,
     preferredProvider: 'voicestudio' | 'elevenlabs' | 'openai' = 'voicestudio',
-    customVoiceName?: string
+    customVoiceName?: string,
+    isEnglish: boolean = false
   ): Promise<AudioGenerationResult> {
     dotenv.config({ override: true });
     const openaiKey = (process.env.OPENAI_API_KEY || '').trim();
@@ -457,7 +520,8 @@ export class AudioService {
         elevenlabsKey,
         sceneId,
         audioPath,
-        publicAudioUrl
+        publicAudioUrl,
+        customVoiceName
       );
       if (elevenRes) return elevenRes;
     }
@@ -472,7 +536,8 @@ export class AudioService {
         openaiKey,
         sceneId,
         audioPath,
-        publicAudioUrl
+        publicAudioUrl,
+        customVoiceName
       );
       if (openAiRes) return openAiRes;
     }
@@ -485,7 +550,8 @@ export class AudioService {
       projectAudioDir,
       audioPath,
       publicAudioUrl,
-      preferredProvider === 'elevenlabs'
+      isEnglish,
+      customVoiceName
     );
     if (edgeRes) return edgeRes;
 
@@ -507,10 +573,20 @@ export class AudioService {
     openaiKey: string,
     sceneId: number,
     audioPath: string,
-    publicAudioUrl: string
+    publicAudioUrl: string,
+    customVoiceName?: string
   ): Promise<AudioGenerationResult | null> {
     try {
-      const { voice, voiceName } = this.getOpenAIVoiceForChannel(channelId);
+      let voice: any = 'onyx';
+      let voiceName = 'OpenAI Onyx';
+      if (customVoiceName && /^(alloy|echo|fable|onyx|nova|shimmer|ash)$/i.test(customVoiceName.trim())) {
+        voice = customVoiceName.toLowerCase().trim();
+        voiceName = `OpenAI ${customVoiceName}`;
+      } else {
+        const def = this.getOpenAIVoiceForChannel(channelId);
+        voice = def.voice;
+        voiceName = def.voiceName;
+      }
       console.log(`[OpenAI TTS] Generando escena ${sceneId} con "${voiceName}"...`);
 
       const res = await fetch('https://api.openai.com/v1/audio/speech', {
@@ -567,10 +643,20 @@ export class AudioService {
     projectAudioDir: string,
     audioPath: string,
     publicAudioUrl: string,
-    isEnglish: boolean
+    isEnglish: boolean,
+    customVoiceName?: string
   ): Promise<AudioGenerationResult | null> {
     try {
-      const { voice, voiceName } = this.getEdgeNeuralVoiceForChannel(channelId, isEnglish);
+      let voice = '';
+      let voiceName = '';
+      if (customVoiceName && /^(es|en)-[A-Z]{2}-.+Neural$/i.test(customVoiceName.trim())) {
+        voice = customVoiceName.trim();
+        voiceName = `Edge ${voice}`;
+      } else {
+        const def = this.getEdgeNeuralVoiceForChannel(channelId, isEnglish);
+        voice = def.voice;
+        voiceName = def.voiceName;
+      }
       console.log(`[Edge Neural TTS] Generando escena ${sceneId} con "${voiceName}" (Gratis)...`);
 
       const tmpDir = path.join(projectAudioDir, `_tmp_${sceneId}_${Date.now()}`);
@@ -615,10 +701,39 @@ export class AudioService {
     elevenlabsKey: string,
     sceneId: number,
     audioPath: string,
-    publicAudioUrl: string
+    publicAudioUrl: string,
+    customVoiceName?: string
   ): Promise<AudioGenerationResult | null> {
     try {
-      const { voiceId, voiceName } = this.getElevenLabsVoiceForChannel(channelId);
+      let voiceId = '';
+      let voiceName = '';
+
+      if (customVoiceName) {
+        const raw = customVoiceName.trim();
+        if (/^[a-zA-Z0-9_-]{18,24}$/.test(raw)) {
+          voiceId = raw;
+          voiceName = `Custom ElevenLabs (${raw.slice(0, 8)})`;
+        } else {
+          const lower = raw.toLowerCase();
+          if (lower.includes('antoni')) {
+            voiceId = 'ErXwobaYiN019PkySvjV';
+            voiceName = 'Antoni (Historical Narrator)';
+          } else if (lower.includes('adam')) {
+            voiceId = 'pNInz6obpgDQGcFmaJgB';
+            voiceName = 'Adam (Tech Thriller Narrator)';
+          } else if (lower.includes('rachel')) {
+            voiceId = '21m00Tcm4TlvDq8ikWAM';
+            voiceName = 'Rachel';
+          }
+        }
+      }
+
+      if (!voiceId) {
+        const def = this.getElevenLabsVoiceForChannel(channelId);
+        voiceId = def.voiceId;
+        voiceName = def.voiceName;
+      }
+
       console.log(`[ElevenLabs TTS] Generando escena ${sceneId} con voz "${voiceName}"...`);
       const res = await fetch(
         `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/with-timestamps`,
@@ -673,4 +788,279 @@ export class AudioService {
     }
     return null;
   }
+
+  /**
+   * Sincroniza la duración de cada escena al máximo entre la pista inglesa y la española
+   * para garantizar que el render de Remotion dé tiempo suficiente para ambos audios
+   * y que FFmpeg jamás corte una frase hablada en ningún idioma.
+   */
+  static async synchronizeBilingualDurations(project: any): Promise<{ modified: boolean }> {
+    const projectDir = path.join(STORAGE_DIR, project.project_id);
+    let modified = false;
+
+    if (!project.scenes || !Array.isArray(project.scenes)) {
+      return { modified: false };
+    }
+
+    for (let i = 0; i < project.scenes.length; i++) {
+      const scene = project.scenes[i];
+      const sceneEs = project.scenes_es?.[i];
+      const sceneEn = project.scenes_en?.[i];
+
+      // 1. Determinar duración real de audio en español
+      let durEs = sceneEs?.audioDurationSeconds || 0;
+      if (!durEs) {
+        const esAudioPath = path.join(projectDir, 'audio_es', `scene_${scene.scene_id}.mp3`);
+        if (fs.existsSync(esAudioPath)) {
+          durEs = (await this.probeAudioDuration(esAudioPath)) || 0;
+        } else if (project.language === 'es') {
+          const directAudioPath = path.join(projectDir, 'audio', `scene_${scene.scene_id}.mp3`);
+          if (fs.existsSync(directAudioPath)) {
+            durEs = (await this.probeAudioDuration(directAudioPath)) || 0;
+          }
+        }
+      }
+
+      // 2. Determinar duración real de audio en inglés
+      let durEn = sceneEn?.audioDurationSeconds || 0;
+      if (!durEn) {
+        const enAudioPath = path.join(projectDir, 'audio_en', `scene_${scene.scene_id}.mp3`);
+        if (fs.existsSync(enAudioPath)) {
+          durEn = (await this.probeAudioDuration(enAudioPath)) || 0;
+        } else if (project.language === 'en') {
+          const directAudioPath = path.join(projectDir, 'audio', `scene_${scene.scene_id}.mp3`);
+          if (fs.existsSync(directAudioPath)) {
+            durEn = (await this.probeAudioDuration(directAudioPath)) || 0;
+          }
+        }
+      }
+
+      const currentDuration = scene.durationInSeconds || 5;
+      const targetDuration = Number(Math.max(currentDuration, durEs, durEn, 4).toFixed(2));
+
+      if (Math.abs(targetDuration - currentDuration) > 0.05) {
+        scene.durationInSeconds = targetDuration;
+        modified = true;
+      }
+      if (durEs > 0 && sceneEs) {
+        sceneEs.audioDurationSeconds = durEs;
+      }
+      if (durEn > 0 && sceneEn) {
+        sceneEn.audioDurationSeconds = durEn;
+      }
+    }
+
+    return { modified };
+  }
+
+  /**
+   * Concatena y normaliza a -14 LUFS (estándar de YouTube) la pista completa de audio
+   * para un idioma dado, asegurando sincronización escena por escena con el video.
+   * NUNCA corta el audio de una escena hablada: si el audio dura más que el tiempo previsto,
+   * se respeta la duración completa del locutor.
+   */
+  static async stitchAudioTrack(
+    projectId: string,
+    scenes: Array<{ scene_id: number; durationInSeconds: number }>,
+    language: 'en' | 'es' = 'es'
+  ): Promise<{ audioUrl: string; duration: number; filePath: string }> {
+    const projectDir = path.join(STORAGE_DIR, projectId);
+    let audioSubdir = language === 'es' ? 'audio_es' : 'audio';
+    let audioDirPath = path.join(projectDir, audioSubdir);
+
+    // Si language es 'es' y no existe audio_es, revisar si los audios están en audio/
+    if (language === 'es' && !fs.existsSync(audioDirPath)) {
+      const fallbackAudioDir = path.join(projectDir, 'audio');
+      if (fs.existsSync(fallbackAudioDir)) {
+        audioDirPath = fallbackAudioDir;
+      }
+    }
+
+    const tempDir = path.join(projectDir, `_temp_stitch_${language}_${Date.now()}`);
+    if (!fs.existsSync(tempDir)) {
+      fs.mkdirSync(tempDir, { recursive: true });
+    }
+
+    const concatListLines: string[] = [];
+    let totalCalculatedDuration = 0;
+
+    for (let i = 0; i < scenes.length; i++) {
+      const scene = scenes[i];
+      const expectedFile = `scene_${scene.scene_id}.mp3`;
+      let inputPath = path.join(audioDirPath, expectedFile);
+      if (!fs.existsSync(inputPath) && language === 'es') {
+        const altPath = path.join(projectDir, 'audio', expectedFile);
+        if (fs.existsSync(altPath)) inputPath = altPath;
+      }
+
+      const paddedPath = path.join(tempDir, `padded_${scene.scene_id}.wav`);
+
+      let fileDuration = 0;
+      if (fs.existsSync(inputPath)) {
+        fileDuration = (await this.probeAudioDuration(inputPath)) || 0;
+      }
+
+      // CRITICAL FIX: El duration nunca debe ser menor al archivo hablado
+      const duration = Number(Math.max(scene.durationInSeconds || 5, fileDuration, 1).toFixed(2));
+      totalCalculatedDuration += duration;
+
+      if (fs.existsSync(inputPath)) {
+        // Rellenar con apad hasta la duración exacta sin recortar la voz
+        await execFileAsync('ffmpeg', [
+          '-y',
+          '-i',
+          inputPath,
+          '-af',
+          'apad',
+          '-t',
+          String(duration),
+          '-ar',
+          '44100',
+          '-ac',
+          '2',
+          paddedPath,
+        ]);
+      } else {
+        // Generar silencio exacto si no hay audio para esa escena
+        await execFileAsync('ffmpeg', [
+          '-y',
+          '-f',
+          'lavfi',
+          '-i',
+          'anullsrc=r=44100:cl=stereo',
+          '-t',
+          String(duration),
+          paddedPath,
+        ]);
+      }
+
+      concatListLines.push(`file '${paddedPath}'`);
+    }
+
+    const listFilePath = path.join(tempDir, 'concat_list.txt');
+    fs.writeFileSync(listFilePath, concatListLines.join('\n'), 'utf-8');
+
+    const outputFilename = language === 'es' ? 'audio_spanish_track.mp3' : 'audio_master_en.mp3';
+    const finalOutputPath = path.join(projectDir, outputFilename);
+
+    console.log(`[Audio Stitcher] Concatenando y normalizando pista ${language} a -14 LUFS para YouTube...`);
+
+    await execFileAsync('ffmpeg', [
+      '-y',
+      '-f',
+      'concat',
+      '-safe',
+      '0',
+      '-i',
+      listFilePath,
+      '-af',
+      'loudnorm=I=-14:LRA=7:tp=-2',
+      '-b:a',
+      '192k',
+      finalOutputPath,
+    ]);
+
+    // Limpieza de archivos temporales
+    try {
+      fs.rmSync(tempDir, { recursive: true, force: true });
+    } catch {}
+
+    const probedDuration =
+      (await this.probeAudioDuration(finalOutputPath)) || totalCalculatedDuration;
+    console.log(`[Audio Stitcher] ✓ Pista completa generada: ${outputFilename} (${probedDuration}s)`);
+
+    return {
+      audioUrl: `/storage/${projectId}/${outputFilename}`,
+      duration: probedDuration,
+      filePath: finalOutputPath,
+    };
+  }
+
+  /**
+   * Genera el audio doblado para una escena en la carpeta audio_es/
+   */
+  static async generateDubSceneAudio(
+    projectId: string,
+    sceneId: number,
+    voiceoverTextEs: string,
+    channelId: string,
+    preferredProvider: 'voicestudio' | 'elevenlabs' | 'openai' | 'edge' = 'edge',
+    customVoiceName?: string
+  ): Promise<AudioGenerationResult> {
+    dotenv.config({ override: true });
+    const openaiKey = (process.env.OPENAI_API_KEY || '').trim();
+    const elevenlabsKey = (process.env.ELEVENLABS_API_KEY || '').trim();
+
+    const dubAudioDir = path.join(STORAGE_DIR, projectId, 'audio_es');
+    if (!fs.existsSync(dubAudioDir)) {
+      fs.mkdirSync(dubAudioDir, { recursive: true });
+    }
+
+    const audioFilename = `scene_${sceneId}.mp3`;
+    const audioPath = path.join(dubAudioDir, audioFilename);
+    const publicAudioUrl = `/storage/${projectId}/audio_es/${audioFilename}`;
+
+    // 1. VoiceStudio Local si está disponible
+    if (preferredProvider === 'voicestudio') {
+      const vsRes = await this.tryVoiceStudioTTS(
+        voiceoverTextEs,
+        channelId,
+        sceneId,
+        audioPath,
+        publicAudioUrl,
+        customVoiceName || 'gomorra'
+      );
+      if (vsRes) return vsRes;
+    }
+
+    // 2. ElevenLabs si se seleccionó y hay clave
+    if (preferredProvider === 'elevenlabs' && elevenlabsKey) {
+      const elevenRes = await this.tryElevenLabsTTS(
+        voiceoverTextEs,
+        channelId,
+        elevenlabsKey,
+        sceneId,
+        audioPath,
+        publicAudioUrl,
+        customVoiceName
+      );
+      if (elevenRes) return { ...elevenRes, audioUrl: publicAudioUrl };
+    }
+
+    // 3. OpenAI TTS si hay clave
+    if (preferredProvider === 'openai' && openaiKey && openaiKey.startsWith('sk-')) {
+      const openAiRes = await this.tryOpenAITTS(
+        voiceoverTextEs,
+        channelId,
+        openaiKey,
+        sceneId,
+        audioPath,
+        publicAudioUrl,
+        customVoiceName
+      );
+      if (openAiRes) return { ...openAiRes, audioUrl: publicAudioUrl };
+    }
+
+    // 4. Edge Neural TTS en Español (Gratuito y de alta calidad)
+    const edgeRes = await this.tryEdgeNeuralTTS(
+      voiceoverTextEs,
+      channelId,
+      sceneId,
+      dubAudioDir,
+      audioPath,
+      publicAudioUrl,
+      false, // false = Español
+      customVoiceName
+    );
+    if (edgeRes) return edgeRes;
+
+    const { durationInSeconds, wordTimings } = this.generateSimulatedWordTimings(voiceoverTextEs);
+    return {
+      audioUrl: fs.existsSync(audioPath) ? publicAudioUrl : '',
+      durationInSeconds,
+      wordTimings,
+      providerUsed: 'simulated',
+    };
+  }
 }
+

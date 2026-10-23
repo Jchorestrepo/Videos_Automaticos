@@ -1,0 +1,150 @@
+{
+  "character_id": "elena_vega_auditora",
+  "channel_id": "tech_scandals",
+  "name": "Elena Vega (La Ingeniera Testigo)",
+  "role": "Personaje Recurrente del Canal • Desarrolladora Senior / Whistleblower / Analista",
+  "real_person": false,
+  "character_category": "channel_lore_cast",
+  "known_face": false,
+  "company_or_affiliation": "Elenco con Lore del Canal",
+  "channel_lore": {
+    "age": "29 años",
+    "personality_traits": [
+      "Escéptica",
+      "Brillante",
+      "Observadora",
+      "Adicta al café expreso"
+    ],
+    "peculiarities": [
+      "Usa gafas de montura fina metálica donde se reflejan gráficas y terminales",
+      "Siempre sostiene un termo negro lleno de stickers de ciberseguridad",
+      "Lleva una libreta roja de notas forenses donde subraya inconsistencias"
+    ],
+    "channel_backstory": "Elena Vega es el rostro recurrente del canal para representar a los ingenieros internos, auditores anónimos, ex-empleados o filtradores (whistleblowers) cuya identidad o fotografía real no es pública.",
+    "reusable_archetypes": [
+      "ingeniero anónimo",
+      "whistleblower",
+      "empleado interno",
+      "auditor financiero",
+      "desarrollador testigo",
+      "analista secundario"
+    ],
+    "appearances": [
+      {
+        "project_id": "proj_1792715738305",
+        "title": "Valía $4.500 Millones y un Simple Script la Destruyó: El Escándalo de Zenefits",
+        "role_in_story": "Juanito, el empleado común que descubre la verdad"
+      },
+      {
+        "project_id": "proj_1792289301259",
+        "title": "Rechazado por Facebook en 2009... 5 Años Después le Cobró $19.000 Millones: La Historia de WhatsApp",
+        "role_in_story": "El ingeniero idealista"
+      }
+    ]
+  },
+  "anchor_prompt": "Stylized 3D cinematic animated character of Elena Vega, a 29-year-old sharp female software engineer and forensic analyst, dark hair tied in a messy bun with a pencil, thin metallic glasses reflecting terminal code, sceptical observant expression, wearing a dark blazer over a tech hoodie, holding a black thermal mug with stickers, Pixar and Arcane inspired 3D documentary aesthetic, single individual render",
+  "signature_props": [
+    "black thermal coffee mug with security stickers",
+    "thin metallic glasses",
+    "red forensic notebook"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/elena_vega_auditora_frame_1792462774924_406.jpg",
+    "/channel-assets/tech_scandals/characters/assets/elena_vega_auditora_frame_1792292943966_160.jpg",
+    "/channel-assets/tech_scandals/characters/assets/elena_vega_auditora_frame_1792289591574_185.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792462774924_3tu5c",
+      "url": "/channel-assets/tech_scandals/characters/assets/elena_vega_auditora_frame_1792462774924_406.jpg",
+      "prompt": "Single unified 16:9 frame of Elena Vega holding a letter, her face reflecting the dilemma.",
+      "description": "La Analogía Reveladora",
+      "characterId": "elena_vega_auditora",
+      "characterName": "Elena Vega (La Ingeniera Testigo)",
+      "characterIds": [
+        "elena_vega_auditora"
+      ],
+      "characterNames": [
+        "Elena Vega (La Ingeniera Testigo)"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "character_closeup",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "elena",
+        "vega",
+        "(la",
+        "ingeniera",
+        "testigo)",
+        "holding",
+        "letter"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 14,
+      "createdAt": "2026-10-20T02:19:34.924Z"
+    },
+    {
+      "id": "asset_1792292943968_iklsz",
+      "url": "/channel-assets/tech_scandals/characters/assets/elena_vega_auditora_frame_1792292943966_160.jpg",
+      "prompt": "Single unified 16:9 frame of Elena Vega holding a letter, her face reflecting the dilemma.",
+      "description": "La Analogía Reveladora",
+      "characterId": "elena_vega_auditora",
+      "characterName": "Elena Vega (La Ingeniera Testigo)",
+      "characterIds": [
+        "elena_vega_auditora"
+      ],
+      "characterNames": [
+        "Elena Vega (La Ingeniera Testigo)"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "character_closeup",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "elena",
+        "vega",
+        "(la",
+        "ingeniera",
+        "testigo)",
+        "holding",
+        "letter"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 14,
+      "createdAt": "2026-10-18T03:09:03.968Z"
+    },
+    {
+      "id": "asset_1792289591578_h8mog",
+      "url": "/channel-assets/tech_scandals/characters/assets/elena_vega_auditora_frame_1792289591574_185.jpg",
+      "prompt": "Single unified 16:9 frame of Elena Vega holding a letter, her face reflecting the dilemma.",
+      "description": "La Analogía Reveladora",
+      "characterId": "elena_vega_auditora",
+      "characterName": "Elena Vega (La Ingeniera Testigo)",
+      "characterIds": [
+        "elena_vega_auditora"
+      ],
+      "characterNames": [
+        "Elena Vega (La Ingeniera Testigo)"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "character_closeup",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "elena",
+        "vega",
+        "(la",
+        "ingeniera",
+        "testigo)",
+        "holding",
+        "letter"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 14,
+      "createdAt": "2026-10-18T02:13:11.578Z"
+    }
+  ],
+  "updatedAt": "2026-10-23T00:35:53.682Z",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/elena_vega_auditora_frame_1792289591574_185.jpg"
+}

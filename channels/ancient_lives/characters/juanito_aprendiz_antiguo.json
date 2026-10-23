@@ -1,0 +1,43 @@
+{
+  "character_id": "juanito_aprendiz_antiguo",
+  "channel_id": "ancient_lives",
+  "name": "Juanito (El Joven Aprendiz)",
+  "role": "Personaje Recurrente del Canal • Aprendiz de Oficios y Mensajero Ágil",
+  "real_person": false,
+  "character_category": "channel_lore_cast",
+  "known_face": false,
+  "company_or_affiliation": "Elenco con Lore del Canal",
+  "channel_lore": {
+    "age": "15 años",
+    "personality_traits": [
+      "Alegre",
+      "Atlético y veloz",
+      "Curioso",
+      "Competitivo"
+    ],
+    "peculiarities": [
+      "Siempre lleva una cinta tejida azul atada en la frente al estilo corredor antiguo",
+      "Carga una pequeña pelota de cuero rellena de grano con la que hace malabares",
+      "Sonríe con entusiasmo incluso en los trabajos más agotadores"
+    ],
+    "channel_backstory": "Juanito es un joven de 15 años con energía inagotable y amor por las carreras y el deporte físico. En cada civilización antigua del canal aparece como el aprendiz joven, mensajero o ayudante sin rostro histórico conocido, manteniendo siempre su cinta azul y su espíritu deportivo.",
+    "reusable_archetypes": [
+      "joven aprendiz",
+      "mensajero",
+      "ayudante",
+      "ciudadano común",
+      "adolescente",
+      "personaje secundario sin rostro"
+    ],
+    "appearances": []
+  },
+  "anchor_prompt": "Stylized 3D cinematic animated character of Juanito, a cheerful 15-year-old athletic boy, warm expressive brown eyes, wide optimistic smile, wearing a distinctive woven blue headband across his forehead, simple historical tunic with rolled sleeves for running, holding a small stitched leather ball, Pixar and Arcane inspired 3D documentary aesthetic, single individual character render",
+  "signature_props": [
+    "woven blue runner headband",
+    "small stitched leather ball",
+    "messenger satchel"
+  ],
+  "reference_gallery": [],
+  "assets": [],
+  "updatedAt": "2026-10-17T09:38:23.589Z"
+}

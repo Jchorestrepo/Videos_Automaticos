@@ -1,0 +1,328 @@
+{
+  "character_id": "rus_yusupov",
+  "channel_id": "tech_scandals",
+  "name": "Rus Yusupov",
+  "role": "Co-fundador y Director de Diseño de Vine",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Vine",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Rus Yusupov (Vine co-founder and design lead), 28-year-old digital product designer, dark wavy hair, expressive dark eyes, wearing a modern street-style jacket over a graphic tee, creative NYC studio lighting, Pixar and Arcane inspired 3D documentary render, single individual portrait",
+  "signature_props": [
+    "UI wireframe sketches for 6-second video player",
+    "sleek design monitor",
+    "minimalist smartphone"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792270109754_647.jpg",
+    "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792270087938_638.jpg",
+    "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792270009998_922.jpg",
+    "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792269984745_810.jpg",
+    "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792269973588_183.jpg",
+    "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792269947756_142.jpg",
+    "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792267508498_599.jpg",
+    "/channel-assets/tech_scandals/characters/assets/rus_yusupov_frame_1792267409561_369.jpg",
+    "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792267368895_915.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792270109791_i4yk4",
+      "url": "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792270109754_647.jpg",
+      "prompt": "Single unified 16:9 frame showing Dom Hofmann working on a laptop with screenshots of Byte and Clash apps in the background.",
+      "description": "El Legado de los Fundadores",
+      "characterId": "rus_yusupov",
+      "characterName": "Rus Yusupov",
+      "characterIds": [
+        "dom_hofmann",
+        "rus_yusupov",
+        "colin_kroll"
+      ],
+      "characterNames": [
+        "Dom Hofmann",
+        "Rus Yusupov",
+        "Colin Kroll"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Dom Hofmann, Rus Yusupov y Colin Kroll",
+      "shotType": "character_closeup",
+      "tags": [
+        "dom hofmann, rus yusupov y colin kroll",
+        "dom",
+        "hofmann,",
+        "rus",
+        "yusupov,",
+        "colin",
+        "kroll",
+        "showing"
+      ],
+      "sourceProjectId": "proj_1792226956203",
+      "sourceSceneId": 22,
+      "createdAt": "2026-10-17T20:48:29.791Z"
+    },
+    {
+      "id": "asset_1792270087942_terj8",
+      "url": "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792270087938_638.jpg",
+      "prompt": "Single unified 16:9 frame showing a silhouette of a Vine app icon fading into darkness as the server lights flicker.",
+      "description": "Las Últimas Horas",
+      "characterId": "rus_yusupov",
+      "characterName": "Rus Yusupov",
+      "characterIds": [
+        "dom_hofmann",
+        "rus_yusupov"
+      ],
+      "characterNames": [
+        "Dom Hofmann",
+        "Rus Yusupov"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Dom Hofmann, Rus Yusupov y Colin Kroll",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "dom hofmann, rus yusupov y colin kroll",
+        "dom",
+        "hofmann,",
+        "rus",
+        "yusupov",
+        "showing",
+        "silhouette",
+        "vine"
+      ],
+      "sourceProjectId": "proj_1792226956203",
+      "sourceSceneId": 20,
+      "createdAt": "2026-10-17T20:48:07.942Z"
+    },
+    {
+      "id": "asset_1792270010034_hvew5",
+      "url": "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792270009998_922.jpg",
+      "prompt": "Single unified 16:9 frame of a silhouette of creators leaving Vine, with Instagram and YouTube logos glowing in the background.",
+      "description": "El Punto Ciego",
+      "characterId": "rus_yusupov",
+      "characterName": "Rus Yusupov",
+      "characterIds": [
+        "dom_hofmann",
+        "rus_yusupov",
+        "colin_kroll"
+      ],
+      "characterNames": [
+        "Dom Hofmann",
+        "Rus Yusupov",
+        "Colin Kroll"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Dom Hofmann, Rus Yusupov y Colin Kroll",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "dom hofmann, rus yusupov y colin kroll",
+        "dom",
+        "hofmann,",
+        "rus",
+        "yusupov,",
+        "colin",
+        "kroll",
+        "silhouette"
+      ],
+      "sourceProjectId": "proj_1792226956203",
+      "sourceSceneId": 8,
+      "createdAt": "2026-10-17T20:46:50.034Z"
+    },
+    {
+      "id": "asset_1792269984749_6lcfl",
+      "url": "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792269984745_810.jpg",
+      "prompt": "Single unified 16:9 frame of a handshake between Hofmann, Yusupov, Kroll, and Twitter executives, with the Vine logo in the background.",
+      "description": "La Primera Audacia",
+      "characterId": "rus_yusupov",
+      "characterName": "Rus Yusupov",
+      "characterIds": [
+        "dom_hofmann",
+        "rus_yusupov",
+        "colin_kroll",
+        "twitter"
+      ],
+      "characterNames": [
+        "Dom Hofmann",
+        "Rus Yusupov",
+        "Colin Kroll"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Dom Hofmann, Rus Yusupov y Colin Kroll",
+      "shotType": "object_detail",
+      "tags": [
+        "dom hofmann, rus yusupov y colin kroll",
+        "dom",
+        "hofmann,",
+        "rus",
+        "yusupov,",
+        "colin",
+        "kroll,",
+        "twitter"
+      ],
+      "sourceProjectId": "proj_1792226956203",
+      "sourceSceneId": 6,
+      "createdAt": "2026-10-17T20:46:24.749Z"
+    },
+    {
+      "id": "asset_1792269973624_9da05",
+      "url": "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792269973588_183.jpg",
+      "prompt": "Single unified 16:9 frame of Dom Hofmann coding late at night, with Vine’s prototype interface on his laptop screen.",
+      "description": "El Origen del Visionario",
+      "characterId": "rus_yusupov",
+      "characterName": "Rus Yusupov",
+      "characterIds": [
+        "dom_hofmann",
+        "rus_yusupov",
+        "colin_kroll"
+      ],
+      "characterNames": [
+        "Dom Hofmann",
+        "Rus Yusupov",
+        "Colin Kroll"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Oficina de Desarrollo / Open Space",
+      "companyOrSubject": "Dom Hofmann, Rus Yusupov y Colin Kroll",
+      "shotType": "character_closeup",
+      "tags": [
+        "dom hofmann, rus yusupov y colin kroll",
+        "dom",
+        "hofmann,",
+        "rus",
+        "yusupov,",
+        "colin",
+        "kroll",
+        "hofmann"
+      ],
+      "sourceProjectId": "proj_1792226956203",
+      "sourceSceneId": 5,
+      "createdAt": "2026-10-17T20:46:13.624Z"
+    },
+    {
+      "id": "asset_1792269947793_7agp1",
+      "url": "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792269947756_142.jpg",
+      "prompt": "Single unified 16:9 frame of a dark silhouette of Dom Hofmann, Rus Yusupov, and Colin Kroll against a fading Vine logo.",
+      "description": "El Preludio de la Caída",
+      "characterId": "rus_yusupov",
+      "characterName": "Rus Yusupov",
+      "characterIds": [
+        "dom_hofmann",
+        "rus_yusupov",
+        "colin_kroll"
+      ],
+      "characterNames": [
+        "Dom Hofmann",
+        "Rus Yusupov",
+        "Colin Kroll"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Dom Hofmann, Rus Yusupov y Colin Kroll",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "dom hofmann, rus yusupov y colin kroll",
+        "dom",
+        "hofmann,",
+        "rus",
+        "yusupov,",
+        "colin",
+        "kroll",
+        "dark"
+      ],
+      "sourceProjectId": "proj_1792226956203",
+      "sourceSceneId": 4,
+      "createdAt": "2026-10-17T20:45:47.793Z"
+    },
+    {
+      "id": "asset_1792267508535_gcszf",
+      "url": "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792267508498_599.jpg",
+      "prompt": "Single unified 16:9 frame of a contract signing, with Dom Hofmann, Rus Yusupov, and Colin Kroll shaking hands with Twitter executives.",
+      "description": "El Sueño de Silicon Valley",
+      "characterId": "rus_yusupov",
+      "characterName": "Rus Yusupov",
+      "characterIds": [
+        "dom_hofmann",
+        "rus_yusupov",
+        "colin_kroll",
+        "twitter"
+      ],
+      "characterNames": [
+        "Dom Hofmann",
+        "Rus Yusupov",
+        "Colin Kroll"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Dom Hofmann, Rus Yusupov y Colin Kroll",
+      "shotType": "object_detail",
+      "tags": [
+        "dom hofmann, rus yusupov y colin kroll",
+        "dom",
+        "hofmann,",
+        "rus",
+        "yusupov,",
+        "colin",
+        "kroll,",
+        "twitter"
+      ],
+      "createdAt": "2026-10-17T20:05:08.535Z"
+    },
+    {
+      "id": "asset_1792267409566_dwt88",
+      "url": "/channel-assets/tech_scandals/characters/assets/rus_yusupov_frame_1792267409561_369.jpg",
+      "prompt": "Single unified 16:9 frame showing silhouettes of influencers walking away from a neon Vine logo fading into darkness.",
+      "description": "La Migración Silenciosa",
+      "characterId": "rus_yusupov",
+      "characterName": "Rus Yusupov",
+      "characterIds": [
+        "rus_yusupov"
+      ],
+      "characterNames": [
+        "Rus Yusupov"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Dom Hofmann, Rus Yusupov y Colin Kroll",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "dom hofmann, rus yusupov y colin kroll",
+        "rus",
+        "yusupov",
+        "showing",
+        "silhouettes",
+        "influencers",
+        "walking",
+        "away"
+      ],
+      "createdAt": "2026-10-17T20:03:29.566Z"
+    },
+    {
+      "id": "asset_1792267368901_py6h1",
+      "url": "/channel-assets/tech_scandals/characters/assets/dom_hofmann_frame_1792267368895_915.jpg",
+      "prompt": "Single unified 16:9 frame of a bustling social media office filled with screens displaying Vine videos, creators laughing and collaborating.",
+      "description": "El Fénix Digital",
+      "characterId": "rus_yusupov",
+      "characterName": "Rus Yusupov",
+      "characterIds": [
+        "dom_hofmann",
+        "rus_yusupov",
+        "colin_kroll"
+      ],
+      "characterNames": [
+        "Dom Hofmann",
+        "Rus Yusupov",
+        "Colin Kroll"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Dom Hofmann, Rus Yusupov y Colin Kroll",
+      "shotType": "environment_wide",
+      "tags": [
+        "dom hofmann, rus yusupov y colin kroll",
+        "dom",
+        "hofmann,",
+        "rus",
+        "yusupov,",
+        "colin",
+        "kroll",
+        "bustling"
+      ],
+      "createdAt": "2026-10-17T20:02:48.901Z"
+    }
+  ],
+  "updatedAt": "2026-10-17T20:48:29.791Z",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/rus_yusupov_frame_1792267409561_369.jpg"
+}

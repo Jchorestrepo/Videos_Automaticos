@@ -12,12 +12,39 @@ const DEFAULT_SHEET_URL =
   'https://docs.google.com/spreadsheets/d/1HgeZPdsav5lT5070dAAMtoEDRpF3aa4yvorr5hDV5S4/export?format=csv&gid=0';
 
 export class SheetsService {
-  static async fetchSheetItems(sheetUrl: string = DEFAULT_SHEET_URL): Promise<SheetVideoItem[]> {
+  /**
+   * Convierte cualquier URL normal de Google Sheets (/edit#gid=...) a URL de exportación CSV
+   */
+  static normalizeSheetCsvUrl(rawUrl: string): string {
+    const trimmed = (rawUrl || '').trim();
+    if (!trimmed) return '';
+    if (trimmed.includes('/export?format=csv')) return trimmed;
+
+    const match = trimmed.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+    if (!match) return trimmed;
+    const docId = match[1];
+    const gidMatch = trimmed.match(/[?#&]gid=(\d+)/);
+    const gid = gidMatch ? gidMatch[1] : '0';
+    return `https://docs.google.com/spreadsheets/d/${docId}/export?format=csv&gid=${gid}`;
+  }
+
+  static getCacheFilePath(channelId: string = 'tech_scandals'): string {
+    if (channelId === 'tech_scandals') return CACHE_FILE;
+    return path.resolve(__dirname, `../../storage/sheet_cache_${channelId}.json`);
+  }
+
+  static async fetchSheetItems(
+    sheetUrl: string = DEFAULT_SHEET_URL,
+    channelId: string = 'tech_scandals'
+  ): Promise<SheetVideoItem[]> {
+    const cachePath = this.getCacheFilePath(channelId);
+    const normalizedUrl = this.normalizeSheetCsvUrl(sheetUrl);
+
     try {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 6000);
 
-      const response = await fetch(sheetUrl, {
+      const response = await fetch(normalizedUrl, {
         signal: controller.signal,
         headers: {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
@@ -59,51 +86,59 @@ export class SheetsService {
         const published = (row[9] || '').toUpperCase() === 'TRUE';
 
         items.push({
-          id: `case_${i}`,
+          id: `${channelId}_case_${i}`,
+          channel_id: channelId,
           rowIndex: i + 1,
           title,
           characterCompany,
           conflict,
           sources,
+          status: published ? 'published' : finished ? 'completed' : approved ? 'approved' : 'idea',
           approved,
           finished,
           published,
         });
       }
 
-      // Guardar en caché local para resiliencia offline
+      // Guardar en caché local por canal para resiliencia offline
       try {
-        const dir = path.dirname(CACHE_FILE);
+        const dir = path.dirname(cachePath);
         if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-        fs.writeFileSync(CACHE_FILE, JSON.stringify(items, null, 2), 'utf-8');
+        fs.writeFileSync(cachePath, JSON.stringify(items, null, 2), 'utf-8');
       } catch (cacheErr) {
         console.warn('No se pudo guardar la caché de Google Sheets:', cacheErr);
       }
 
       return items;
     } catch (error) {
-      console.warn('Aviso: Error obteniendo Google Sheets en vivo, recurriendo a caché local:', error);
+      console.warn(`Aviso: Error obteniendo Google Sheets en vivo para ${channelId}, recurriendo a caché local:`, error);
 
       // Respaldo en caché local si existe
-      if (fs.existsSync(CACHE_FILE)) {
+      if (fs.existsSync(cachePath)) {
         try {
-          const cachedData = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
-          console.log(`[SheetsService] Retornando ${cachedData.length} items de la caché local.`);
+          const cachedData = JSON.parse(fs.readFileSync(cachePath, 'utf-8'));
+          console.log(`[SheetsService] Retornando ${cachedData.length} items de la caché local (${channelId}).`);
           return cachedData;
         } catch (readErr) {
           console.error('Error leyendo caché de Google Sheets:', readErr);
         }
       }
 
-      // Si no hay caché, retornar los casos predeterminados sin lanzar error 500
+      if (channelId !== 'tech_scandals') {
+        return [];
+      }
+
+      // Si no hay caché en tech_scandals, retornar caso predeterminado
       return [
         {
           id: 'case_default_1',
+          channel_id: 'tech_scandals',
           rowIndex: 2,
           title: 'Quemó $120M en 24 Meses y Engañó a Silicon Valley: La Caída de Fast',
           characterCompany: 'Domm Holland / Fast (Fast.co)',
           conflict: 'Prometieron revolucionar los pagos en un clic y gastaron más de 10 millones de dólares mensuales con ingresos mínimos.',
           sources: ['NPR', 'Bloomberg', 'TechCrunch'],
+          status: 'approved',
           approved: true,
           finished: false,
           published: false,
@@ -112,3 +147,4 @@ export class SheetsService {
     }
   }
 }
+

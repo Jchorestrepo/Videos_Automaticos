@@ -1,0 +1,1337 @@
+{
+  "character_id": "brian_acton",
+  "channel_id": "tech_scandals",
+  "name": "Brian Acton",
+  "role": "Protagonista / Fundador de WhatsApp",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "WhatsApp",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Brian Acton (WhatsApp), single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "WhatsApp branded office environment",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464568988_411.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464503811_2.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464437755_770.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464374050_706.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464356360_431.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464205447_481.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464140983_283.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464123825_629.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464106052_452.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464088005_604.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792462791324_401.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792462760719_306.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792462735708_582.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792293368081_564.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792293084527_110.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792293037805_343.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292995016_652.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292897171_423.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292708613_599.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292519359_536.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292424787_7.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292331503_108.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292246117_455.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292219281_348.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290849178_901.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290531304_117.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290520445_148.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290506854_536.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290495477_264.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289651434_977.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289613796_816.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289602693_528.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289582288_924.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289540193_474.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289525570_936.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289516266_970.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289504327_975.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289492913_189.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289481056_90.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289467985_23.jpg",
+    "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289448512_647.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792464568989_xs4gf",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464568988_411.jpg",
+      "prompt": "Wide shot of Brian Acton speaking at a congressional hearing, with a 'Signal' app interface projected massively behind him, contrasting with tiny Facebook logos on lawmakers' desks.",
+      "description": "Los Sobrevivientes",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "environment_wide",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "acton",
+        "speaking",
+        "congressional"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-20T02:49:28.989Z"
+    },
+    {
+      "id": "asset_1792464503812_i50n4",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464503811_2.jpg",
+      "prompt": "Single unified 16:9 frame of Mark Zuckerberg's silhouette against the glass walls of Facebook HQ at night, holding a contract with WhatsApp's logo faintly visible, blue light casting long shadows.",
+      "description": "El Tiro de Gracia",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "silhouette",
+        "glass",
+        "walls"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 17,
+      "createdAt": "2026-10-20T02:48:23.812Z"
+    },
+    {
+      "id": "asset_1792464437756_k3e35",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464437755_770.jpg",
+      "prompt": "Single unified 16:9 frame of a bomb icon ticking down, surrounded by user icons and dollar signs.",
+      "description": "El Conflicto Inevitable",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "bomb",
+        "icon",
+        "ticking",
+        "down",
+        "surrounded"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 16,
+      "createdAt": "2026-10-20T02:47:17.756Z"
+    },
+    {
+      "id": "asset_1792464374052_vfj52",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464374050_706.jpg",
+      "prompt": "Single unified 16:9 frame of a silhouette walking away from a pile of money towards a privacy padlock.",
+      "description": "El Precio de la Privacidad",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "silhouette",
+        "walking",
+        "away",
+        "pile",
+        "money"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 15,
+      "createdAt": "2026-10-20T02:46:14.052Z"
+    },
+    {
+      "id": "asset_1792464356361_2l0yc",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464356360_431.jpg",
+      "prompt": "Single unified 16:9 frame of a scale balancing privacy padlocks on one side and dollar bills on the other.",
+      "description": "El Dilema Digital",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "scale",
+        "balancing",
+        "privacy",
+        "padlocks",
+        "side"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 13,
+      "createdAt": "2026-10-20T02:45:56.361Z"
+    },
+    {
+      "id": "asset_1792464205449_mlogh",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464205447_481.jpg",
+      "prompt": "Animated split diagram showing encrypted messages on one side and dollar bills with Facebook logos on the other, pressing against a cracking glass barrier.",
+      "description": "La Grieta en el Edificio",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "animated",
+        "split",
+        "diagram",
+        "showing",
+        "encrypted"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 8,
+      "createdAt": "2026-10-20T02:43:25.449Z"
+    },
+    {
+      "id": "asset_1792464140984_silmh",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464140983_283.jpg",
+      "prompt": "A pile of rejection letters on a kitchen table, next to a single laptop showing early WhatsApp code, with a coffee stain on one envelope.",
+      "description": "El Fracaso como Trampolín",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "object_detail",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "pile",
+        "rejection",
+        "letters",
+        "kitchen",
+        "table"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 6,
+      "createdAt": "2026-10-20T02:42:20.984Z"
+    },
+    {
+      "id": "asset_1792464123825_oeyi7",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464123825_629.jpg",
+      "prompt": "A young Acton in late 1990s office attire, staring at an old Yahoo computer screen in a cubicle, surrounded by outdated tech.",
+      "description": "El Perfil del Inadaptado",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "Oficina de Desarrollo / Open Space",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "character_closeup",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "late",
+        "1990s",
+        "office",
+        "attire",
+        "staring"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 5,
+      "createdAt": "2026-10-20T02:42:03.825Z"
+    },
+    {
+      "id": "asset_1792464106053_iof4d",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464106052_452.jpg",
+      "prompt": "Extreme close-up of a WhatsApp chat screen showing end-to-end encryption notification, reflected in a pair of glasses left on a desk.",
+      "description": "El Precio de la Privacidad",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "object_detail",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "extreme",
+        "close",
+        "whatsapp",
+        "chat",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 3,
+      "createdAt": "2026-10-20T02:41:46.053Z"
+    },
+    {
+      "id": "asset_1792464088006_fqatm",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792464088005_604.jpg",
+      "prompt": "A silhouetted figure signs documents at a glass conference table, with the Facebook logo ominously reflected in the surface. The pen glints under cold office lighting.",
+      "description": "La Cumbre del Poder",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Conferencia / Escenario de Prensa",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "silhouetted",
+        "figure",
+        "signs"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 1,
+      "createdAt": "2026-10-20T02:41:28.006Z"
+    },
+    {
+      "id": "asset_1792462791325_xu57p",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792462791324_401.jpg",
+      "prompt": "Animated diagram showing WhatsApp's user growth curve from 2009 to 2026, with layers peeling away to reveal Facebook's data harvesting infrastructure underneath, visualized as dark tendrils.",
+      "description": "Las Cenizas del Acuerdo",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "animated",
+        "diagram",
+        "showing",
+        "whatsapp",
+        "user"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 22,
+      "createdAt": "2026-10-20T02:19:51.325Z"
+    },
+    {
+      "id": "asset_1792462760720_6lrzh",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792462760719_306.jpg",
+      "prompt": "Single unified 16:9 frame of Mark Zuckerberg sitting in a dimly lit office, staring at a screen showing WhatsApp's growth metrics.",
+      "description": "El Rival en la Sombra",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "sitting",
+        "dimly",
+        "office"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-20T02:19:20.720Z"
+    },
+    {
+      "id": "asset_1792462735741_4s5fx",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792462735708_582.jpg",
+      "prompt": "The empty office space with peeling paint that became WhatsApp's first HQ, showing a single desk with two computers back-to-back, afternoon light streaming through dusty windows.",
+      "description": "El Nacimiento de un Unicornio",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "jan_koum"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Jan Koum"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "environment_wide",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "jan",
+        "koum",
+        "empty",
+        "office",
+        "space"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 7,
+      "createdAt": "2026-10-20T02:18:55.741Z"
+    },
+    {
+      "id": "asset_1792293368085_bd3k8",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792293368081_564.jpg",
+      "prompt": "A dimly lit profile shot of Zuckerberg looking at a computer screen showing Acton's rejected job application from 2009.",
+      "description": "Semillas del Conflicto",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "dimly",
+        "profile",
+        "zuckerberg",
+        "looking",
+        "computer"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "createdAt": "2026-10-18T03:16:08.085Z"
+    },
+    {
+      "id": "asset_1792293084527_xrb4x",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792293084527_110.jpg",
+      "prompt": "Single unified 16:9 frame of Mark Zuckerberg's silhouette against the glass walls of Facebook HQ at night, holding a contract with WhatsApp's logo faintly visible, blue light casting long shadows.",
+      "description": "El Tiro de Gracia",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "silhouette",
+        "glass",
+        "walls"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 17,
+      "createdAt": "2026-10-18T03:11:24.527Z"
+    },
+    {
+      "id": "asset_1792293037807_j3iy8",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792293037805_343.jpg",
+      "prompt": "Single unified 16:9 frame of a bomb icon ticking down, surrounded by user icons and dollar signs.",
+      "description": "El Conflicto Inevitable",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "bomb",
+        "icon",
+        "ticking",
+        "down",
+        "surrounded"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 16,
+      "createdAt": "2026-10-18T03:10:37.807Z"
+    },
+    {
+      "id": "asset_1792292995018_qi77h",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292995016_652.jpg",
+      "prompt": "Single unified 16:9 frame of a silhouette walking away from a pile of money towards a privacy padlock.",
+      "description": "El Precio de la Privacidad",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "silhouette",
+        "walking",
+        "away",
+        "pile",
+        "money"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 15,
+      "createdAt": "2026-10-18T03:09:55.018Z"
+    },
+    {
+      "id": "asset_1792292897173_zt3sh",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292897171_423.jpg",
+      "prompt": "Single unified 16:9 frame of a scale balancing privacy padlocks on one side and dollar bills on the other.",
+      "description": "El Dilema Digital",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "scale",
+        "balancing",
+        "privacy",
+        "padlocks",
+        "side"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 13,
+      "createdAt": "2026-10-18T03:08:17.173Z"
+    },
+    {
+      "id": "asset_1792292708613_mnnpi",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292708613_599.jpg",
+      "prompt": "Single unified 16:9 frame of Mark Zuckerberg sitting in a dimly lit office, staring at a screen showing WhatsApp's growth metrics.",
+      "description": "El Rival en la Sombra",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "sitting",
+        "dimly",
+        "office"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-18T03:05:08.613Z"
+    },
+    {
+      "id": "asset_1792292519359_fu020",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292519359_536.jpg",
+      "prompt": "A young Acton in late 1990s office attire, staring at an old Yahoo computer screen in a cubicle, surrounded by outdated tech.",
+      "description": "El Perfil del Inadaptado",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "Oficina de Desarrollo / Open Space",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "character_closeup",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "late",
+        "1990s",
+        "office",
+        "attire",
+        "staring"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 5,
+      "createdAt": "2026-10-18T03:01:59.359Z"
+    },
+    {
+      "id": "asset_1792292424789_wjie6",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292424787_7.jpg",
+      "prompt": "Extreme close-up of a WhatsApp chat screen showing end-to-end encryption notification, reflected in a pair of glasses left on a desk.",
+      "description": "El Precio de la Privacidad",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "object_detail",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "extreme",
+        "close",
+        "whatsapp",
+        "chat",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 3,
+      "createdAt": "2026-10-18T03:00:24.789Z"
+    },
+    {
+      "id": "asset_1792292331524_0y1ao",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292331503_108.jpg",
+      "prompt": "A silhouetted figure signs documents at a glass conference table, with the Facebook logo ominously reflected in the surface. The pen glints under cold office lighting.",
+      "description": "La Cumbre del Poder",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Conferencia / Escenario de Prensa",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "silhouetted",
+        "figure",
+        "signs"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 1,
+      "createdAt": "2026-10-18T02:58:51.524Z"
+    },
+    {
+      "id": "asset_1792292246137_hepck",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292246117_455.jpg",
+      "prompt": "Animated diagram showing WhatsApp's user growth curve from 2009 to 2026, with layers peeling away to reveal Facebook's data harvesting infrastructure underneath, visualized as dark tendrils.",
+      "description": "Las Cenizas del Acuerdo",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "animated",
+        "diagram",
+        "showing",
+        "whatsapp",
+        "user"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 22,
+      "createdAt": "2026-10-18T02:57:26.137Z"
+    },
+    {
+      "id": "asset_1792292219301_5xgkt",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792292219281_348.jpg",
+      "prompt": "Animated diagram showing WhatsApp's user growth curve from 2009 to 2026, with layers peeling away to reveal Facebook's data harvesting infrastructure underneath, visualized as dark tendrils.",
+      "description": "Las Cenizas del Acuerdo",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "animated",
+        "diagram",
+        "showing",
+        "whatsapp",
+        "user"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 22,
+      "createdAt": "2026-10-18T02:56:59.301Z"
+    },
+    {
+      "id": "asset_1792290849180_n9gtq",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290849178_901.jpg",
+      "prompt": "Wide shot of Brian Acton speaking at a congressional hearing, with a 'Signal' app interface projected massively behind him, contrasting with tiny Facebook logos on lawmakers' desks.",
+      "description": "Los Sobrevivientes",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "environment_wide",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "acton",
+        "speaking",
+        "congressional"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 23,
+      "createdAt": "2026-10-18T02:34:09.180Z"
+    },
+    {
+      "id": "asset_1792290531340_qzhv2",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290531304_117.jpg",
+      "prompt": "Over-the-shoulder shot of a smartphone displaying the infamous tweet with #deleteFacebook in bold letters, reflected in Brian Acton's glasses as he watches stock charts plummet on a laptop.",
+      "description": "El Hashtag que Sacudió Silicon Valley",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "object_detail",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "shoulder",
+        "smartphone",
+        "displaying",
+        "infamous",
+        "tweet"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 20,
+      "createdAt": "2026-10-18T02:28:51.340Z"
+    },
+    {
+      "id": "asset_1792290520480_cylma",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290520445_148.jpg",
+      "prompt": "Extreme close-up of Brian Acton's conflicted expression reflected in an elevator door closing slowly, with Facebook ads faintly glowing on digital screens in the background.",
+      "description": "El Precio de Salir",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "character_closeup",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "extreme",
+        "close",
+        "conflicted",
+        "expression",
+        "reflected"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 19,
+      "createdAt": "2026-10-18T02:28:40.480Z"
+    },
+    {
+      "id": "asset_1792290506859_dk3o3",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290506854_536.jpg",
+      "prompt": "Close-up of a pen signing the $19B acquisition contract on a wooden desk, with food stamp coupons subtly visible in the blurred background, shallow depth of field.",
+      "description": "Firma en la Humildad",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "jan_koum"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Jan Koum"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Cancha / Entorno Deportivo",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "object_detail",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "jan",
+        "koum",
+        "close",
+        "signing",
+        "acquisition"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 18,
+      "createdAt": "2026-10-18T02:28:26.859Z"
+    },
+    {
+      "id": "asset_1792290495482_2jqsw",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792290495477_264.jpg",
+      "prompt": "Single unified 16:9 frame of Mark Zuckerberg's silhouette against the glass walls of Facebook HQ at night, holding a contract with WhatsApp's logo faintly visible, blue light casting long shadows.",
+      "description": "El Tiro de Gracia",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "silhouette",
+        "glass",
+        "walls"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 17,
+      "createdAt": "2026-10-18T02:28:15.482Z"
+    },
+    {
+      "id": "asset_1792289651437_pb659",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289651434_977.jpg",
+      "prompt": "Slow push-in on a shattered smartphone screen displaying both Facebook and WhatsApp logos, with Brian Acton's reflection barely visible in the cracks, golden hour lighting.",
+      "description": "La Lección No Aprendida",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "slow",
+        "push",
+        "shattered",
+        "smartphone",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 24,
+      "createdAt": "2026-10-18T02:14:11.437Z"
+    },
+    {
+      "id": "asset_1792289613811_cuasx",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289613796_816.jpg",
+      "prompt": "Single unified 16:9 frame of a bomb icon ticking down, surrounded by user icons and dollar signs.",
+      "description": "El Conflicto Inevitable",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "bomb",
+        "icon",
+        "ticking",
+        "down",
+        "surrounded"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 16,
+      "createdAt": "2026-10-18T02:13:33.811Z"
+    },
+    {
+      "id": "asset_1792289602714_bxz09",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289602693_528.jpg",
+      "prompt": "Single unified 16:9 frame of a silhouette walking away from a pile of money towards a privacy padlock.",
+      "description": "El Precio de la Privacidad",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "silhouette",
+        "walking",
+        "away",
+        "pile",
+        "money"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 15,
+      "createdAt": "2026-10-18T02:13:22.714Z"
+    },
+    {
+      "id": "asset_1792289582290_ix7ie",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289582288_924.jpg",
+      "prompt": "Single unified 16:9 frame of a scale balancing privacy padlocks on one side and dollar bills on the other.",
+      "description": "El Dilema Digital",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "scale",
+        "balancing",
+        "privacy",
+        "padlocks",
+        "side"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 13,
+      "createdAt": "2026-10-18T02:13:02.290Z"
+    },
+    {
+      "id": "asset_1792289540197_spgn6",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289540193_474.jpg",
+      "prompt": "Single unified 16:9 frame of Mark Zuckerberg sitting in a dimly lit office, staring at a screen showing WhatsApp's growth metrics.",
+      "description": "El Rival en la Sombra",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "sitting",
+        "dimly",
+        "office"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-18T02:12:20.197Z"
+    },
+    {
+      "id": "asset_1792289525573_w6e1n",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289525570_936.jpg",
+      "prompt": "Animated split diagram showing encrypted messages on one side and dollar bills with Facebook logos on the other, pressing against a cracking glass barrier.",
+      "description": "La Grieta en el Edificio",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "concept_diagram",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "animated",
+        "split",
+        "diagram",
+        "showing",
+        "encrypted"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 8,
+      "createdAt": "2026-10-18T02:12:05.573Z"
+    },
+    {
+      "id": "asset_1792289516269_r27t0",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289516266_970.jpg",
+      "prompt": "The empty office space with peeling paint that became WhatsApp's first HQ, showing a single desk with two computers back-to-back, afternoon light streaming through dusty windows.",
+      "description": "El Nacimiento de un Unicornio",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "jan_koum"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Jan Koum"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Headquarters / Sede Central",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "environment_wide",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "jan",
+        "koum",
+        "empty",
+        "office",
+        "space"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 7,
+      "createdAt": "2026-10-18T02:11:56.269Z"
+    },
+    {
+      "id": "asset_1792289504332_4zc7w",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289504327_975.jpg",
+      "prompt": "A pile of rejection letters on a kitchen table, next to a single laptop showing early WhatsApp code, with a coffee stain on one envelope.",
+      "description": "El Fracaso como Trampolín",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "object_detail",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "pile",
+        "rejection",
+        "letters",
+        "kitchen",
+        "table"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 6,
+      "createdAt": "2026-10-18T02:11:44.332Z"
+    },
+    {
+      "id": "asset_1792289492916_zas0q",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289492913_189.jpg",
+      "prompt": "A young Acton in late 1990s office attire, staring at an old Yahoo computer screen in a cubicle, surrounded by outdated tech.",
+      "description": "El Perfil del Inadaptado",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "Oficina de Desarrollo / Open Space",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "character_closeup",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "late",
+        "1990s",
+        "office",
+        "attire",
+        "staring"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 5,
+      "createdAt": "2026-10-18T02:11:32.916Z"
+    },
+    {
+      "id": "asset_1792289481092_06smg",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289481056_90.jpg",
+      "prompt": "A dimly lit profile shot of Zuckerberg looking at a computer screen showing Acton's rejected job application from 2009.",
+      "description": "Semillas del Conflicto",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "dimly",
+        "profile",
+        "looking"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 4,
+      "createdAt": "2026-10-18T02:11:21.092Z"
+    },
+    {
+      "id": "asset_1792289467989_tpet4",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289467985_23.jpg",
+      "prompt": "Extreme close-up of a WhatsApp chat screen showing end-to-end encryption notification, reflected in a pair of glasses left on a desk.",
+      "description": "El Precio de la Privacidad",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton"
+      ],
+      "characterNames": [
+        "Brian Acton"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "object_detail",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton",
+        "extreme",
+        "close",
+        "whatsapp",
+        "chat",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 3,
+      "createdAt": "2026-10-18T02:11:07.989Z"
+    },
+    {
+      "id": "asset_1792289448515_lro3z",
+      "url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289448512_647.jpg",
+      "prompt": "A silhouetted figure signs documents at a glass conference table, with the Facebook logo ominously reflected in the surface. The pen glints under cold office lighting.",
+      "description": "La Cumbre del Poder",
+      "characterId": "brian_acton",
+      "characterName": "Brian Acton",
+      "characterIds": [
+        "brian_acton",
+        "mark_zuckerberg"
+      ],
+      "characterNames": [
+        "Brian Acton",
+        "Mark Zuckerberg"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Conferencia / Escenario de Prensa",
+      "companyOrSubject": "Brian Acton y Jan Koum / WhatsApp",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "brian acton y jan koum / whatsapp",
+        "brian",
+        "acton,",
+        "mark",
+        "zuckerberg",
+        "silhouetted",
+        "figure",
+        "signs"
+      ],
+      "sourceProjectId": "proj_1792289301259",
+      "sourceSceneId": 1,
+      "createdAt": "2026-10-18T02:10:48.515Z"
+    }
+  ],
+  "updatedAt": "2026-10-20T02:49:28.989Z",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/brian_acton_frame_1792289651434_977.jpg",
+  "custom_uploaded": false
+}

@@ -55,6 +55,7 @@ import {
   Globe,
   Languages,
   Camera,
+  Building2,
   X,
 } from 'lucide-react';
 import type {
@@ -63,6 +64,7 @@ import type {
   ProjectScript,
   SceneItem,
   CharacterProfile,
+  CharacterCategory,
   VisualAssetMetadata,
   VoiceCatalogItem,
   MotionIntensityType,
@@ -3256,6 +3258,8 @@ export default function App() {
                                     alt={char.name}
                                     className="w-full h-full object-cover"
                                   />
+                                ) : char.character_category === 'company_or_brand' ? (
+                                  <Building2 className="w-7 h-7 text-blue-400" />
                                 ) : (
                                   <User className="w-7 h-7 text-slate-600" />
                                 )}
@@ -3275,7 +3279,11 @@ export default function App() {
                                     {char.name}
                                   </h4>
                                   <div className="flex items-center gap-1 shrink-0">
-                                    {isLoreCast ? (
+                                    {char.character_category === 'company_or_brand' ? (
+                                      <span className="text-[9px] bg-blue-500/20 text-blue-300 border border-blue-500/40 px-1.5 py-0.5 rounded font-bold">
+                                        🏢 Empresa
+                                      </span>
+                                    ) : isLoreCast ? (
                                       <span className="text-[9px] bg-amber-500/20 text-amber-300 border border-amber-500/40 px-1.5 py-0.5 rounded font-bold">
                                         🌟 Lore / Doble
                                       </span>
@@ -3630,19 +3638,55 @@ export default function App() {
                           {/* Selector de Categoría del Personaje */}
                           <div className="flex items-center justify-between gap-2 bg-slate-900/90 border border-slate-800 px-3 py-2 rounded-lg">
                             <span className="text-[11px] font-semibold text-slate-300">
-                              Tipo de Personaje:
+                              Tipo de Personaje o Entidad:
                             </span>
                             <select
-                              value={selectedLibraryChar.character_category || 'real_person'}
+                              value={
+                                selectedLibraryChar.character_category ||
+                                (selectedLibraryChar.real_person ? 'real_person' : 'channel_lore_cast')
+                              }
                               onChange={(e) => {
-                                const cat = e.target.value as 'real_person' | 'channel_lore_cast';
+                                const cat = e.target.value as CharacterCategory;
+                                const isComp = cat === 'company_or_brand';
+                                const isLore = cat === 'channel_lore_cast';
+
+                                let updatedAnchor = selectedLibraryChar.anchor_prompt;
+                                let updatedProps = selectedLibraryChar.signature_props || [];
+                                let updatedRole = selectedLibraryChar.role;
+                                let updatedAge = selectedLibraryChar.age;
+
+                                if (isComp) {
+                                  if (!updatedRole || updatedRole.includes('Protagonista')) {
+                                    updatedRole = `Empresa / Entidad Central (${selectedLibraryChar.name})`;
+                                  }
+                                  updatedAge = selectedLibraryChar.age || 'Entidad Corporativa';
+                                  updatedAnchor = `Stylized 3D cinematic visual identity of ${selectedLibraryChar.name}, iconic modern corporate headquarters campus architecture with recognizable branding aesthetic, sleek glass facades, cutting-edge technology hub, dramatic volumetric lighting, Pixar and Arcane inspired 3D documentary visual design, cinematic high-end render`;
+                                  updatedProps = [
+                                    'iconic headquarters building',
+                                    'modern tech campus lobby',
+                                    'branded architectural signage',
+                                  ];
+                                } else if (cat === 'real_person') {
+                                  updatedAge = selectedLibraryChar.age || '30-40 años';
+                                  updatedAnchor = `Stylized 3D cinematic animated character of ${selectedLibraryChar.name}${
+                                    selectedLibraryChar.company_or_affiliation
+                                      ? ` (${selectedLibraryChar.company_or_affiliation})`
+                                      : ''
+                                  }, single individual person only, ${updatedAge}, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render`;
+                                }
+
                                 setSelectedLibraryChar({
                                   ...selectedLibraryChar,
                                   character_category: cat,
-                                  real_person: cat === 'real_person',
-                                  known_face: cat === 'real_person',
+                                  real_person: !isComp && !isLore,
+                                  known_face: !isLore,
+                                  entity_type: isComp ? 'company' : 'person',
+                                  role: updatedRole,
+                                  age: updatedAge,
+                                  anchor_prompt: updatedAnchor,
+                                  signature_props: updatedProps,
                                   channel_lore:
-                                    cat === 'channel_lore_cast' && !selectedLibraryChar.channel_lore
+                                    isLore && !selectedLibraryChar.channel_lore
                                       ? {
                                           age: '15 años',
                                           personality_traits: ['Alegre', 'Amante del deporte'],
@@ -3656,9 +3700,12 @@ export default function App() {
                                       : selectedLibraryChar.channel_lore,
                                 });
                               }}
-                              className="bg-slate-950 border border-slate-700 text-xs font-bold text-amber-300 px-2.5 py-1 rounded"
+                              className="bg-slate-950 border border-slate-700 text-xs font-bold text-amber-300 px-2.5 py-1 rounded cursor-pointer"
                             >
-                              <option value="real_person">👤 Figura Real (Rostro Conocido)</option>
+                              <option value="real_person">👤 Figura Real (Persona / Rostro Humano)</option>
+                              <option value="company_or_brand">
+                                🏢 Empresa / Marca / Entidad (ej: Google, Apple, SVB)
+                              </option>
                               <option value="channel_lore_cast">
                                 🌟 Lore del Canal / Doble (Para rostros desconocidos)
                               </option>
@@ -3667,10 +3714,10 @@ export default function App() {
                         </div>
 
                         {/* Campos de edición de la ficha */}
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-4 gap-3.5">
                           <div>
                             <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                              Nombre Individual:
+                              Nombre:
                             </label>
                             <input
                               type="text"
@@ -3681,7 +3728,7 @@ export default function App() {
                                   name: e.target.value,
                                 })
                               }
-                              className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-purple-500"
+                              className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-purple-500 font-semibold"
                             />
                           </div>
 
@@ -3698,8 +3745,8 @@ export default function App() {
                                   company_or_affiliation: e.target.value,
                                 })
                               }
-                              placeholder="Ej: Tumblr, Yahoo, Elenco del Canal..."
-                              className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-purple-500"
+                              placeholder="Ej: Google, Tumblr, Yahoo..."
+                              className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-purple-500"
                             />
                           </div>
 
@@ -3716,7 +3763,31 @@ export default function App() {
                                   role: e.target.value,
                                 })
                               }
-                              className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-purple-500"
+                              className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                            />
+                          </div>
+
+                          <div>
+                            <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                              {selectedLibraryChar.character_category === 'company_or_brand'
+                                ? 'Año / Sede Fundación:'
+                                : 'Edad / Etapa Vital:'}
+                            </label>
+                            <input
+                              type="text"
+                              value={selectedLibraryChar.age || ''}
+                              onChange={(e) =>
+                                setSelectedLibraryChar({
+                                  ...selectedLibraryChar,
+                                  age: e.target.value,
+                                })
+                              }
+                              placeholder={
+                                selectedLibraryChar.character_category === 'company_or_brand'
+                                  ? 'Ej: 1998, Mountain View'
+                                  : 'Ej: 21 años (joven), 60 años...'
+                              }
+                              className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-purple-500"
                             />
                           </div>
                         </div>
@@ -3882,9 +3953,37 @@ export default function App() {
                         )}
 
                         <div className="space-y-1.5">
-                          <label className="text-xs font-bold text-purple-400 uppercase tracking-wider flex items-center gap-1.5">
-                            <Sparkles className="w-3.5 h-3.5" /> Prompt Ancla 3D Individual (Rasgos Faciales, Edad, Vestimenta y Estilo):
-                          </label>
+                          <div className="flex items-center justify-between gap-2 flex-wrap">
+                            <label className="text-xs font-bold text-purple-400 uppercase tracking-wider flex items-center gap-1.5">
+                              <Sparkles className="w-3.5 h-3.5" />
+                              {selectedLibraryChar.character_category === 'company_or_brand'
+                                ? 'Prompt Ancla 3D de la Empresa (Campus, Logo y Estilo):'
+                                : 'Prompt Ancla 3D (Rasgos Faciales, Edad y Estilo):'}
+                            </label>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                const isComp = selectedLibraryChar.character_category === 'company_or_brand';
+                                const ageText = selectedLibraryChar.age || (isComp ? 'Entidad Corporativa' : 'in their prime era');
+                                const newPrompt = isComp
+                                  ? `Stylized 3D cinematic visual identity of ${selectedLibraryChar.name}, iconic modern corporate headquarters campus architecture with recognizable branding aesthetic, sleek glass facades, cutting-edge technology hub, dramatic volumetric lighting, Pixar and Arcane inspired 3D documentary visual design, cinematic high-end render`
+                                  : `Stylized 3D cinematic animated character of ${selectedLibraryChar.name}${
+                                      selectedLibraryChar.company_or_affiliation
+                                        ? ` (${selectedLibraryChar.company_or_affiliation})`
+                                        : ''
+                                    }, single individual person only, ${ageText}, distinctive realistic facial structure, expressive eyes, authentic attire matching their role as ${selectedLibraryChar.role}, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render`;
+                                setSelectedLibraryChar({
+                                  ...selectedLibraryChar,
+                                  anchor_prompt: newPrompt,
+                                });
+                                showToast('✨ Prompt ancla adaptado a la edad y tipo seleccionado.');
+                              }}
+                              className="text-[11px] text-purple-400 hover:text-purple-300 font-semibold flex items-center gap-1 transition"
+                              title="Regenera el texto del prompt base a partir de los datos actuales de la ficha"
+                            >
+                              <RefreshCw className="w-3 h-3" /> Adaptar Prompt a Tipo &amp; Edad
+                            </button>
+                          </div>
                           <textarea
                             rows={4}
                             value={selectedLibraryChar.anchor_prompt}
@@ -8537,11 +8636,15 @@ export default function App() {
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    Foto Real de Referencia
+                    {refPickerChar.character_category === 'company_or_brand'
+                      ? 'Logo o Imagen de Referencia'
+                      : 'Foto Real de Referencia'}
                     <span className="text-xs text-indigo-300 font-normal">({refPickerChar.name})</span>
                   </h3>
                   <p className="text-[11px] text-slate-400">
-                    Búsqueda en Wikipedia, Wikimedia Commons y Google Imágenes
+                    {refPickerChar.character_category === 'company_or_brand'
+                      ? 'Búsqueda de logos, sedes corporativas y marcas en Wikipedia, Commons y Google'
+                      : 'Búsqueda de retratos en Wikipedia, Wikimedia Commons y Google Imágenes'}
                   </p>
                 </div>
               </div>

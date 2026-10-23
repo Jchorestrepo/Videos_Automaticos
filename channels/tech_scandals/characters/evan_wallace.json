@@ -1,0 +1,27 @@
+{
+  "character_id": "evan_wallace",
+  "channel_id": "tech_scandals",
+  "name": "Evan Wallace",
+  "role": "Cofundador y CTO de Figma, arquitecto de la tecnología web",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Figma",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Evan Wallace (Figma), single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "Figma branded office environment",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/evan_wallace_ai_1792360818422.jpg"
+  ],
+  "assets": [],
+  "updatedAt": "2026-10-18T22:04:45.680Z",
+  "real_reference_image_url": "/channel-assets/tech_scandals/characters/assets/evan_wallace_realref_1792360814609.webp",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/evan_wallace_ai_1792360818422.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

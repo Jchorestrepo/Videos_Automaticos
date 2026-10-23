@@ -1,0 +1,89 @@
+[
+  {
+    "id": "story_1792740986484_7x5j",
+    "channel_id": "ancient_lives",
+    "rowIndex": 6,
+    "title": "Test Story Archive 1792740986448",
+    "characterCompany": "Test Hero",
+    "conflict": "Conflict for testing archive flow",
+    "sources": [],
+    "status": "approved",
+    "approved": true,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-23T07:36:26.484Z",
+    "updatedAt": "2026-10-23T07:36:26.484Z"
+  },
+  {
+    "id": "ancient_case_1",
+    "channel_id": "ancient_lives",
+    "rowIndex": 2,
+    "title": "Sobrevivir a 50°C sin Agua Potable: Un Día Real como Obrero en el Antiguo Egipto",
+    "characterCompany": "Nekht (Campesino del Nilo) / Antiguo Egipto",
+    "conflict": "Cómo lograban los constructores y campesinos egipcios sobrevivir al calor extremo del desierto, las infecciones parasitarias del Nilo y las jornadas extenuantes usando ingeniería doméstica de barro y cerveza espesa.",
+    "sources": [
+      "Historia National Geographic",
+      "British Museum Papyrus Archive"
+    ],
+    "status": "approved",
+    "approved": true,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-17T09:23:18.536Z",
+    "updatedAt": "2026-10-17T09:23:18.536Z"
+  },
+  {
+    "id": "ancient_case_2",
+    "channel_id": "ancient_lives",
+    "rowIndex": 3,
+    "title": "La Pesadilla de Dormir en la Antigua Roma: Incendios, Insulaes de 7 Pisos y Crimen Nocturno",
+    "characterCompany": "Marco (Inquilino de Suburra) / Imperio Romano",
+    "conflict": "Más del 90% de los habitantes de Roma vivían hacinados en edificios de madera e adobe a punto de derrumbarse, sin baños ni cocinas, donde caer la noche significaba jugarse la vida.",
+    "sources": [
+      "Juvenal Satires",
+      "Archaeology of Roman Insulae"
+    ],
+    "status": "approved",
+    "approved": true,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-17T09:23:18.536Z",
+    "updatedAt": "2026-10-17T09:23:18.536Z"
+  },
+  {
+    "id": "ancient_case_3",
+    "channel_id": "ancient_lives",
+    "rowIndex": 4,
+    "title": "El Trabajo Más Peligroso del Mundo Antiguo: Los Buzos de Esponjas y Púrpura de Tiro",
+    "characterCompany": "Kallias / Fenicia y Mar Egeo",
+    "conflict": "Para producir un solo gramo del tinte más caro de la antigüedad, miles de buzos descendían 30 metros a pulmón libre con piedras atadas al cuerpo y hervían glándulas tóxicas durante semanas.",
+    "sources": [
+      "Plinio el Viejo - Historia Natural",
+      "World History Encyclopedia"
+    ],
+    "status": "idea",
+    "approved": false,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-17T09:23:18.536Z",
+    "updatedAt": "2026-10-17T09:23:18.536Z"
+  },
+  {
+    "id": "ancient_case_4",
+    "channel_id": "ancient_lives",
+    "rowIndex": 5,
+    "title": "Cirugía Cerebral con Piedra Obsidiana: ¿Cómo Sobrevivían al Dolor en el Imperio Inca?",
+    "characterCompany": "Amauta Cirujano / Tahuantinsuyo (Andes)",
+    "conflict": "Los cirujanos andinos realizaban trepanaciones craneales con una tasa de supervivencia superior a la de los hospitales de la Guerra Civil estadounidense siglos después.",
+    "sources": [
+      "Smithsonian Institute of Andean Bioarchaeology",
+      "Science Magazine"
+    ],
+    "status": "idea",
+    "approved": false,
+    "finished": false,
+    "published": false,
+    "createdAt": "2026-10-17T09:23:18.536Z",
+    "updatedAt": "2026-10-17T09:23:18.536Z"
+  }
+]

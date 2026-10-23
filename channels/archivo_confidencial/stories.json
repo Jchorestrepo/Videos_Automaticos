@@ -1,0 +1,99 @@
+[
+  {
+    "id": "story_1792393710060_1",
+    "channel_id": "archivo_confidencial",
+    "rowIndex": 1,
+    "title": "El Ascenso y la Implosión de Canal de documentales de tecno",
+    "characterCompany": "El Protagonista Principal",
+    "conflict": "Ambición desmedida y desobediencia a las leyes del mercado.",
+    "sources": [
+      "Investigación forense",
+      "Registros públicos",
+      "Arco trágico clásico que garantiza más del 65% de retención en YouTube."
+    ],
+    "status": "approved",
+    "approved": true,
+    "finished": false,
+    "published": false,
+    "notes": "🎯 Gancho inicial: Cómo un imperio que parecía indestructible colapsó en solo semanas.\n💡 Por qué funciona: Arco trágico clásico que garantiza más del 65% de retención en YouTube.\n⏱️ Duración sugerida: 14 min",
+    "createdAt": "2026-10-19T07:08:30.060Z"
+  },
+  {
+    "id": "story_1792393710060_2",
+    "channel_id": "archivo_confidencial",
+    "rowIndex": 2,
+    "title": "El Error Silencioso que Nadie Notó",
+    "characterCompany": "El Escriba / Auditor",
+    "conflict": "Negligencia deliberada y encubrimiento.",
+    "sources": [
+      "Investigación forense",
+      "Registros públicos",
+      "Gatillo de curiosidad irresistible."
+    ],
+    "status": "in_production",
+    "approved": true,
+    "finished": false,
+    "published": false,
+    "notes": "🎯 Gancho inicial: Una sola firma en un documento secreto selló el destino de millones.\n💡 Por qué funciona: Gatillo de curiosidad irresistible.\n⏱️ Duración sugerida: 12 min",
+    "createdAt": "2026-10-19T07:08:30.060Z",
+    "linkedProjectId": "proj_1792393846351",
+    "updatedAt": "2026-10-19T07:28:30.611Z"
+  },
+  {
+    "id": "story_1792393710060_3",
+    "channel_id": "archivo_confidencial",
+    "rowIndex": 3,
+    "title": "La Traición que Creó un Monopolio",
+    "characterCompany": "Rival y Fundador",
+    "conflict": "Traición empresarial y choque legal.",
+    "sources": [
+      "Investigación forense",
+      "Registros públicos",
+      "El drama interpersonal supera a las cifras técnicas."
+    ],
+    "status": "approved",
+    "approved": true,
+    "finished": false,
+    "published": false,
+    "notes": "🎯 Gancho inicial: Eran socios inseparables hasta que la codicia apareció.\n💡 Por qué funciona: El drama interpersonal supera a las cifras técnicas.\n⏱️ Duración sugerida: 15 min",
+    "createdAt": "2026-10-19T07:08:30.060Z"
+  },
+  {
+    "id": "story_1792393710060_4",
+    "channel_id": "archivo_confidencial",
+    "rowIndex": 4,
+    "title": "El Juicio del Siglo: La Caída Final",
+    "characterCompany": "El Tribunal",
+    "conflict": "Rendición de cuentas y veredicto demoledor.",
+    "sources": [
+      "Investigación forense",
+      "Registros públicos",
+      "Clímax con alta satisfacción para el espectador."
+    ],
+    "status": "approved",
+    "approved": true,
+    "finished": false,
+    "published": false,
+    "notes": "🎯 Gancho inicial: Frente al jurado, los secretos finalmente salieron a la luz.\n💡 Por qué funciona: Clímax con alta satisfacción para el espectador.\n⏱️ Duración sugerida: 16 min",
+    "createdAt": "2026-10-19T07:08:30.060Z"
+  },
+  {
+    "id": "story_1792393710060_5",
+    "channel_id": "archivo_confidencial",
+    "rowIndex": 5,
+    "title": "Lo que Quedó: Las Ruinas del Imperio",
+    "characterCompany": "Los Sobrevivientes",
+    "conflict": "Consecuencias históricas y lecciones imborrables.",
+    "sources": [
+      "Investigación forense",
+      "Registros públicos",
+      "Cierre de la primera temporada del canal."
+    ],
+    "status": "approved",
+    "approved": true,
+    "finished": false,
+    "published": false,
+    "notes": "🎯 Gancho inicial: Años después del colapso, esta es la verdad que perdura.\n💡 Por qué funciona: Cierre de la primera temporada del canal.\n⏱️ Duración sugerida: 11 min",
+    "createdAt": "2026-10-19T07:08:30.060Z"
+  }
+]

@@ -10,9 +10,10 @@ export interface VisualBeatsProps {
   highlightLabel?: string;
   accentColor: string;
   durationInFrames: number;
+  language?: 'es' | 'en';
 }
 
-const BLOCK_BADGE_MAP: Record<
+const BLOCK_BADGE_MAP_ES: Record<
   NarrativeBlockType,
   { tag: string; subtitle: string; badgeColor: string }
 > = {
@@ -48,6 +49,42 @@ const BLOCK_BADGE_MAP: Record<
   },
 };
 
+const BLOCK_BADGE_MAP_EN: Record<
+  NarrativeBlockType,
+  { tag: string; subtitle: string; badgeColor: string }
+> = {
+  hook_climax: {
+    tag: 'ACT I • THE MIRAGE AT THE TOP',
+    subtitle: 'FORENSIC CASE STUDY',
+    badgeColor: '#f59e0b',
+  },
+  protagonist_origin: {
+    tag: 'ACT II • PROTAGONIST DOSSIER',
+    subtitle: 'ORIGIN, RISE & PSYCHOLOGY',
+    badgeColor: '#38bdf8',
+  },
+  antagonist_rival: {
+    tag: 'ACT III • FORCE IN THE SHADOWS',
+    subtitle: 'THE RIVAL & STRATEGIC COUNTER',
+    badgeColor: '#a855f7',
+  },
+  concept_explainer: {
+    tag: 'ACT IV • MASTER EXPLAINER',
+    subtitle: 'HIDDEN MECHANISM UNVEILED',
+    badgeColor: '#10b981',
+  },
+  collision_collapse: {
+    tag: 'ACT V • BREAKING POINT',
+    subtitle: 'TIMELINE OF THE COLLAPSE',
+    badgeColor: '#ef4444',
+  },
+  aftermath_verdict: {
+    tag: 'ACT VI • FINAL VERDICT',
+    subtitle: 'THE ASHES OF THE EMPIRE',
+    badgeColor: '#94a3b8',
+  },
+};
+
 export const VisualBeats: React.FC<VisualBeatsProps> = ({
   sceneId,
   narrativeBlock = 'hook_climax',
@@ -55,7 +92,10 @@ export const VisualBeats: React.FC<VisualBeatsProps> = ({
   highlightLabel,
   accentColor,
   durationInFrames,
+  language = 'en',
 }) => {
+  const isEn = language === 'en';
+  const blockMeta = (isEn ? BLOCK_BADGE_MAP_EN : BLOCK_BADGE_MAP_ES)[narrativeBlock] || (isEn ? BLOCK_BADGE_MAP_EN.hook_climax : BLOCK_BADGE_MAP_ES.hook_climax);
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -95,7 +135,6 @@ export const VisualBeats: React.FC<VisualBeatsProps> = ({
   const cardOpacity = cardSpringIn * cardFadeOut;
   const cardTranslateX = interpolate(cardSpringIn, [0, 1], [50, 0]);
 
-  const blockMeta = BLOCK_BADGE_MAP[narrativeBlock] || BLOCK_BADGE_MAP.hook_climax;
   const activeColor = blockMeta.badgeColor || accentColor;
 
   // Alternar posición de la tarjeta (derecha o izquierda) según la escena para mayor dinamismo
@@ -162,7 +201,7 @@ export const VisualBeats: React.FC<VisualBeatsProps> = ({
             marginTop: 2,
           }}
         >
-          {blockMeta.subtitle} • CÁMARA {(beatIndex % 4) + 1}
+          {blockMeta.subtitle} • {isEn ? 'CAM' : 'CÁMARA'} {(beatIndex % 4) + 1}
         </span>
       </div>
 
@@ -210,7 +249,7 @@ export const VisualBeats: React.FC<VisualBeatsProps> = ({
                 textTransform: 'uppercase',
               }}
             >
-              {highlightLabel || 'EVIDENCIA VERIFICADA'}
+              {highlightLabel || (isEn ? 'VERIFIED EVIDENCE' : 'EVIDENCIA VERIFICADA')}
             </span>
           </div>
 

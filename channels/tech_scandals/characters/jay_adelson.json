@@ -1,0 +1,124 @@
+{
+  "character_id": "jay_adelson",
+  "channel_id": "tech_scandals",
+  "name": "Jay Adelson",
+  "role": "Cofundador y CEO (hasta 2010)",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Digg",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Jay Adelson (Digg), single individual person only, 30-42 years old, distinctive realistic facial structure, expressive eyes, modern tailored tech executive or founder attire, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, high-end 3D documentary render",
+  "signature_props": [
+    "Digg branded office environment",
+    "sleek smartphone with financial charts",
+    "glass corporate office window"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/jay_adelson_frame_1792693906209_676.jpg",
+    "/channel-assets/tech_scandals/characters/assets/jay_adelson_frame_1792693678839_899.jpg",
+    "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693582399_513.jpg",
+    "/channel-assets/tech_scandals/characters/assets/jay_adelson_ai_1792693398441.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792693906245_jkxwi",
+      "url": "/channel-assets/tech_scandals/characters/assets/jay_adelson_frame_1792693906209_676.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A wide shot of a dark, stormy sky over a city skyline, with digital lines of code and Digg logos swirling like a tornado. In the foreground, a silhouette of a person holding a smartphone, posting a link. The scene conveys impending chaos and rebellion.",
+      "description": "La tormenta perfecta",
+      "characterId": "jay_adelson",
+      "characterName": "Jay Adelson",
+      "characterIds": [
+        "jay_adelson"
+      ],
+      "characterNames": [
+        "Jay Adelson"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "New York City / Calle Urbana",
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "environment_wide",
+      "tags": [
+        "kevin rose / digg",
+        "jay",
+        "adelson",
+        "grid",
+        "split",
+        "screen",
+        "dark",
+        "stormy"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 11,
+      "createdAt": "2026-10-22T18:31:46.245Z"
+    },
+    {
+      "id": "asset_1792693678843_vfc55",
+      "url": "/channel-assets/tech_scandals/characters/assets/jay_adelson_frame_1792693678839_899.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A lone figure standing in front of a giant screen showing Digg's traffic graph plummeting. The figure is silhouetted against the glow, casting a long shadow. The room is empty except for scattered papers. The mood is desolate and dramatic.",
+      "description": "La tormenta perfecta",
+      "characterId": "jay_adelson",
+      "characterName": "Jay Adelson",
+      "characterIds": [
+        "jay_adelson"
+      ],
+      "characterNames": [
+        "Jay Adelson"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "kevin rose / digg",
+        "jay",
+        "adelson",
+        "grid",
+        "split",
+        "screen",
+        "lone",
+        "figure"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 12,
+      "createdAt": "2026-10-22T18:27:58.843Z"
+    },
+    {
+      "id": "asset_1792693582404_d2xeq",
+      "url": "/channel-assets/tech_scandals/characters/assets/kevin_rose_frame_1792693582399_513.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of Kevin Rose and Jay Adelson in a 2004 office, shaking hands over a desk with a laptop showing the first Digg prototype. Optimistic startup vibe, natural light.",
+      "description": "El Mentor y la Visión",
+      "characterId": "jay_adelson",
+      "characterName": "Jay Adelson",
+      "characterIds": [
+        "kevin_rose",
+        "jay_adelson"
+      ],
+      "characterNames": [
+        "Kevin Rose",
+        "Jay Adelson"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "Kevin Rose / Digg",
+      "shotType": "character_closeup",
+      "tags": [
+        "kevin rose / digg",
+        "kevin",
+        "rose,",
+        "jay",
+        "adelson",
+        "grid",
+        "split",
+        "screen"
+      ],
+      "sourceProjectId": "proj_1792690869908",
+      "sourceSceneId": 6,
+      "createdAt": "2026-10-22T18:26:22.404Z"
+    }
+  ],
+  "updatedAt": "2026-10-22T18:31:46.245Z",
+  "real_reference_image_url": "/channel-assets/tech_scandals/characters/assets/jay_adelson_realref_1792693396212.jpg",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/jay_adelson_ai_1792693398441.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

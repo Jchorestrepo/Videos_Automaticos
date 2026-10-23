@@ -1,7 +1,7 @@
 import React from 'react';
 import { Sequence, Audio, interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
-import type { SceneItem } from '../types/index.ts';
-import { KenBurnsImage } from './KenBurnsImage.tsx';
+import type { SceneItem, MotionIntensityType } from '../types/index.ts';
+import { LivingVisualRenderer } from './LivingVisualRenderer.tsx';
 import { Atmosphere } from './Atmosphere.tsx';
 import { KineticCaptions } from './KineticCaptions.tsx';
 import { VisualBeats } from './VisualBeats.tsx';
@@ -14,7 +14,8 @@ export interface DocumentaryVideoProps {
   showAtmosphere?: boolean;
   showHighlightCards?: boolean;
   showChapterBadge?: boolean;
-  motionIntensity?: 'subtle' | 'standard' | 'dynamic';
+  motionIntensity?: MotionIntensityType;
+  language?: 'es' | 'en';
   [key: string]: unknown;
 }
 
@@ -23,7 +24,7 @@ export function resolveMediaUrl(url?: string): string {
   if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
     return url;
   }
-  if (url.startsWith('/storage')) {
+  if (url.startsWith('/storage') || url.startsWith('/channel-assets')) {
     return `http://127.0.0.1:3001${url}`;
   }
   return url;
@@ -37,6 +38,7 @@ export const DocumentaryVideo: React.FC<DocumentaryVideoProps> = ({
   showHighlightCards = true,
   showChapterBadge = true,
   motionIntensity = 'standard',
+  language = 'en',
 }) => {
   const { fps } = useVideoConfig();
   const isTech = channelId.includes('tech');
@@ -67,6 +69,7 @@ export const DocumentaryVideo: React.FC<DocumentaryVideoProps> = ({
             scene.chapter
           )}`;
         const imgSrc = resolveMediaUrl(rawImgSrc);
+        const videoSrc = scene.videoUrl ? resolveMediaUrl(scene.videoUrl) : undefined;
 
         return (
           <Sequence
@@ -77,6 +80,7 @@ export const DocumentaryVideo: React.FC<DocumentaryVideoProps> = ({
             <SceneRenderer
               scene={scene}
               imgSrc={imgSrc}
+              videoSrc={videoSrc}
               durationInFrames={durationInFrames}
               channelId={channelId}
               accentColor={accentColor}
@@ -85,6 +89,7 @@ export const DocumentaryVideo: React.FC<DocumentaryVideoProps> = ({
               showHighlightCards={showHighlightCards}
               showChapterBadge={showChapterBadge}
               motionIntensity={motionIntensity}
+              language={language}
             />
           </Sequence>
         );
@@ -96,6 +101,7 @@ export const DocumentaryVideo: React.FC<DocumentaryVideoProps> = ({
 interface SceneRendererProps {
   scene: SceneItem;
   imgSrc: string;
+  videoSrc?: string;
   durationInFrames: number;
   channelId: string;
   accentColor: string;
@@ -103,12 +109,14 @@ interface SceneRendererProps {
   showAtmosphere?: boolean;
   showHighlightCards?: boolean;
   showChapterBadge?: boolean;
-  motionIntensity?: 'subtle' | 'standard' | 'dynamic';
+  motionIntensity?: MotionIntensityType;
+  language?: 'es' | 'en';
 }
 
 const SceneRenderer: React.FC<SceneRendererProps> = ({
   scene,
   imgSrc,
+  videoSrc,
   durationInFrames,
   channelId,
   accentColor,
@@ -116,6 +124,8 @@ const SceneRenderer: React.FC<SceneRendererProps> = ({
   showAtmosphere = true,
   showHighlightCards = true,
   showChapterBadge = true,
+  motionIntensity = 'standard',
+  language = 'en',
 }) => {
   const frame = useCurrentFrame();
 
@@ -136,11 +146,17 @@ const SceneRenderer: React.FC<SceneRendererProps> = ({
         opacity,
       }}
     >
-      <KenBurnsImage
+      <LivingVisualRenderer
         src={imgSrc}
+        videoUrl={videoSrc}
         motion={scene.camera_motion || 'zoom_in'}
         durationInFrames={durationInFrames}
         sceneId={scene.scene_id}
+        shotType={scene.shot_type}
+        motionMode={scene.motion_mode}
+        characterEffect={scene.character_effect}
+        intensity={motionIntensity}
+        accentColor={accentColor}
       />
       {showAtmosphere && <Atmosphere channelId={channelId} />}
 
@@ -154,6 +170,7 @@ const SceneRenderer: React.FC<SceneRendererProps> = ({
           highlightLabel={scene.highlight_label}
           accentColor={accentColor}
           durationInFrames={durationInFrames}
+          language={language}
         />
       )}
 

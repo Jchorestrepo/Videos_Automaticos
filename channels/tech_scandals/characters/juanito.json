@@ -1,0 +1,289 @@
+{
+  "character_id": "juanito",
+  "channel_id": "tech_scandals",
+  "name": "Juanito",
+  "role": "Personaje Recurrente del Canal • Joven Entusiasta del Deporte, Beta Tester y Creador",
+  "real_person": false,
+  "character_category": "channel_lore_cast",
+  "known_face": false,
+  "company_or_affiliation": "Elenco con Lore del Canal",
+  "channel_lore": {
+    "age": "15 años",
+    "personality_traits": [
+      "Alegre",
+      "Amor por el deporte",
+      "Curioso",
+      "Optimista",
+      "Hiperactivo digital"
+    ],
+    "peculiarities": [
+      "Siempre usa una gorra deportiva azul hacia atrás",
+      "Viste una chaqueta o sudadera deportiva con el número 10 y auriculares al cuello",
+      "Siempre tiene un balón de fútbol o un cronómetro deportivo cerca de su escritorio",
+      "Usa analogías deportivas y celebra como si metiera un gol cuando descubre algo nuevo"
+    ],
+    "channel_backstory": "Juanito es un chico de 15 años alegre y apasionado por el deporte que vive conectado probando cada nueva plataforma, app viral o tendencia tecnológica. Cuando en una historia aparece un usuario temprano, un creador joven, un testigo cotidiano o un personaje del que no se conoce el rostro, Juanito entra en acción como parte del lore oficial del canal.",
+    "reusable_archetypes": [
+      "usuario joven",
+      "creador de contenido",
+      "beta tester",
+      "estudiante",
+      "comunidad de usuarios",
+      "testigo cotidiano",
+      "personaje sin rostro conocido"
+    ],
+    "appearances": [
+      {
+        "project_id": "proj_1792779696034",
+        "title": "Transmitió su Vida 24/7 y Casi se Vuelve Loco... pero Creó un Monstruo de $970 Millones: La Historia de Twitch",
+        "role_in_story": "Juanito"
+      },
+      {
+        "project_id": "test_proj_bilingual_1792740420439",
+        "title": "Test Bilingual Project",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      },
+      {
+        "project_id": "test_proj_turbo_1792740403483",
+        "title": "Test Turbo Production Project",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      },
+      {
+        "project_id": "test_proj_bilingual_1792716561876",
+        "title": "Test Bilingual Project",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      },
+      {
+        "project_id": "test_proj_bilingual_1792716529258",
+        "title": "Test Bilingual Project",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      },
+      {
+        "project_id": "proj_1792715738305",
+        "title": "Valía $4.500 Millones y un Simple Script la Destruyó: El Escándalo de Zenefits",
+        "role_in_story": "Fondo de capital riesgo representado por un socio anónimo"
+      },
+      {
+        "project_id": "proj_1792690869908",
+        "title": "Rechazó $200M de Google y Murió en 24 Horas: El Error que Mató a Digg",
+        "role_in_story": "La comunidad de power users de Digg (Grupo de usuarios influyentes que controlaba la portada y luego se rebeló)"
+      },
+      {
+        "project_id": "proj_1792690310897",
+        "title": "Rechazó $200M de Google y Murió en 24 Horas: El Error que Mató a Digg",
+        "role_in_story": "La comunidad de power users de Digg (Usuarios influyentes que controlaban la portada y luego se rebelaron)"
+      },
+      {
+        "project_id": "proj_1792360536298",
+        "title": "Valía $2.000 Millones y Murió en Silencio: Cómo Figma Destruyó a InVision",
+        "role_in_story": "Periodista joven y analítico, con mirada crítica y acceso a información de primera mano. Podría ser interpretado por un actor recurrente como Juanito o Elena Vega."
+      },
+      {
+        "project_id": "proj_1792226956203",
+        "title": "Twitter Tenía al \"TikTok\" Original por $30M y lo Dejó Morir: El Fracaso de Vine",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      },
+      {
+        "project_id": "proj_1792136125235",
+        "title": "Pagaron $1.100 Millones por Ella y la Vendieron por $3 Millones: El Desastre de Tumblr",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      },
+      {
+        "project_id": "proj_1792101360764",
+        "title": "Rechazó $200M de Google y Murió en 24 Horas: El Error que Mató a Digg",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      },
+      {
+        "project_id": "proj_1792099572228",
+        "title": "Quemó $120M en 24 Meses y Engañó a Silicon Valley: La Caída de Fast",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      },
+      {
+        "project_id": "proj_1792096197684",
+        "title": "Quemó $120M en 24 Meses y Engañó a Silicon Valley: La Caída de Fast",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      },
+      {
+        "project_id": "proj_1792096173311",
+        "title": "Quemó $120M en 24 Meses y Engañó a Silicon Valley: La Caída de Fast",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      },
+      {
+        "project_id": "proj_1792096118373",
+        "title": "Quemó $120M en 24 Meses y Engañó a Silicon Valley: La Caída de Fast",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      },
+      {
+        "project_id": "proj_1792095345662",
+        "title": "Quemó $120M en 24 Meses y Engañó a Silicon Valley: La Caída de Fast",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      }
+    ]
+  },
+  "anchor_prompt": "Stylized 3D cinematic animated character of Juanito, a cheerful 15-year-old boy with a passion for sports, warm expressive eyes, bright energetic smile, wearing a signature backwards blue athletic cap, sporty jersey hoodie with number 10, headphones around his neck, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, single individual 3D documentary render",
+  "signature_props": [
+    "backwards blue sports cap",
+    "soccer ball next to laptop",
+    "sporty digital chronograph watch"
+  ],
+  "reference_gallery": [
+    "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792781449716_576.jpg",
+    "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792364945531_860.jpg",
+    "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792361392525_719.jpg",
+    "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792270039966_302.jpg",
+    "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792267419825_599.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792781449720_7tade",
+      "url": "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792781449716_576.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Juanito looking bored as viewer count drops on a screen, while multiple other streamers emerge in the background, each with their own audience, illustrating the shift to a platform model.",
+      "description": "La Trampa de la Atención",
+      "characterId": "juanito",
+      "characterName": "Juanito",
+      "characterIds": [
+        "juanito"
+      ],
+      "characterNames": [
+        "Juanito"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Justin Kan y Emmett Shear / Justin.tv (Twitch)",
+      "shotType": "concept_diagram",
+      "tags": [
+        "justin kan y emmett shear / justin.tv (twitch)",
+        "juanito",
+        "grid",
+        "split",
+        "screen",
+        "looking",
+        "bored",
+        "viewer"
+      ],
+      "sourceProjectId": "proj_1792779696034",
+      "sourceSceneId": 15,
+      "createdAt": "2026-10-23T18:50:49.720Z"
+    },
+    {
+      "id": "asset_1792364945532_i4lku",
+      "url": "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792364945531_860.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A split composition: on the left, a record store with a 'Closed' sign; on the right, the same teenager (Juanito) now in a modern co-working space, using Figma on a laptop with a smile. The lighting contrasts: dim on the left, bright on the right.",
+      "description": "La lección de Juanito",
+      "characterId": "juanito",
+      "characterName": "Juanito",
+      "characterIds": [
+        "juanito"
+      ],
+      "characterNames": [
+        "Juanito"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Clark Valberg / InVision vs. Dylan Field / Figma",
+      "shotType": "concept_diagram",
+      "tags": [
+        "clark valberg / invision vs. dylan field / figma",
+        "juanito",
+        "grid",
+        "split",
+        "screen",
+        "composition",
+        "left",
+        "record"
+      ],
+      "sourceProjectId": "proj_1792360536298",
+      "sourceSceneId": 15,
+      "createdAt": "2026-10-18T23:09:05.532Z"
+    },
+    {
+      "id": "asset_1792361392546_97o2p",
+      "url": "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792361392525_719.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A split composition: on the left, a record store with a 'Closed' sign; on the right, the same teenager (Juanito) now in a modern co-working space, using Figma on a laptop with a smile. The lighting contrasts: dim on the left, bright on the right.",
+      "description": "La lección de Juanito",
+      "characterId": "juanito",
+      "characterName": "Juanito",
+      "characterIds": [
+        "juanito"
+      ],
+      "characterNames": [
+        "Juanito"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Clark Valberg / InVision vs. Dylan Field / Figma",
+      "shotType": "concept_diagram",
+      "tags": [
+        "clark valberg / invision vs. dylan field / figma",
+        "juanito",
+        "grid",
+        "split",
+        "screen",
+        "composition",
+        "left",
+        "record"
+      ],
+      "sourceProjectId": "proj_1792360536298",
+      "sourceSceneId": 15,
+      "createdAt": "2026-10-18T22:09:52.546Z"
+    },
+    {
+      "id": "asset_1792270040002_1v1k5",
+      "url": "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792270039966_302.jpg",
+      "prompt": "Single unified 16:9 frame showing a bustling restaurant with customers leaving as the owner watches helplessly.",
+      "description": "La Analogía del Restaurante",
+      "characterId": "juanito",
+      "characterName": "Juanito",
+      "characterIds": [
+        "juanito"
+      ],
+      "characterNames": [
+        "Juanito"
+      ],
+      "isGroupShot": false,
+      "placeOrEnvironment": "Café / Restaurante",
+      "companyOrSubject": "Dom Hofmann, Rus Yusupov y Colin Kroll",
+      "shotType": "concept_diagram",
+      "tags": [
+        "dom hofmann, rus yusupov y colin kroll",
+        "juanito",
+        "showing",
+        "bustling",
+        "restaurant",
+        "customers",
+        "leaving",
+        "owner"
+      ],
+      "sourceProjectId": "proj_1792226956203",
+      "sourceSceneId": 14,
+      "createdAt": "2026-10-17T20:47:20.002Z"
+    },
+    {
+      "id": "asset_1792267419829_gvrzc",
+      "url": "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792267419825_599.jpg",
+      "prompt": "Single unified 16:9 frame showing a ticking clock superimposed over a Vine logo cracking apart.",
+      "description": "La Bomba de Relojería",
+      "characterId": "juanito",
+      "characterName": "Juanito",
+      "characterIds": [
+        "juanito"
+      ],
+      "characterNames": [
+        "Juanito"
+      ],
+      "isGroupShot": false,
+      "companyOrSubject": "Dom Hofmann, Rus Yusupov y Colin Kroll",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "dom hofmann, rus yusupov y colin kroll",
+        "juanito",
+        "showing",
+        "ticking",
+        "clock",
+        "superimposed",
+        "vine",
+        "logo"
+      ],
+      "createdAt": "2026-10-17T20:03:39.829Z"
+    }
+  ],
+  "updatedAt": "2026-10-23T18:50:49.720Z",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792267419825_599.jpg"
+}

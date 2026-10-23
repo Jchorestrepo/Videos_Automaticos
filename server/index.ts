@@ -509,9 +509,14 @@ app.get('/api/characters/:channelId/:characterId/reference-candidates', async (r
       return res.status(404).json({ error: 'Personaje no encontrado' });
     }
     const query = typeof req.query.q === 'string' && req.query.q.trim() ? req.query.q : character.name;
+    const isCompany =
+      character.character_category === 'company_or_brand' ||
+      character.entity_type === 'company' ||
+      CharacterService.isCompanyOrBrandEntity(character.name);
     const candidates = await ReferencePhotoService.searchCandidates(
       query,
-      character.company_or_affiliation
+      character.company_or_affiliation,
+      isCompany
     );
     res.json({ query, candidates });
   } catch (error: any) {
@@ -1124,14 +1129,16 @@ app.post('/api/script/ai-adjust', async (req, res) => {
         if (sc) {
           try {
             const scChars =
-              sc.character_ids && sc.character_ids.length > 0
-                ? sc.character_ids
-                    .map(
-                      (id) =>
-                        updatedProject.characters?.find((c) => c.character_id === id) ||
-                        CharacterService.getCharacter(channelId, id)
-                    )
-                    .filter((c): c is NonNullable<typeof c> => Boolean(c))
+              Array.isArray(sc.character_ids)
+                ? (sc.character_ids.length === 0
+                    ? []
+                    : sc.character_ids
+                        .map(
+                          (id) =>
+                            updatedProject.characters?.find((c) => c.character_id === id) ||
+                            CharacterService.getCharacter(channelId, id)
+                        )
+                        .filter((c): c is NonNullable<typeof c> => Boolean(c) && c.character_category !== 'company_or_brand'))
                 : updatedProject.characters?.[0]
                   ? [updatedProject.characters[0]]
                   : [];
@@ -1266,17 +1273,19 @@ app.post('/api/images/generate', async (req, res) => {
     }
 
     const resolveSceneCast = (sc: typeof project.scenes[0]) => {
-      if (sc.character_ids && sc.character_ids.length > 0) {
-        const resolved = sc.character_ids
+      if (Array.isArray(sc.character_ids)) {
+        if (sc.character_ids.length === 0) return [];
+        return sc.character_ids
           .map(
             (id) =>
               project.characters?.find((c) => c.character_id === id) ||
               CharacterService.getCharacter(channelId, id)
           )
-          .filter((c): c is NonNullable<typeof c> => Boolean(c));
-        if (resolved.length > 0) return resolved;
+          .filter((c): c is NonNullable<typeof c> => Boolean(c) && c.character_category !== 'company_or_brand');
       }
-      return project.characters && project.characters.length > 0 ? [project.characters[0]] : [];
+      return project.characters && project.characters.length > 0
+        ? project.characters.filter((c) => c.character_category !== 'company_or_brand').slice(0, 1)
+        : [];
     };
 
     const artStyle = customArtStyle || project.artStyle || '3d_animation';

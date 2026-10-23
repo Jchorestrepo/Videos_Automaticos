@@ -1,0 +1,295 @@
+{
+  "character_id": "marissa_mayer",
+  "channel_id": "tech_scandals",
+  "name": "Marissa Mayer",
+  "role": "CEO de Yahoo",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Yahoo",
+  "anchor_prompt": "Stylized 3D cinematic animated character of Marissa Mayer (CEO of Yahoo), 38-year-old female corporate tech executive, straight blonde hair, sharp piercing blue eyes, calculating analytical expression, tailored designer corporate dress and blazer, Pixar and Arcane inspired visual aesthetic, rich volumetric lighting, single individual 3D documentary render",
+  "signature_props": [
+    "sleek Yahoo corporate boardroom presentation screen",
+    "glass executive desk",
+    "billion-dollar acquisition contract"
+  ],
+  "canonical_image_url": "/storage/proj_1792136125235/images/scene_1.jpg",
+  "custom_uploaded": false,
+  "reference_gallery": [
+    "/storage/proj_1792136125235/images/scene_1.jpg",
+    "/storage/proj_1792136125235/images/scene_3.jpg",
+    "/storage/proj_1792136125235/images/scene_4.jpg",
+    "/storage/proj_1792136125235/images/scene_9.jpg",
+    "/storage/proj_1792136125235/images/scene_10.jpg",
+    "/storage/proj_1792136125235/images/scene_11.jpg",
+    "/storage/proj_1792136125235/images/scene_15.jpg",
+    "/storage/proj_1792136125235/images/scene_17.jpg",
+    "/storage/proj_1792136125235/images/scene_23.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_scene_1",
+      "url": "/storage/proj_1792136125235/images/scene_1.jpg",
+      "prompt": "A wide shot of Tumblr's vibrant headquarters in New York City, filled with young employees working on laptops, with a banner celebrating the Yahoo acquisition in the background.",
+      "description": "Escena 1: El Cenit del Éxito",
+      "characterId": "marissa_mayer",
+      "characterName": "Marissa Mayer",
+      "placeOrEnvironment": "Headquarters / Sede Central Tumblr NYC",
+      "companyOrSubject": "Yahoo",
+      "shotType": "environment_wide",
+      "tags": [
+        "tumblr",
+        "yahoo",
+        "wide",
+        "shot",
+        "vibrant",
+        "headquarters",
+        "york",
+        "city"
+      ],
+      "createdAt": "2026-10-16T23:42:50.398Z",
+      "characterIds": [
+        "marissa_mayer"
+      ],
+      "characterNames": [
+        "Marissa Mayer"
+      ],
+      "isGroupShot": false
+    },
+    {
+      "id": "asset_scene_3",
+      "url": "/storage/proj_1792136125235/images/scene_3.jpg",
+      "prompt": "A symbolic silhouette of David Karp shaking hands with Marissa Mayer, with the Tumblr logo glowing faintly in the background, casting long shadows.",
+      "description": "Escena 3: La Promesa Dorada",
+      "characterId": "marissa_mayer",
+      "characterName": "Marissa Mayer",
+      "placeOrEnvironment": "Escenario Documental Tumblr",
+      "companyOrSubject": "Tumblr",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "tumblr",
+        "yahoo",
+        "symbolic",
+        "silhouette",
+        "david",
+        "karp",
+        "shaking",
+        "hands"
+      ],
+      "createdAt": "2026-10-16T23:42:50.420Z",
+      "characterIds": [
+        "david_karp",
+        "marissa_mayer"
+      ],
+      "characterNames": [
+        "David Karp",
+        "Marissa Mayer"
+      ],
+      "isGroupShot": true
+    },
+    {
+      "id": "asset_scene_4",
+      "url": "/storage/proj_1792136125235/images/scene_4.jpg",
+      "prompt": "A conceptual diagram showing the clash between Tumblr's creative culture and Yahoo's corporate strategies, with arrows pointing towards inevitable collision.",
+      "description": "Escena 4: El Preludio del Desastre",
+      "characterId": "marissa_mayer",
+      "characterName": "Marissa Mayer",
+      "placeOrEnvironment": "Escenario Documental Tumblr",
+      "companyOrSubject": "Yahoo",
+      "shotType": "concept_diagram",
+      "tags": [
+        "tumblr",
+        "yahoo",
+        "conceptual",
+        "diagram",
+        "showing",
+        "clash",
+        "between",
+        "creative"
+      ],
+      "createdAt": "2026-10-16T23:42:50.420Z",
+      "characterIds": [
+        "marissa_mayer"
+      ],
+      "characterNames": [
+        "Marissa Mayer"
+      ],
+      "isGroupShot": false
+    },
+    {
+      "id": "asset_scene_9",
+      "url": "/storage/proj_1792136125235/images/scene_9.jpg",
+      "prompt": "Single unified 16:9 frame of Marissa Mayer in a sleek Yahoo boardroom, pointing at a Tumblr logo on a presentation screen, with cold corporate lighting casting sharp shadows.",
+      "description": "Escena 9: El Contrapeso",
+      "characterId": "marissa_mayer",
+      "characterName": "Marissa Mayer",
+      "placeOrEnvironment": "Oficina Corporativa / Boardroom Yahoo",
+      "companyOrSubject": "Yahoo",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "tumblr",
+        "yahoo",
+        "single",
+        "unified",
+        "frame",
+        "marissa",
+        "mayer",
+        "sleek"
+      ],
+      "createdAt": "2026-10-16T23:42:50.422Z",
+      "characterIds": [
+        "marissa_mayer"
+      ],
+      "characterNames": [
+        "Marissa Mayer"
+      ],
+      "isGroupShot": false
+    },
+    {
+      "id": "asset_scene_10",
+      "url": "/storage/proj_1792136125235/images/scene_10.jpg",
+      "prompt": "Single unified 16:9 frame of a Yahoo press release document with the headline 'We Promise Not to Screw It Up', slowly fading to reveal aggressive ad placement mockups underneath.",
+      "description": "Escena 10: Promesas Vacías",
+      "characterId": "marissa_mayer",
+      "characterName": "Marissa Mayer",
+      "placeOrEnvironment": "Escenario Documental Tumblr",
+      "companyOrSubject": "Yahoo",
+      "shotType": "object_detail",
+      "tags": [
+        "tumblr",
+        "yahoo",
+        "single",
+        "unified",
+        "frame",
+        "press",
+        "release",
+        "document"
+      ],
+      "createdAt": "2026-10-16T23:42:50.422Z",
+      "characterIds": [
+        "marissa_mayer"
+      ],
+      "characterNames": [
+        "Marissa Mayer"
+      ],
+      "isGroupShot": false
+    },
+    {
+      "id": "asset_scene_11",
+      "url": "/storage/proj_1792136125235/images/scene_11.jpg",
+      "prompt": "Single unified 16:9 frame of a dark stormy sky over the Yahoo logo building, with Tumblr's logo as a small boat being tossed by corporate waves.",
+      "description": "Escena 11: La Tormenta Perfecta",
+      "characterId": "marissa_mayer",
+      "characterName": "Marissa Mayer",
+      "placeOrEnvironment": "Escenario Documental Tumblr",
+      "companyOrSubject": "Yahoo",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "tumblr",
+        "yahoo",
+        "single",
+        "unified",
+        "frame",
+        "dark",
+        "stormy",
+        "over"
+      ],
+      "createdAt": "2026-10-16T23:42:50.422Z",
+      "characterIds": [
+        "marissa_mayer"
+      ],
+      "characterNames": [
+        "Marissa Mayer"
+      ],
+      "isGroupShot": false
+    },
+    {
+      "id": "asset_scene_15",
+      "url": "/storage/proj_1792136125235/images/scene_15.jpg",
+      "prompt": "Single unified 16:9 frame of a towering stack of dollar bills collapsing into dust, with the Yahoo logo burning in the background.",
+      "description": "Escena 15: El Precio del Desconocimiento",
+      "characterId": "marissa_mayer",
+      "characterName": "Marissa Mayer",
+      "placeOrEnvironment": "Escenario Documental Tumblr",
+      "companyOrSubject": "Yahoo",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "tumblr",
+        "yahoo",
+        "single",
+        "unified",
+        "frame",
+        "towering",
+        "stack",
+        "dollar"
+      ],
+      "createdAt": "2026-10-16T23:42:50.422Z",
+      "characterIds": [
+        "marissa_mayer"
+      ],
+      "characterNames": [
+        "Marissa Mayer"
+      ],
+      "isGroupShot": false
+    },
+    {
+      "id": "asset_scene_17",
+      "url": "/storage/proj_1792136125235/images/scene_17.jpg",
+      "prompt": "Single unified 16:9 frame of a packed press conference room with flashing cameras and Marissa Mayer holding a Tumblr mug.",
+      "description": "Escena 17: La Tormenta que se Avecina",
+      "characterId": "marissa_mayer",
+      "characterName": "Marissa Mayer",
+      "placeOrEnvironment": "Oficina Corporativa / Boardroom Yahoo",
+      "companyOrSubject": "Tumblr",
+      "shotType": "environment_wide",
+      "tags": [
+        "tumblr",
+        "yahoo",
+        "single",
+        "unified",
+        "frame",
+        "packed",
+        "press",
+        "conference"
+      ],
+      "createdAt": "2026-10-16T23:42:50.422Z",
+      "characterIds": [
+        "marissa_mayer"
+      ],
+      "characterNames": [
+        "Marissa Mayer"
+      ],
+      "isGroupShot": false
+    },
+    {
+      "id": "asset_scene_23",
+      "url": "/storage/proj_1792136125235/images/scene_23.jpg",
+      "prompt": "Single unified 16:9 frame of Marissa Mayer walking alone in a sterile corporate hallway, looking over her shoulder.",
+      "description": "Escena 23: El Destino de los Protagonistas",
+      "characterId": "marissa_mayer",
+      "characterName": "Marissa Mayer",
+      "placeOrEnvironment": "Escenario Documental Tumblr",
+      "companyOrSubject": "Tumblr",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "tumblr",
+        "yahoo",
+        "single",
+        "unified",
+        "frame",
+        "marissa",
+        "mayer",
+        "walking"
+      ],
+      "createdAt": "2026-10-16T23:42:50.422Z",
+      "characterIds": [
+        "marissa_mayer"
+      ],
+      "characterNames": [
+        "Marissa Mayer"
+      ],
+      "isGroupShot": false
+    }
+  ],
+  "updatedAt": "2026-10-17T09:16:28.772Z"
+}

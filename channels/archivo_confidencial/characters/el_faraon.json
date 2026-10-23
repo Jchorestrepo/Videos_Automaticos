@@ -1,0 +1,360 @@
+{
+  "character_id": "el_faraon",
+  "channel_id": "archivo_confidencial",
+  "name": "El Faraón",
+  "role": "Gobernante absoluto",
+  "real_person": true,
+  "character_category": "real_person",
+  "known_face": true,
+  "company_or_affiliation": "Estado egipcio",
+  "anchor_prompt": "Stylized 3D cinematic animated historical character of El Faraón, single individual person only, sun-bronzed textured skin, authentic historical garments of the era, determined expressive eyes, Arcane and Pixar inspired 3D render, high aesthetic realism",
+  "signature_props": [
+    "earthenware water jar",
+    "authentic historical tool of trade",
+    "sun-drenched historical setting"
+  ],
+  "reference_gallery": [
+    "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394852354_279.jpg",
+    "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394781142_288.jpg",
+    "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394734304_313.jpg",
+    "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394668804_842.jpg",
+    "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394490174_214.jpg",
+    "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394264407_53.jpg",
+    "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394200708_567.jpg",
+    "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394118560_520.jpg",
+    "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394078632_368.jpg",
+    "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394061940_994.jpg",
+    "/channel-assets/archivo_confidencial/characters/assets/el_faraon_ai_1792393995528.jpg"
+  ],
+  "assets": [
+    {
+      "id": "asset_1792394852361_o8wl7",
+      "url": "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394852354_279.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Empty granary with scattered grain, broken tablets on the floor, dim lighting, a sense of abandonment and decay, cinematic wide shot.",
+      "description": "El Silencio",
+      "characterId": "el_faraon",
+      "characterName": "El Faraón",
+      "characterIds": [
+        "el_escriba",
+        "el_faraon"
+      ],
+      "characterNames": [
+        "El Escriba",
+        "El Faraón"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "El Escriba / Auditor",
+      "shotType": "environment_wide",
+      "tags": [
+        "el escriba / auditor",
+        "escriba,",
+        "faraón",
+        "grid",
+        "split",
+        "screen",
+        "empty",
+        "granary"
+      ],
+      "sourceProjectId": "proj_1792393846351",
+      "sourceSceneId": 22,
+      "createdAt": "2026-10-19T07:27:32.361Z"
+    },
+    {
+      "id": "asset_1792394781147_ntgia",
+      "url": "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394781142_288.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Wide shot of an ancient Egyptian public square, a chained scribe standing before a pharaoh's throne, crowd watching, dramatic lighting, cinematic epic scale.",
+      "description": "El Juicio",
+      "characterId": "el_faraon",
+      "characterName": "El Faraón",
+      "characterIds": [
+        "el_escriba",
+        "el_faraon"
+      ],
+      "characterNames": [
+        "El Escriba",
+        "El Faraón"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "El Escriba / Auditor",
+      "shotType": "environment_wide",
+      "tags": [
+        "el escriba / auditor",
+        "escriba,",
+        "faraón",
+        "grid",
+        "split",
+        "screen",
+        "ancient",
+        "egyptian"
+      ],
+      "sourceProjectId": "proj_1792393846351",
+      "sourceSceneId": 21,
+      "createdAt": "2026-10-19T07:26:21.147Z"
+    },
+    {
+      "id": "asset_1792394734306_cn1jy",
+      "url": "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394734304_313.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouette of a scribe being led away by guards at dawn, ancient Egyptian cityscape in background, long shadows, dramatic backlighting, cinematic and ominous atmosphere.",
+      "description": "La Detención",
+      "characterId": "el_faraon",
+      "characterName": "El Faraón",
+      "characterIds": [
+        "el_escriba",
+        "el_faraon"
+      ],
+      "characterNames": [
+        "El Escriba",
+        "El Faraón"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "El Escriba / Auditor",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "el escriba / auditor",
+        "escriba,",
+        "faraón",
+        "grid",
+        "split",
+        "screen",
+        "silhouette",
+        "scribe"
+      ],
+      "sourceProjectId": "proj_1792393846351",
+      "sourceSceneId": 20,
+      "createdAt": "2026-10-19T07:25:34.306Z"
+    },
+    {
+      "id": "asset_1792394668808_1ya3l",
+      "url": "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394668804_842.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Dramatic shot of a shadowy figure in ancient Egyptian noble attire, handing a rolled papyrus to another silhouette in a dimly lit chamber, torchlight flickering, tension and conspiracy in the air, cinematic composition.",
+      "description": "La Filtración",
+      "characterId": "el_faraon",
+      "characterName": "El Faraón",
+      "characterIds": [
+        "el_escriba",
+        "el_faraon"
+      ],
+      "characterNames": [
+        "El Escriba",
+        "El Faraón"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "El Escriba / Auditor",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "el escriba / auditor",
+        "escriba,",
+        "faraón",
+        "grid",
+        "split",
+        "screen",
+        "dramatic",
+        "shadowy"
+      ],
+      "sourceProjectId": "proj_1792393846351",
+      "sourceSceneId": 18,
+      "createdAt": "2026-10-19T07:24:28.808Z"
+    },
+    {
+      "id": "asset_1792394490179_ubdlv",
+      "url": "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394490174_214.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A diagram showing a small hole in a dam, then water leaking and the hole growing larger, with numbers and dollar signs flowing out. In the background, a silhouette of a person trying to plug the hole with papers. Metaphorical, dramatic lighting.",
+      "description": "Negligencia deliberada",
+      "characterId": "el_faraon",
+      "characterName": "El Faraón",
+      "characterIds": [
+        "el_escriba",
+        "elena_vega_auditora",
+        "el_faraon"
+      ],
+      "characterNames": [
+        "El Escriba",
+        "Elena Vega (La Ingeniera Testigo)",
+        "El Faraón"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "El Escriba / Auditor",
+      "shotType": "concept_diagram",
+      "tags": [
+        "el escriba / auditor",
+        "escriba,",
+        "elena",
+        "vega",
+        "(la",
+        "ingeniera",
+        "testigo),",
+        "faraón"
+      ],
+      "sourceProjectId": "proj_1792393846351",
+      "sourceSceneId": 15,
+      "createdAt": "2026-10-19T07:21:30.179Z"
+    },
+    {
+      "id": "asset_1792394264416_tf06a",
+      "url": "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394264407_53.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Silhouettes of five figures in a dark corridor, whispering, one handing a scroll to another. In the foreground, the shadow of a sixth figure (the Auditor) watches from a distance. Tension, conspiracy, chiaroscuro lighting.",
+      "description": "El Auditor",
+      "characterId": "el_faraon",
+      "characterName": "El Faraón",
+      "characterIds": [
+        "el_escriba",
+        "el_faraon"
+      ],
+      "characterNames": [
+        "El Escriba",
+        "El Faraón"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "El Escriba / Auditor",
+      "shotType": "symbolic_silhouette",
+      "tags": [
+        "el escriba / auditor",
+        "escriba,",
+        "faraón",
+        "grid",
+        "split",
+        "screen",
+        "silhouettes",
+        "five"
+      ],
+      "sourceProjectId": "proj_1792393846351",
+      "sourceSceneId": 11,
+      "createdAt": "2026-10-19T07:17:44.416Z"
+    },
+    {
+      "id": "asset_1792394200712_malda",
+      "url": "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394200708_567.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. A mysterious figure in dark robes stands at the entrance of a massive Egyptian grain storehouse, backlit by the desert sun, holding a rolled papyrus scroll. The silhouette is imposing, with a sense of quiet authority. Dust particles float in the air. Cinematic lighting, high contrast, shallow depth of field.",
+      "description": "El Auditor",
+      "characterId": "el_faraon",
+      "characterName": "El Faraón",
+      "characterIds": [
+        "el_escriba",
+        "el_faraon"
+      ],
+      "characterNames": [
+        "El Escriba",
+        "El Faraón"
+      ],
+      "isGroupShot": true,
+      "placeOrEnvironment": "Cancha / Entorno Deportivo",
+      "companyOrSubject": "El Escriba / Auditor",
+      "shotType": "antagonist_shot",
+      "tags": [
+        "el escriba / auditor",
+        "escriba,",
+        "faraón",
+        "grid",
+        "split",
+        "screen",
+        "mysterious",
+        "figure"
+      ],
+      "sourceProjectId": "proj_1792393846351",
+      "sourceSceneId": 9,
+      "createdAt": "2026-10-19T07:16:40.712Z"
+    },
+    {
+      "id": "asset_1792394118565_qjj01",
+      "url": "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394118560_520.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Close-up of a young Egyptian boy in a scribe school, sitting cross-legged on the floor, intently writing on a clay tablet with a reed pen. An older scribe oversees him. The setting is a modest classroom with papyrus scrolls on shelves. Warm, natural light. Historical accuracy.",
+      "description": "El Elegido de Thot",
+      "characterId": "el_faraon",
+      "characterName": "El Faraón",
+      "characterIds": [
+        "el_escriba",
+        "el_faraon"
+      ],
+      "characterNames": [
+        "El Escriba",
+        "El Faraón"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "El Escriba / Auditor",
+      "shotType": "character_closeup",
+      "tags": [
+        "el escriba / auditor",
+        "escriba,",
+        "faraón",
+        "grid",
+        "split",
+        "screen",
+        "close",
+        "egyptian"
+      ],
+      "sourceProjectId": "proj_1792393846351",
+      "sourceSceneId": 5,
+      "createdAt": "2026-10-19T07:15:18.565Z"
+    },
+    {
+      "id": "asset_1792394078634_ihmb3",
+      "url": "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394078632_368.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Extreme close-up of a weathered papyrus scroll with hieratic writing, some numbers subtly altered with a different shade of ink. A reed pen lies beside it. The lighting is dim, as if in a secret archive. The texture of the papyrus and the ink strokes are highly detailed. Forensic style.",
+      "description": "El Coloso de Grano",
+      "characterId": "el_faraon",
+      "characterName": "El Faraón",
+      "characterIds": [
+        "el_escriba",
+        "el_faraon"
+      ],
+      "characterNames": [
+        "El Escriba",
+        "El Faraón"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "El Escriba / Auditor",
+      "shotType": "object_detail",
+      "tags": [
+        "el escriba / auditor",
+        "escriba,",
+        "faraón",
+        "grid",
+        "split",
+        "screen",
+        "extreme",
+        "close"
+      ],
+      "sourceProjectId": "proj_1792393846351",
+      "sourceSceneId": 3,
+      "createdAt": "2026-10-19T07:14:38.634Z"
+    },
+    {
+      "id": "asset_1792394061946_ler0a",
+      "url": "/channel-assets/archivo_confidencial/characters/assets/el_escriba_frame_1792394061940_994.jpg",
+      "prompt": "Single unified 16:9 frame, no grid, no split screen. Epic wide shot of ancient Egyptian grain storehouses at sunset, massive mudbrick silos stretching to the horizon, workers carrying sacks of grain, scribes with papyrus recording. The Nile river glimmers in the background. Golden hour light casts long shadows. Cinematic, grand scale.",
+      "description": "El Coloso de Grano",
+      "characterId": "el_faraon",
+      "characterName": "El Faraón",
+      "characterIds": [
+        "el_escriba",
+        "el_faraon"
+      ],
+      "characterNames": [
+        "El Escriba",
+        "El Faraón"
+      ],
+      "isGroupShot": true,
+      "companyOrSubject": "El Escriba / Auditor",
+      "shotType": "environment_wide",
+      "tags": [
+        "el escriba / auditor",
+        "escriba,",
+        "faraón",
+        "grid",
+        "split",
+        "screen",
+        "epic",
+        "ancient"
+      ],
+      "sourceProjectId": "proj_1792393846351",
+      "sourceSceneId": 2,
+      "createdAt": "2026-10-19T07:14:21.946Z"
+    }
+  ],
+  "updatedAt": "2026-10-19T07:27:32.361Z",
+  "canonical_image_url": "/channel-assets/archivo_confidencial/characters/assets/el_faraon_ai_1792393995528.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

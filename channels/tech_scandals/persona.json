@@ -1,11 +1,13 @@
 {
   "channel_id": "tech_scandals",
-  "name": "Silicon Scandals",
-  "display_title": "Silicon Scandals (Tecnología y Finanzas)",
+  "name": "The Silicon Fall",
+  "display_title": "The Silicon Fall (Tecnología y Finanzas)",
   "niche": "Tecnología, Startups y Desastres Corporativos",
-  "language": "es",
+  "language": "en",
   "target_audience": "Emprendedores, desarrolladores, inversores y entusiastas de la tecnología",
   "cpm_tier": "Ultra High ($15-$35+ USD)",
+  "default_voice_id": "075bbe61",
+  "default_voice_engine": "voicestudio",
   "narrator": {
     "name": "El Investigador Forense",
     "archetype": "Analista Forense y Narrador de Thriller Corporativo",
@@ -53,13 +55,22 @@
   "visual_style": {
     "engine": "google_imagen_3",
     "aspect_ratio": "16:9",
+    "art_style_name": "3D Clay-Digital Diorama",
     "prompt_prefix": "Fotografía cinematográfica documental de 35mm, estilo thriller de Wall Street y Bloomberg,",
     "prompt_suffix": "iluminación dramática claroscuro, grano cinematográfico sutil, atmósfera de tensión corporativa, colores desaturados con toques de azul cobalto y sombras profundas, alta resolución 4k, fotorrealista",
     "default_foley": "dark_corporate_ambient.mp3"
   },
   "sheets_integration": {
+    "enabled": true,
     "sheet_url": "https://docs.google.com/spreadsheets/d/1HgeZPdsav5lT5070dAAMtoEDRpF3aa4yvorr5hDV5S4/export?format=csv&gid=0",
     "status_column": "Aprobado?",
-    "finished_column": "Video terminado?"
+    "finished_column": "Video terminado?",
+    "columns_mapping": {
+      "status": "Estado",
+      "topic": "Tema / Historia",
+      "angle": "Enfoque / Gancho",
+      "script_output": "Guion Generado",
+      "video_url": "Link Video"
+    }
   }
 }

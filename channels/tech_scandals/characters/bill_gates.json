@@ -15,5 +15,7 @@
   ],
   "updatedAt": "2026-10-16T07:29:48.604Z",
   "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/bill_gates_ai_1792135775288.jpg",
-  "custom_uploaded": false
+  "custom_uploaded": false,
+  "character_category": "real_person",
+  "known_face": true
 }
