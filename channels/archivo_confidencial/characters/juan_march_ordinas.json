@@ -1,0 +1,28 @@
+{
+  "character_id": "juan_march_ordinas",
+  "channel_id": "archivo_confidencial",
+  "name": "Juan March Ordinas",
+  "role": "Empresario, financiero y contrabandista español, fundador de la Banca March y protagonista de la creación de un monopolio tabaquero en Marruecos.",
+  "real_person": true,
+  "character_category": "real_person",
+  "entity_type": "person",
+  "age": "Edad adulta",
+  "known_face": true,
+  "anchor_prompt": "Stylized 3D cinematic animated historical character of Juan March Ordinas, single individual person only, authentic historical presence, authentic historical garments of the era, determined expressive eyes, Arcane and Pixar inspired 3D render, high aesthetic realism",
+  "signature_props": [
+    "authentic historical tool of trade",
+    "characteristic cultural artifact",
+    "sun-drenched historical setting"
+  ],
+  "reference_gallery": [
+    "/channel-assets/archivo_confidencial/characters/assets/juan_march_ordinas_ai_1792809984909.jpg"
+  ],
+  "assets": [],
+  "updatedAt": "2026-10-24T02:46:34.435Z",
+  "real_reference_image_url": "/channel-assets/archivo_confidencial/characters/assets/juan_march_ordinas_realref_1792809905769.jpg",
+  "canonical_image_url": "/channel-assets/archivo_confidencial/characters/assets/juan_march_ordinas_ai_1792809984909.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

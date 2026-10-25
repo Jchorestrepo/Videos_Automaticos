@@ -1,0 +1,28 @@
+{
+  "character_id": "francisco_franco",
+  "channel_id": "archivo_confidencial",
+  "name": "Francisco Franco",
+  "role": "Dictador español que, tras la Guerra Civil, se convirtió en el principal obstáculo para los intereses de Juan March, compitiendo por el control del tabaco y otros sectores estratégicos.",
+  "real_person": true,
+  "character_category": "real_person",
+  "entity_type": "person",
+  "age": "Edad adulta",
+  "known_face": true,
+  "anchor_prompt": "Stylized 3D cinematic animated historical character of Francisco Franco, single individual person only, authentic historical presence, authentic historical garments of the era, determined expressive eyes, Arcane and Pixar inspired 3D render, high aesthetic realism",
+  "signature_props": [
+    "authentic historical tool of trade",
+    "characteristic cultural artifact",
+    "sun-drenched historical setting"
+  ],
+  "reference_gallery": [
+    "/channel-assets/archivo_confidencial/characters/assets/francisco_franco_ai_1792810002793.jpg"
+  ],
+  "assets": [],
+  "updatedAt": "2026-10-24T02:46:54.009Z",
+  "real_reference_image_url": "/channel-assets/archivo_confidencial/characters/assets/francisco_franco_realref_1792809907527.jpg",
+  "canonical_image_url": "/channel-assets/archivo_confidencial/characters/assets/francisco_franco_ai_1792810002793.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
+}

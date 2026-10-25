@@ -25,6 +25,9 @@ import { ChannelStrategyService } from './services/channelStrategyService.ts';
 import { SubtitleService } from './services/subtitleService.ts';
 import { TranslationService } from './services/translationService.ts';
 import { ParallelProductionService } from './services/parallelProductionService.ts';
+import { ShotPlannerService, normalizePacing } from './services/shotPlannerService.ts';
+import { buildPromptExport, matchFileToShot } from './services/shotExchange.ts';
+import { resolveShotFrames } from '../src/remotion/shotTiming.ts';
 
 dotenv.config();
 
@@ -1593,6 +1596,370 @@ app.post('/api/images/generate', async (req, res) => {
   }
 });
 
+// =========================================================================
+// 6.5 MODO SECUENCIA DE PLANOS (SHOT SEQUENCES: 3s / 4s / 6s + EXPORT/IMPORT MANUAL + IA)
+// =========================================================================
+
+// Cambiar modo visual (classic / sequence), ritmo (3, 4, 6s) o editar planos de una escena
+app.put('/api/projects/:id/shots/config', (req, res) => {
+  try {
+    const project = ProjectService.getProject(req.params.id);
+    if (!project) return res.status(404).json({ error: 'Proyecto no encontrado' });
+
+    const { visualMode, shotPacingSeconds, sceneId, shots } = req.body || {};
+    if (visualMode === 'classic' || visualMode === 'sequence') {
+      project.visualMode = visualMode;
+    }
+    if (shotPacingSeconds !== undefined) {
+      project.shotPacingSeconds = normalizePacing(shotPacingSeconds);
+    }
+    if (sceneId !== undefined && Array.isArray(shots)) {
+      const scene = project.scenes.find((s) => s.scene_id === Number(sceneId));
+      if (!scene) return res.status(404).json({ error: `Escena ${sceneId} no encontrada` });
+      scene.shots = shots;
+      ShotPlannerService.renumberGlobalIndexes(project);
+    }
+
+    project.videoNeedsReRender = true;
+    ProjectService.saveProject(project);
+    res.json({
+      success: true,
+      project,
+      counts: ShotPlannerService.countShots(project),
+    });
+  } catch (error: any) {
+    console.error('Error updating shot config:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Planificar secuencia de planos (todas las escenas o una escena específica)
+app.post('/api/projects/:id/shots/plan', async (req, res) => {
+  const project = ProjectService.getProject(req.params.id);
+  if (!project) return res.status(404).json({ error: 'Proyecto no encontrado' });
+
+  const { sceneId, pacing, reuseSceneImage } = req.body || {};
+  const effectivePacing = normalizePacing(pacing ?? project.shotPacingSeconds);
+  const persona = PersonaService.getPersona(project.channel_id);
+  const targetScenesCount = sceneId !== undefined ? 1 : project.scenes.length;
+
+  const job = JobProgressService.createJob({
+    type: 'script',
+    title:
+      sceneId !== undefined
+        ? `Planificando Planos de Escena #${sceneId} (corte cada ${effectivePacing}s)`
+        : `Planificando Secuencia de Planos (${project.scenes.length} escenas • cada ${effectivePacing}s)`,
+    projectId: project.project_id,
+    channelId: project.channel_id,
+    phase: 'Dividiendo locución y diseñando encuadres de cámara con Director IA...',
+    totalSteps: targetScenesCount,
+  });
+
+  try {
+    const results = [];
+    const targets =
+      sceneId !== undefined
+        ? project.scenes.filter((s) => s.scene_id === Number(sceneId))
+        : project.scenes;
+
+    if (targets.length === 0) {
+      JobProgressService.failJob(job.jobId, `Escena ${sceneId} no encontrada`);
+      return res.status(404).json({ error: `Escena ${sceneId} no encontrada` });
+    }
+
+    for (let i = 0; i < targets.length; i++) {
+      if (JobProgressService.isCancelled(job.jobId)) break;
+      const sc = targets[i];
+      JobProgressService.updateJob(job.jobId, {
+        currentStep: i + 1,
+        totalSteps: targets.length,
+        percent: Math.round(((i + 0.5) / targets.length) * 95),
+        phase: `Escena #${sc.scene_id}/${project.scenes.length}: Diseñando secuencia de planos (${effectivePacing}s por corte)...`,
+        detail: sc.chapter,
+      });
+
+      const sceneRes = await ShotPlannerService.planProject(project, persona, {
+        sceneId: sc.scene_id,
+        pacing: effectivePacing,
+        reuseSceneImage: reuseSceneImage !== false,
+      });
+      results.push(...sceneRes);
+      ProjectService.saveProject(project);
+    }
+
+    const counts = ShotPlannerService.countShots(project);
+    project.videoNeedsReRender = true;
+    ProjectService.saveProject(project);
+
+    JobProgressService.completeJob(
+      job.jobId,
+      `¡Storyboard de ${counts.total} planos diseñado!`,
+      `Corte cada ~${effectivePacing}s • ${counts.withImage}/${counts.total} planos ya tienen imagen`
+    );
+
+    res.json({
+      success: true,
+      project,
+      results,
+      counts,
+    });
+  } catch (error: any) {
+    console.error('Error planning shots:', error);
+    JobProgressService.failJob(job.jobId, error.message || 'Error planificando planos');
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Exportar todos los prompts (formato tutorial con [001] o solo prompts) para copiar/descargar a Google Whisk / AI Studio
+app.get('/api/projects/:id/shots/export-prompts', (req, res) => {
+  try {
+    const project = ProjectService.getProject(req.params.id);
+    if (!project) return res.status(404).json({ error: 'Proyecto no encontrado' });
+
+    const sceneId = req.query.sceneId !== undefined ? Number(req.query.sceneId) : undefined;
+    const onlyMissing = req.query.onlyMissing === 'true';
+    const format = req.query.format === 'prompts_only' ? 'prompts_only' : 'tutorial';
+
+    const text = buildPromptExport(project, {
+      sceneId,
+      onlyMissing,
+      format,
+      resolvePrompt: (scene, shot) => ShotPlannerService.buildFullShotPrompt(project, scene, shot),
+      resolveShotSeconds: (scene, shot) => {
+        const totalFrames = Math.max(30, Math.round((scene.durationInSeconds || 10) * 30));
+        const ranges = resolveShotFrames(scene, 30, totalFrames);
+        const found = ranges.find((r) => r.shot.shot_id === shot.shot_id);
+        return found ? found.durationInFrames / 30 : project.shotPacingSeconds || 3;
+      },
+    });
+
+    const counts = ShotPlannerService.countShots(project);
+    res.json({
+      text,
+      totalShots: counts.total,
+      withImage: counts.withImage,
+      missingShots: counts.total - counts.withImage,
+    });
+  } catch (error: any) {
+    console.error('Error exporting shot prompts:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Importar imágenes en bloque (emparejadas por nombre 001.png / [001].png / S01-P01.png o asignadas a un plano específico)
+app.post('/api/projects/:id/shots/import-images', (req, res) => {
+  try {
+    const project = ProjectService.getProject(req.params.id);
+    if (!project) return res.status(404).json({ error: 'Proyecto no encontrado' });
+
+    const files: Array<{
+      fileName: string;
+      imageBase64: string;
+      sceneId?: number;
+      shotId?: string;
+    }> = Array.isArray(req.body?.files) ? req.body.files : [];
+
+    if (files.length === 0) {
+      return res.status(400).json({ error: 'No se recibieron archivos de imagen' });
+    }
+
+    const matched: Array<{ fileName: string; sceneId: number; shotId: string; imageUrl: string }> = [];
+    const unmatched: Array<{ fileName: string; error: string }> = [];
+
+    for (const item of files) {
+      if (!item.imageBase64) {
+        unmatched.push({ fileName: item.fileName || 'unknown', error: 'Imagen vacía' });
+        continue;
+      }
+
+      let targetSceneId = item.sceneId !== undefined ? Number(item.sceneId) : undefined;
+      let targetShotId = item.shotId;
+
+      if (!targetSceneId || !targetShotId) {
+        const m = matchFileToShot(item.fileName || '', project);
+        if ('error' in m) {
+          unmatched.push(m);
+          continue;
+        }
+        targetSceneId = m.sceneId;
+        targetShotId = m.shotId;
+      }
+
+      const scene = project.scenes.find((s) => s.scene_id === targetSceneId);
+      const shot = scene?.shots?.find((sh) => sh.shot_id === targetShotId);
+      if (!scene || !shot) {
+        unmatched.push({
+          fileName: item.fileName,
+          error: `No se encontró el plano ${targetShotId} en la escena ${targetSceneId}`,
+        });
+        continue;
+      }
+
+      const savedUrl = ImageService.saveCustomSceneImage(
+        project.project_id,
+        scene.scene_id,
+        item.imageBase64,
+        shot.shot_id
+      );
+      const cleanUrl = savedUrl.split('?')[0];
+      const finalUrl = `${cleanUrl}?t=${Date.now()}`;
+      shot.imageUrl = finalUrl;
+      shot.imageSource = 'manual';
+
+      // Si es el primer plano de la escena y la escena aún no tiene imagen principal, sincronizarla
+      if (scene.shots?.[0]?.shot_id === shot.shot_id && (!scene.imageUrl || scene.imageUrl.includes('.svg'))) {
+        scene.imageUrl = finalUrl;
+      }
+
+      matched.push({
+        fileName: item.fileName,
+        sceneId: scene.scene_id,
+        shotId: shot.shot_id,
+        imageUrl: finalUrl,
+      });
+    }
+
+    if (matched.length > 0) {
+      project.visualMode = 'sequence';
+      project.videoNeedsReRender = true;
+      ProjectService.saveProject(project);
+    }
+
+    res.json({
+      success: true,
+      project,
+      matched,
+      unmatched,
+      counts: ShotPlannerService.countShots(project),
+    });
+  } catch (error: any) {
+    console.error('Error importing shot images:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Generar imágenes de planos automáticamente con Gemini / Vertex AI (un plano, una escena o todos los faltantes)
+app.post('/api/projects/:id/shots/generate-images', async (req, res) => {
+  const project = ProjectService.getProject(req.params.id);
+  if (!project) return res.status(404).json({ error: 'Proyecto no encontrado' });
+
+  const { sceneId, shotId, onlyMissing, customArtStyle } = req.body || {};
+  const artStyle = customArtStyle || project.artStyle || '3d_animation';
+
+  const queue: Array<{ scene: typeof project.scenes[0]; shot: NonNullable<typeof project.scenes[0]['shots']>[0] }> = [];
+  for (const scene of project.scenes) {
+    if (sceneId !== undefined && scene.scene_id !== Number(sceneId)) continue;
+    for (const shot of scene.shots || []) {
+      if (shotId && shot.shot_id !== shotId) continue;
+      const hasValidImg = Boolean(shot.imageUrl) && !shot.imageUrl!.split('?')[0].toLowerCase().endsWith('.svg');
+      if (onlyMissing && hasValidImg) continue;
+      queue.push({ scene, shot });
+    }
+  }
+
+  if (queue.length === 0) {
+    return res.json({
+      success: true,
+      project,
+      generatedCount: 0,
+      counts: ShotPlannerService.countShots(project),
+    });
+  }
+
+  const job = JobProgressService.createJob({
+    type: 'images',
+    title:
+      shotId
+        ? `Generando Plano ${shotId}`
+        : sceneId !== undefined
+        ? `Generando ${queue.length} Planos de Escena #${sceneId}`
+        : `Generando ${queue.length} Planos Visuales (${project.title.slice(0, 28)})`,
+    projectId: project.project_id,
+    channelId: project.channel_id,
+    phase: `Iniciando generación de ${queue.length} plano(s) 16:9...`,
+    totalSteps: queue.length,
+  });
+
+  try {
+    let generatedCount = 0;
+    const isUsingVertex =
+      process.env.GOOGLE_GENAI_USE_VERTEXAI === 'true' || Boolean(process.env.GOOGLE_CLOUD_PROJECT);
+    const paceMs = isUsingVertex ? 9500 : 1500;
+
+    for (let i = 0; i < queue.length; i++) {
+      if (JobProgressService.isCancelled(job.jobId)) break;
+      const { scene, shot } = queue[i];
+
+      if (generatedCount > 0 && queue.length > 1) {
+        await new Promise((r) => setTimeout(r, paceMs));
+      }
+
+      const shotCast = (project.characters || []).filter(
+        (c) => (shot.character_ids || []).includes(c.character_id) && c.character_category !== 'company_or_brand'
+      );
+
+      JobProgressService.updateJob(job.jobId, {
+        currentStep: i + 1,
+        totalSteps: queue.length,
+        percent: Math.round(((i + 0.5) / queue.length) * 95),
+        phase: `Generando [${String(shot.global_index).padStart(3, '0')}] ${shot.shot_id} (Escena #${scene.scene_id})...`,
+        detail: shot.voiceText.slice(0, 70),
+      });
+
+      const promptWithContinuity = shot.continuity_note
+        ? `${shot.visual_prompt}. Continuity: ${shot.continuity_note}`
+        : shot.visual_prompt;
+
+      const imageUrl = await ImageService.generateSceneImage(
+        project.project_id,
+        scene.scene_id,
+        promptWithContinuity,
+        `${scene.chapter} (${shot.shot_id})`,
+        project.channel_id,
+        shotCast,
+        project.scenes.length,
+        artStyle,
+        shot.shot_type || scene.shot_type,
+        shot.shot_id
+      );
+
+      const cleanUrl = (imageUrl || '').split('?')[0];
+      shot.imageUrl = cleanUrl ? `${cleanUrl}?t=${Date.now()}` : imageUrl;
+      shot.imageSource = 'ai';
+      if (scene.shots?.[0]?.shot_id === shot.shot_id && (!scene.imageUrl || scene.imageUrl.includes('.svg'))) {
+        scene.imageUrl = shot.imageUrl;
+      }
+
+      generatedCount++;
+      ProjectService.saveProject(project);
+    }
+
+    project.visualMode = 'sequence';
+    project.videoNeedsReRender = true;
+    ProjectService.saveProject(project);
+
+    const counts = ShotPlannerService.countShots(project);
+    if (!JobProgressService.isCancelled(job.jobId)) {
+      JobProgressService.completeJob(
+        job.jobId,
+        `¡${generatedCount} plano(s) generados con éxito!`,
+        `${counts.withImage}/${counts.total} planos listos en el proyecto`
+      );
+    }
+
+    res.json({
+      success: true,
+      project,
+      generatedCount,
+      counts,
+    });
+  } catch (error: any) {
+    console.error('Error generating shot images:', error);
+    JobProgressService.failJob(job.jobId, error.message || 'Error generando imágenes de planos');
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Establecer una imagen de la biblioteca como retrato canónico/oficial del personaje
 app.post('/api/characters/:channelId/:characterId/set-canonical', (req, res) => {
   try {
@@ -2025,6 +2392,7 @@ app.post('/api/render', async (req, res) => {
       channelId: project.channel_id,
       title: project.title,
       scenes: scenesToRender,
+      visualMode: project.visualMode,
       showCaptions: typeof showCaptions === 'boolean' ? showCaptions : false,
       showAtmosphere: typeof showAtmosphere === 'boolean' ? showAtmosphere : true,
       showHighlightCards: typeof showHighlightCards === 'boolean' ? showHighlightCards : true,

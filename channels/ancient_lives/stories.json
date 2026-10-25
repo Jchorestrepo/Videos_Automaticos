@@ -25,12 +25,14 @@
       "Historia National Geographic",
       "British Museum Papyrus Archive"
     ],
-    "status": "approved",
+    "status": "scripted",
     "approved": true,
     "finished": false,
     "published": false,
     "createdAt": "2026-10-17T09:23:18.536Z",
-    "updatedAt": "2026-10-17T09:23:18.536Z"
+    "updatedAt": "2026-10-24T02:51:04.550Z",
+    "linkedProjectId": "proj_1792810228545",
+    "archived": false
   },
   {
     "id": "ancient_case_2",

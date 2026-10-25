@@ -80,6 +80,7 @@ import { ChannelModal } from './components/ChannelModal.tsx';
 import { ChannelBacklogBoard } from './components/ChannelBacklogBoard.tsx';
 import { YouTubeStudio } from './components/YouTubeStudio.tsx';
 import { ChannelIncubatorStudio } from './components/ChannelIncubatorStudio.tsx';
+import { ShotStoryboardPanel } from './components/ShotStoryboardPanel.tsx';
 
 interface ActLightingRule {
   act_number: number;
@@ -6310,6 +6311,14 @@ export default function App() {
                 {/* PASO 4: Galería de Imágenes & Locución de Audio */}
                 {activeStep === 4 && currentProject && (
                   <div className="space-y-6">
+                    <ShotStoryboardPanel
+                      project={currentProject}
+                      onProjectUpdate={(updated) => {
+                        setCurrentProject(updated);
+                        loadProjectsList(false, selectedChannel?.channel_id);
+                      }}
+                      showToast={showToast}
+                    />
                     {/* Si el proyecto fue creado reutilizando la voz de otro proyecto */}
                     {currentProject.fork_type === 'voice_only' && (
                       <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3">
@@ -7188,6 +7197,7 @@ export default function App() {
                           channelId: selectedChannel?.channel_id || 'tech_scandals',
                           title: currentProject.title,
                           scenes: currentProject.scenes,
+                          visualMode: currentProject.visualMode,
                           showCaptions,
                           showAtmosphere,
                           showHighlightCards,

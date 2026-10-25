@@ -401,7 +401,7 @@ INSTRUCCIONES ESTRICTAS PARA ESTE BLOQUE (${spec.sceneCount} ESCENAS, de scene_i
 ${spec.actsDescription}
 
 REGLAS DE REDACCIÓN PARA ALTA RETENCIÓN Y DURACIÓN (${durationRange.min}–${durationRange.max} MINUTOS):
-1. Cada escena DEBE tener un "voiceover" rico, narrativo, cinematográfico y envolvente de entre **${wordRange.min} y ${wordRange.max} palabras** en español. ¡NO escribas resúmenes cortos de 25 palabras! Desarrolla la atmósfera, las emociones, las cifras y la tensión.
+1. Cada escena DEBE tener un "voiceover" rico, narrativo, cinematográfico y envolvente de entre **${wordRange.min} y ${wordRange.max} palabras** en español. ¡NO escribas resúmenes cortos de 25 palabras! Desarrolla la atmósfera, las emociones, las cifras y la tensión. Escribe pensando como un Director de Fotografía: incluye anclas visuales concretas cada 1 o 2 frases (lugar, hora, objeto físico, documento, gesto del personaje o cifra en pantalla) para que cada segmento de la locución se enlace con un plano de cámara filmable; evita frases abstractas sin imagen.
 2. NUNCA uses barras "/" ni paréntesis "( )" dentro de "voiceover". Escribe las cifras de forma natural para un locutor humano.
 3. Alterna el campo "shot_type" entre las escenas para que el video sea visualmente dinámico:
    - "character_closeup": Plano emocional del protagonista o personaje principal del momento.

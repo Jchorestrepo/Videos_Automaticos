@@ -2,6 +2,7 @@ import React from 'react';
 import { Sequence, Audio, interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
 import type { SceneItem, MotionIntensityType } from '../types/index.ts';
 import { LivingVisualRenderer } from './LivingVisualRenderer.tsx';
+import { ShotSequence } from './ShotSequence.tsx';
 import { Atmosphere } from './Atmosphere.tsx';
 import { KineticCaptions } from './KineticCaptions.tsx';
 import { VisualBeats } from './VisualBeats.tsx';
@@ -10,6 +11,7 @@ export interface DocumentaryVideoProps {
   channelId: string;
   title: string;
   scenes: SceneItem[];
+  visualMode?: 'classic' | 'sequence';
   showCaptions?: boolean;
   showAtmosphere?: boolean;
   showHighlightCards?: boolean;
@@ -33,6 +35,7 @@ export function resolveMediaUrl(url?: string): string {
 export const DocumentaryVideo: React.FC<DocumentaryVideoProps> = ({
   channelId,
   scenes = [],
+  visualMode,
   showCaptions = true,
   showAtmosphere = true,
   showHighlightCards = true,
@@ -79,6 +82,7 @@ export const DocumentaryVideo: React.FC<DocumentaryVideoProps> = ({
           >
             <SceneRenderer
               scene={scene}
+              visualMode={visualMode}
               imgSrc={imgSrc}
               videoSrc={videoSrc}
               durationInFrames={durationInFrames}
@@ -100,6 +104,7 @@ export const DocumentaryVideo: React.FC<DocumentaryVideoProps> = ({
 
 interface SceneRendererProps {
   scene: SceneItem;
+  visualMode?: 'classic' | 'sequence';
   imgSrc: string;
   videoSrc?: string;
   durationInFrames: number;
@@ -115,6 +120,7 @@ interface SceneRendererProps {
 
 const SceneRenderer: React.FC<SceneRendererProps> = ({
   scene,
+  visualMode,
   imgSrc,
   videoSrc,
   durationInFrames,
@@ -146,18 +152,29 @@ const SceneRenderer: React.FC<SceneRendererProps> = ({
         opacity,
       }}
     >
-      <LivingVisualRenderer
-        src={imgSrc}
-        videoUrl={videoSrc}
-        motion={scene.camera_motion || 'zoom_in'}
-        durationInFrames={durationInFrames}
-        sceneId={scene.scene_id}
-        shotType={scene.shot_type}
-        motionMode={scene.motion_mode}
-        characterEffect={scene.character_effect}
-        intensity={motionIntensity}
-        accentColor={accentColor}
-      />
+      {visualMode !== 'classic' && scene.shots && scene.shots.length > 0 ? (
+        <ShotSequence
+          scene={scene}
+          fallbackSrc={imgSrc}
+          durationInFrames={durationInFrames}
+          motionIntensity={motionIntensity}
+          accentColor={accentColor}
+          resolveUrl={resolveMediaUrl}
+        />
+      ) : (
+        <LivingVisualRenderer
+          src={imgSrc}
+          videoUrl={videoSrc}
+          motion={scene.camera_motion || 'zoom_in'}
+          durationInFrames={durationInFrames}
+          sceneId={scene.scene_id}
+          shotType={scene.shot_type}
+          motionMode={scene.motion_mode}
+          characterEffect={scene.character_effect}
+          intensity={motionIntensity}
+          accentColor={accentColor}
+        />
+      )}
       {showAtmosphere && <Atmosphere channelId={channelId} />}
 
       {/* Cortes de Cámara Dinámicos y Tarjetas Forenses de Datos / Conceptos */}

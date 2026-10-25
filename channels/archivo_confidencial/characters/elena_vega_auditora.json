@@ -31,6 +31,11 @@
     ],
     "appearances": [
       {
+        "project_id": "proj_1792809871923",
+        "title": "La Traición que Creó un Monopolio",
+        "role_in_story": "El colaborador traicionado que busca redención"
+      },
+      {
         "project_id": "proj_1792393846351",
         "title": "El Error Silencioso que Nadie Notó",
         "role_in_story": "Contable y administrador del Antiguo Egipto"
@@ -114,10 +119,11 @@
       "createdAt": "2026-10-19T07:20:21.177Z"
     }
   ],
-  "updatedAt": "2026-10-19T07:21:30.178Z",
+  "updatedAt": "2026-10-24T02:44:46.972Z",
   "canonical_image_url": "/channel-assets/archivo_confidencial/characters/assets/elena_vega_auditora_ai_1792393984406.jpg",
   "custom_style_prompt": "",
   "preferred_style_preset": "3d_pixar_arcane",
   "portrait_approved": true,
-  "custom_uploaded": false
+  "custom_uploaded": false,
+  "entity_type": "person"
 }

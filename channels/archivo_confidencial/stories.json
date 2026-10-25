@@ -37,7 +37,8 @@
     "notes": "🎯 Gancho inicial: Una sola firma en un documento secreto selló el destino de millones.\n💡 Por qué funciona: Gatillo de curiosidad irresistible.\n⏱️ Duración sugerida: 12 min",
     "createdAt": "2026-10-19T07:08:30.060Z",
     "linkedProjectId": "proj_1792393846351",
-    "updatedAt": "2026-10-19T07:28:30.611Z"
+    "updatedAt": "2026-10-25T19:56:43.732Z",
+    "archived": false
   },
   {
     "id": "story_1792393710060_3",
@@ -51,12 +52,15 @@
       "Registros públicos",
       "El drama interpersonal supera a las cifras técnicas."
     ],
-    "status": "approved",
+    "status": "scripted",
     "approved": true,
     "finished": false,
     "published": false,
     "notes": "🎯 Gancho inicial: Eran socios inseparables hasta que la codicia apareció.\n💡 Por qué funciona: El drama interpersonal supera a las cifras técnicas.\n⏱️ Duración sugerida: 15 min",
-    "createdAt": "2026-10-19T07:08:30.060Z"
+    "createdAt": "2026-10-19T07:08:30.060Z",
+    "linkedProjectId": "proj_1792809871923",
+    "archived": false,
+    "updatedAt": "2026-10-24T02:45:07.573Z"
   },
   {
     "id": "story_1792393710060_4",

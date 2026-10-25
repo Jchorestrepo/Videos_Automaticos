@@ -3,9 +3,11 @@
   "name": "Archivo Confidencial",
   "display_title": "Archivo Confidencial | Documentales de alto impacto para mentes despiertas.",
   "niche": "Canal de documentales de tecnología y finanzas basados en hechos de la vida real.",
-  "language": "es",
+  "language": "en",
   "target_audience": "Adultos de 22 a 45 años interesados en historias reales, negocios y psicología.",
   "cpm_tier": "Alto ($16 - $26 USD) por su alto tiempo de reproducción y retención de adultos.",
+  "default_voice_id": "gomorra",
+  "default_voice_engine": "voicestudio",
   "narrator": {
     "name": "El Cronista Forense",
     "archetype": "El Cronista Forense",
@@ -29,5 +31,17 @@
     "art_style_name": "3D Stylized Clay-Digital Diorama",
     "prompt_prefix": "3D miniature isometric diorama, highly detailed textures, dramatic volumetric rim lighting, 8k render",
     "prompt_suffix": "8k resolution, volumetric rim lighting, masterpiece"
+  },
+  "sheets_integration": {
+    "enabled": false,
+    "status_column": "Aprobado",
+    "finished_column": "Video Terminado",
+    "columns_mapping": {
+      "status": "Estado",
+      "topic": "Tema / Historia",
+      "angle": "Enfoque / Gancho",
+      "script_output": "Guion Generado",
+      "video_url": "Link Video"
+    }
   }
 }

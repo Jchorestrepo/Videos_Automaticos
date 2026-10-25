@@ -376,7 +376,7 @@ export class AudioService {
         `[VoiceStudio TTS] Generando escena ${sceneId} con voz "${voiceProfile}" (ID resuelto: "${resolvedVoiceId}") en ${voiceStudioUrl}...`
       );
 
-      const ttsRes = await fetch(`${voiceStudioUrl}/v1/audio/speech`, {
+      let ttsRes = await fetch(`${voiceStudioUrl}/v1/audio/speech`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -390,8 +390,25 @@ export class AudioService {
 
       if (!ttsRes.ok) {
         const errText = await ttsRes.text();
-        console.warn(`[VoiceStudio TTS] HTTP ${ttsRes.status}: ${errText.slice(0, 160)}`);
-        return null;
+        console.warn(`[VoiceStudio TTS] HTTP ${ttsRes.status} con "${resolvedVoiceId}": ${errText.slice(0, 180)}`);
+        const fallbackVoiceId = resolvedVoiceId === 'b4b14f0e' ? '3ed550f0' : 'b4b14f0e';
+        console.log(`[VoiceStudio TTS] Reintentando escena ${sceneId} en VoiceStudio con perfil de respaldo "${fallbackVoiceId}"...`);
+        ttsRes = await fetch(`${voiceStudioUrl}/v1/audio/speech`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: 'tts-1',
+            voice: fallbackVoiceId,
+            input: voiceoverText,
+            response_format: 'mp3',
+            speed: 1.0,
+          }),
+        });
+        if (!ttsRes.ok) {
+          const retryErr = await ttsRes.text();
+          console.warn(`[VoiceStudio TTS] Reintento HTTP ${ttsRes.status}: ${retryErr.slice(0, 160)}`);
+          return null;
+        }
       }
 
       const arrayBuffer = await ttsRes.arrayBuffer();

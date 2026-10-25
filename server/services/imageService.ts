@@ -752,7 +752,7 @@ export class ImageService {
   /**
    * Permite al usuario subir su propia imagen para reemplazar o establecer una escena específica
    */
-  static saveCustomSceneImage(projectId: string, sceneId: number, base64Data: string): string {
+  static saveCustomSceneImage(projectId: string, sceneId: number, base64Data: string, fileStem?: string): string {
     const projectDir = path.join(STORAGE_DIR, projectId, 'images');
     if (!fs.existsSync(projectDir)) {
       fs.mkdirSync(projectDir, { recursive: true });
@@ -770,7 +770,7 @@ export class ImageService {
       }
     }
 
-    const filename = `scene_${sceneId}_custom_${Date.now()}.${ext}`;
+    const filename = `${fileStem || `scene_${sceneId}`}_custom_${Date.now()}.${ext}`;
     const filePath = path.join(projectDir, filename);
     fs.writeFileSync(filePath, Buffer.from(cleanBase64, 'base64'));
     return `/storage/${projectId}/images/${filename}`;
@@ -785,7 +785,8 @@ export class ImageService {
     characterOrCast?: CharacterProfile | CharacterProfile[],
     totalScenes: number = 24,
     customArtStyle?: string,
-    shotType?: ShotType
+    shotType?: ShotType,
+    fileStem?: string
   ): Promise<string> {
     dotenv.config({ override: true });
 
@@ -794,7 +795,8 @@ export class ImageService {
       fs.mkdirSync(projectDir, { recursive: true });
     }
 
-    const imageFilename = `scene_${sceneId}.jpg`;
+    const baseName = fileStem || `scene_${sceneId}`;
+    const imageFilename = `${baseName}.jpg`;
     const imagePath = path.join(projectDir, imageFilename);
 
     const sceneCharacters: CharacterProfile[] = Array.isArray(characterOrCast)
@@ -848,7 +850,7 @@ export class ImageService {
     const geminiKey = (process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '').trim();
     const agnesKey = (process.env.AGNES_API_KEY || '').trim();
 
-    const svgFilename = `scene_${sceneId}.svg`;
+    const svgFilename = `${baseName}.svg`;
     const svgPath = path.join(projectDir, svgFilename);
     const cleanupStaleSvg = () => {
       try {

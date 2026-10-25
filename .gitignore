@@ -1,9 +1,42 @@
-node_modules
-dist
+# Dependencias y compilación
+node_modules/
+dist/
 .DS_Store
-.env
-.old.env
+*.log
 
-# Ignore the output video and generated storage from Git
-out
-storage
+# Variables de entorno, claves de API y credenciales sensibles
+.env
+.env.*
+!.env.example
+.old.env
+gcp-credentials.json
+*credentials*.json
+*service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# Almacenamiento de proyectos y salidas renderizadas
+out/
+storage/
+
+# Activos multimedia generados (videos, audios y fotos)
+channels/**/assets/
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.avi
+*.mp3
+*.wav
+*.ogg
+*.m4a
+*.flac
+*.aac
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif

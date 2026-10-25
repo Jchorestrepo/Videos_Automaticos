@@ -228,6 +228,33 @@ export type VisualMotionMode =
 
 export type MotionIntensityType = 'subtle' | 'standard' | 'dynamic' | number;
 
+/** Visual production mode: one image per scene (classic) or several camera shots per scene (sequence). */
+export type VisualMode = 'classic' | 'sequence';
+
+/** Target seconds between visual cuts in sequence mode. */
+export type ShotPacingSeconds = 3 | 4 | 6;
+
+export type ShotImageSource = 'ai' | 'manual' | 'scene_reuse';
+
+/**
+ * A camera shot inside a narrative scene. The scene keeps owning audio and captions;
+ * shots only split the visual layer, anchored to word positions of the voiceover.
+ */
+export interface ShotItem {
+  shot_id: string;             // "S03-P02" → scene 3, shot 2
+  global_index: number;        // 1-based index across the whole video (used for 001.png naming)
+  wordStart: number;           // inclusive word index in the planned voiceover
+  wordEnd: number;             // exclusive word index in the planned voiceover
+  voiceText: string;           // literal voiceover fragment for this shot
+  visual_prompt: string;       // English shot description (without channel style)
+  shot_type?: ShotType;
+  camera_motion?: 'zoom_in' | 'zoom_out' | 'pan_left' | 'pan_right' | 'static';
+  character_ids?: string[];
+  continuity_note?: string;
+  imageUrl?: string;
+  imageSource?: ShotImageSource;
+}
+
 export interface SceneItem {
   scene_id: number;
   chapter: string;
@@ -256,6 +283,8 @@ export interface SceneItem {
   reusedAssetPrompt?: string;
   motion_mode?: VisualMotionMode;
   character_effect?: EmotionalAnimationEffect;
+  shots?: ShotItem[];
+  shotsPlannedWordCount?: number; // word count of the voiceover the shots were planned on
 }
 
 export interface ProjectScript {
@@ -269,6 +298,9 @@ export interface ProjectScript {
   primaryVoice?: string;
   secondaryVoice?: string;
   smartReuseImages?: boolean;
+  visualMode?: VisualMode;
+  shotPacingSeconds?: ShotPacingSeconds;
+  shotsLanguage?: 'es' | 'en';
   title: string;
   hook: string;
   characterCompany?: string;

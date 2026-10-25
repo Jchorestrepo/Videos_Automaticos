@@ -33,5 +33,16 @@
       "padre de familia antiguo"
     ],
     "appearances": []
-  }
+  },
+  "entity_type": "person",
+  "reference_gallery": [
+    "/channel-assets/ancient_lives/characters/assets/campesino_egipcio_ai_1792810280803.jpg"
+  ],
+  "assets": [],
+  "updatedAt": "2026-10-24T02:51:28.402Z",
+  "canonical_image_url": "/channel-assets/ancient_lives/characters/assets/campesino_egipcio_ai_1792810280803.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
 }

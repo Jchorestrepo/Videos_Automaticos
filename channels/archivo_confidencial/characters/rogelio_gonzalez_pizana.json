@@ -1,0 +1,21 @@
+{
+  "character_id": "rogelio_gonzalez_pizana",
+  "channel_id": "archivo_confidencial",
+  "name": "Rogelio González Pizaña",
+  "role": "Personaje secundario que ilustra la traición en el crimen organizado (fundador de Los Zetas traicionado por sus socios)",
+  "real_person": true,
+  "character_category": "real_person",
+  "entity_type": "person",
+  "age": "Edad adulta",
+  "known_face": true,
+  "company_or_affiliation": "Los Zetas",
+  "anchor_prompt": "Stylized 3D cinematic animated historical character of Rogelio González Pizaña, single individual person only, authentic historical presence, authentic historical garments of the era, determined expressive eyes, Arcane and Pixar inspired 3D render, high aesthetic realism",
+  "signature_props": [
+    "authentic historical tool of trade",
+    "characteristic cultural artifact",
+    "sun-drenched historical setting"
+  ],
+  "reference_gallery": [],
+  "assets": [],
+  "updatedAt": "2026-10-24T02:44:46.971Z"
+}

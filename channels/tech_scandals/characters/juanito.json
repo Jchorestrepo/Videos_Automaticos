@@ -34,6 +34,11 @@
     ],
     "appearances": [
       {
+        "project_id": "test_proj_bilingual_1792809655586",
+        "title": "Test Bilingual Project",
+        "role_in_story": "usuario joven / analogía cotidiana"
+      },
+      {
         "project_id": "proj_1792779696034",
         "title": "Transmitió su Vida 24/7 y Casi se Vuelve Loco... pero Creó un Monstruo de $970 Millones: La Historia de Twitch",
         "role_in_story": "Juanito"
@@ -284,6 +289,7 @@
       "createdAt": "2026-10-17T20:03:39.829Z"
     }
   ],
-  "updatedAt": "2026-10-23T18:50:49.720Z",
-  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792267419825_599.jpg"
+  "updatedAt": "2026-10-24T02:40:55.610Z",
+  "canonical_image_url": "/channel-assets/tech_scandals/characters/assets/juanito_frame_1792267419825_599.jpg",
+  "entity_type": "person"
 }

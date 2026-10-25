@@ -1,0 +1,20 @@
+{
+  "character_id": "fundador",
+  "channel_id": "archivo_confidencial",
+  "name": "Fundador",
+  "role": "Contraparte / Rival",
+  "real_person": true,
+  "character_category": "real_person",
+  "entity_type": "person",
+  "age": "Edad adulta",
+  "known_face": true,
+  "anchor_prompt": "Stylized 3D cinematic animated historical character of Fundador, single individual person only, authentic historical presence, authentic historical garments of the era, determined expressive eyes, Arcane and Pixar inspired 3D render, high aesthetic realism",
+  "signature_props": [
+    "authentic historical tool of trade",
+    "characteristic cultural artifact",
+    "sun-drenched historical setting"
+  ],
+  "reference_gallery": [],
+  "assets": [],
+  "updatedAt": "2026-10-24T02:44:46.969Z"
+}

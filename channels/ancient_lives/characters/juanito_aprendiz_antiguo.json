@@ -29,7 +29,13 @@
       "adolescente",
       "personaje secundario sin rostro"
     ],
-    "appearances": []
+    "appearances": [
+      {
+        "project_id": "proj_1792810228545",
+        "title": "Sobrevivir a 50°C sin Agua Potable: Un Día Real como Obrero en el Antiguo Egipto",
+        "role_in_story": "Campesino y obrero estacional del Antiguo Egipto"
+      }
+    ]
   },
   "anchor_prompt": "Stylized 3D cinematic animated character of Juanito, a cheerful 15-year-old athletic boy, warm expressive brown eyes, wide optimistic smile, wearing a distinctive woven blue headband across his forehead, simple historical tunic with rolled sleeves for running, holding a small stitched leather ball, Pixar and Arcane inspired 3D documentary aesthetic, single individual character render",
   "signature_props": [
@@ -37,7 +43,15 @@
     "small stitched leather ball",
     "messenger satchel"
   ],
-  "reference_gallery": [],
+  "reference_gallery": [
+    "/channel-assets/ancient_lives/characters/assets/juanito_aprendiz_antiguo_ai_1792810292835.jpg"
+  ],
   "assets": [],
-  "updatedAt": "2026-10-17T09:38:23.589Z"
+  "updatedAt": "2026-10-24T02:51:40.616Z",
+  "entity_type": "person",
+  "canonical_image_url": "/channel-assets/ancient_lives/characters/assets/juanito_aprendiz_antiguo_ai_1792810292835.jpg",
+  "custom_style_prompt": "",
+  "preferred_style_preset": "3d_pixar_arcane",
+  "portrait_approved": true,
+  "custom_uploaded": false
 }
